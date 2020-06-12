@@ -1,0 +1,45 @@
+---
+#------------------------------------------------------------------------------
+# Variables used by both CREATE and DELETE Playbooks. 
+#------------------------------------------------------------------------------
+#
+# *** Important - Do not put credentials in this file. ***  
+#
+# See playbook section titled 'Load Variables from files' for details on how to
+# handle credentials.
+#
+# Note that you must change the following four variables to suit your deployment.
+# The uk_se_name and stack_name are used to identify your deployment - if you
+# don't update them, I'll be usung the same tags and might delete your deployment.
+# Finally, do not use spaces or unusual characters in the variable values!
+#
+    uk_se_name: arch
+    stack_name: ansible-f5-demo-build
+
+    az_region: ukwest
+    #az_region: eastus
+    subnet_start: "10.3"
+#    
+#------------------------------------------------------------------------------
+#
+# You shouldn't need to change these unless you need to create more subnets.
+#
+    automation_tool: "ansible"
+
+    rg_name: "{{ uk_se_name }}-{{ stack_name }}-rg"
+    vnet_name: "{{ uk_se_name }}-{{ stack_name }}-vnet"
+    vnet_cidr: "{{ subnet_start }}.0.0/16"
+
+    vnet_subnets:
+      - name: mgmt_a
+        cidr: "{{ subnet_start }}.1.0/24"
+        az: "{{ az_region }}a"
+      - name: external_a
+        cidr: "{{ subnet_start }}.11.0/24"
+        az: "{{ az_region }}a"
+      - name: internal_a
+        cidr: "{{ subnet_start }}.21.0/24"
+        az: "{{ az_region }}a"       
+
+#------------------------------------------------------------------------------
+...

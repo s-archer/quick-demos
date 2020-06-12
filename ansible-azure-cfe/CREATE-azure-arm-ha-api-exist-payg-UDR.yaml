@@ -1,0 +1,150 @@
+---
+#------------------------------------------------------------------------------
+# Playbook to CREATE Azure demo environment. 
+#------------------------------------------------------------------------------
+
+- name: PROVISION VNET SUBNETS & F5 INSTANCES
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  
+
+  environment:
+    AZURE_SUBSCRIPTION_ID: "{{ az_subs_id }}"
+    AZURE_CLIENT_ID: "{{ az_client_id }}"
+    AZURE_SECRET: "{{ az_secret }}"
+    AZURE_TENANT: "{{ az_tenant }}"
+
+#------------------------------------------------------------------------------
+# Load Variables from files 
+#------------------------------------------------------------------------------
+
+
+  vars_files:
+    - ../../creds/azure_creds.yaml
+    - ../../creds/big_creds.yaml
+    - ./vars.yaml
+     
+
+#------------------------------------------------------------------------------
+# Start Tasks
+#------------------------------------------------------------------------------
+
+  tasks:
+
+
+  - name: CREATE RESOURCE GROUP
+    azure_rm_resourcegroup:
+      name: "{{ rg_name }}"
+      location: "{{ az_region }}"
+      tags:
+        automated: "{{ automation_tool }}"
+        stack: "{{ stack_name }}"
+        UK-SE: "{{ uk_se_name }}"
+
+
+  - name: CREATE VNET
+    azure_rm_virtualnetwork:
+      name: "{{ vnet_name }}"
+      resource_group: "{{ rg_name }}"
+      address_prefixes_cidr:
+          - "{{ vnet_cidr }}"
+      tags:
+        automated: "{{ automation_tool }}"
+        stack: "{{ stack_name }}"
+        UK-SE: "{{ uk_se_name }}"
+
+
+  - name: CREATE SUBNET
+    azure_rm_subnet:
+      name: "{{ item.name }}"
+      virtual_network_name: "{{ vnet_name }}"
+      resource_group: "{{ rg_name }}"
+      address_prefix_cidr: "{{ item.cidr }}"
+    with_items: "{{ vnet_subnets }}"
+    register: create_vnet_subnets
+
+
+  - name: LAUNCH ARM TEMPLATE INTO AZURE  
+    azure_rm_deployment:
+      state: present
+      resource_group_name: "{{ rg_name }}"
+      template_link: "https://raw.githubusercontent.com/F5Networks/f5-azure-arm-templates/master/supported/standalone/3nic/existing-stack/payg/azuredeploy.json"
+      location: "{{ az_region }}"
+      client_id: "{{ az_client_id }}"
+      tenant: "{{ az_tenant }}"
+      secret: "{{ az_secret }}"
+      parameters:
+        adminUsername:
+          value: "{{ bigip_azure_user }}"
+        authenticationType:
+          value: password
+        adminPasswordOrKey:
+          value: "{{ bigip_azure_pass }}"
+        dnsLabel:
+          value: "{{ uk_se_name }}"
+        instanceName:
+          value: big-ip
+        instanceType:
+          value: Standard_DS3_v2
+        imageName:
+          value: Best25Mbps
+        bigIpVersion:
+          value: latest
+        numberOfExternalIps:
+          value: 1
+        vnetName:
+          value: "{{ vnet_name }}"
+        vnetResourceGroupName:
+          value: "{{ rg_name }}"
+        mgmtSubnetName:
+          value: "{{ vnet_subnets[0].name }}"
+        externalSubnetName:
+          value: "{{ vnet_subnets[1].name }}"
+        externalIpAddressRangeStart:
+          value: "{{ subnet_start }}.11.100"
+        internalSubnetName:
+          value: "{{ vnet_subnets[2].name }}"
+        ntpServer:
+          value: 0.pool.ntp.org
+        timeZone:
+          value: UTC
+        customImage:
+          value: OPTIONAL 
+        restrictedSrcAddress:
+          value: "*"
+        provisionPublicIP: 
+          value: "Yes"
+        tagValues:
+          value:
+            application: APP
+            cost: "SALES EMEA-UK 4261"
+            environment: Demo
+            group: "UK SE"
+            owner: "{{ uk_se_name }}"
+            automated: "{{ automation_tool }}"
+            stack: "{{ stack_name }}"
+            UK-SE: "{{ uk_se_name }}"
+        allowUsageAnalytics:
+          value: 'Yes'
+        #declarationUrl:  "NOT_SPECIFIED"
+    # There is a known issue related to addtlnic, which can't be resolved by F5 ARM PD.
+    # We ignore the error, and the BIG-IPs deploy correctly.
+    ignore_errors: True
+
+
+  - name: OUTPUT WARNING ABOUT KNOW ISSUE WITH ADDTLNIC
+    debug:
+      msg: "The previous error referring to missing addtlnic is cosmetic.  F5 ARM templates need to use dependsOn for conditional resources, so unable to work-around the issue.  We can safely igmore and the BIG-IP devices deploy correctly."
+
+
+#------------------------------------------------------------------------------
+# TS Curl
+#------------------------------------------------------------------------------
+
+#curl -kvu $CREDS "https://$IP/mgmt/shared/iapp/package-management-tasks" -H "Origin: https://$IP" -H 'Content-Type: application/json;charset=UTF-8' --data $DATA
+
+#------------------------------------------------------------------------------
+# End
+#------------------------------------------------------------------------------
+...

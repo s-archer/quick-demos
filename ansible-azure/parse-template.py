@@ -10,16 +10,15 @@ with open('./raw-template.json') as json_file:
     # Import the file as a JSON object
     data = json.load(json_file)
     # Loop through each parameter (p) in the parameters section
-    paramlist = []
     for p in data['parameters']:
-            value = str(data['parameters'][p]['value'])
-            #print(p + ':  "' + value + '"')
-            paramlist.append(p + ':  "' + value + '"')
-    paramlist = (sorted(paramlist))
-    for p in paramlist:
-        print(p)
-
-
-            
+        elements = data['parameters'][p]
+        # For each parameter, loop through each element (e)
+        for e in elements:
+            # If the element name is equal to Default, AllowedValues, Description or ConstraintDescription then print it's value.  
+            # but if the value is a list, convert it to a string.  
+            # or if the value is an integer (int), also convert to a string. 
+            # then print the line.
+            if e in ('defaultValue', 'allowedValues', 'Description', 'ConstraintDescription'):
+                print (p + ':  "'  + e + '"')
 
 

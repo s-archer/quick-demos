@@ -1,0 +1,92 @@
+---
+#------------------------------------------------------------------------------
+# Playbook to DELETE Azure demo environment.  
+#------------------------------------------------------------------------------
+
+- name: PROVISION VNET SUBNETS & F5 INSTANCES
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  
+
+  environment:
+    AZURE_SUBSCRIPTION_ID: "{{ az_subs_id }}"
+    AZURE_CLIENT_ID: "{{ az_client_id }}"
+    AZURE_SECRET: "{{ az_secret }}"
+    AZURE_TENANT: "{{ az_tenant }}"
+
+#------------------------------------------------------------------------------
+# Load Variables from files 
+#------------------------------------------------------------------------------
+
+  # You need to create a file named azure_creds.yaml (update path below) with the following variables:
+  #
+  # az_subs_id: "--your-id-here--"
+  # az_client_id: "--your-id-here--"
+  # az_secret: "--your-secret-here--"
+  # az_tenant: "--your-tenant-here--"
+
+  # f5_admin_user: "--your-user-here--"
+  # f5_admin_pass: "--your-password-here--"
+
+  vars_files:
+    - ../../creds/azure_creds.yaml
+    - ./vars.yaml
+    
+
+#------------------------------------------------------------------------------
+# Start Tasks
+#------------------------------------------------------------------------------
+
+  tasks:
+
+  - name: DELETE ARM TEMPLATE FROM AZURE  
+    azure_rm_deployment:
+      state: absent
+      resource_group_name: "{{ rg_name }}"
+      location: "{{ az_region }}"
+      client_id: "{{ az_client_id }}"
+      tenant: "{{ az_tenant }}"
+      secret: "{{ az_secret }}"
+    ignore_errors: True
+
+
+  - name: DELETE VNET
+    azure_rm_virtualnetwork:
+      state: absent
+      name: "{{ vnet_name }}"
+      resource_group: "{{ rg_name }}"
+      address_prefixes_cidr:
+          - "{{ vnet_cidr }}"
+    ignore_errors: True
+
+
+  - name: DELETE SUBNET
+    azure_rm_subnet:
+      state: absent
+      name: "{{ item.key }}"
+      virtual_network_name: "{{ vnet_name }}"
+      resource_group: "{{ rg_name }}"
+      address_prefix_cidr: "{{ item.value.cidr }}"
+    with_dict: "{{ vnet_subnets }}"
+    register: create_vnet_subnets
+    ignore_errors: True
+
+
+  - name: DELETE RESOURCE GROUP
+    azure_rm_resourcegroup:
+      state: absent
+      name: "{{ rg_name }}"
+      location: "{{ az_region }}"
+    ignore_errors: True
+
+#------------------------------------------------------------------------------
+# TS Curl
+#------------------------------------------------------------------------------
+
+#curl -kvu $CREDS "https://$IP/mgmt/shared/iapp/package-management-tasks" -H "Origin: https://$IP" -H 'Content-Type: application/json;charset=UTF-8' --data $DATA
+
+#------------------------------------------------------------------------------
+# End
+#------------------------------------------------------------------------------
+...
