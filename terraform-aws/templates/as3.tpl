@@ -7,9 +7,9 @@
                         "schemaVersion": "3.22.0",
                         "label": "Sample 1",
                         "remark": "Simple HTTP Service with Round-Robin Load Balancing",
-                        "Sample_01": {
+                        "demo_day_1": {
                             "class": "Tenant",
-                            "A1": {
+                            "nginx1": {
                                 "class": "Application",
                                 "template": "http",
                                 "serviceMain": {

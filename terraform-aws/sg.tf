@@ -11,7 +11,7 @@ resource "aws_security_group" "mgmt" {
     cidr_blocks = ["${chomp(data.http.myip.body)}/32"]
     #cidr_blocks = ["0.0.0.0/0"]
   }
-  
+
   ingress {
     description = "TLS for mgmt"
     from_port   = 443
@@ -29,7 +29,7 @@ resource "aws_security_group" "mgmt" {
   }
 
   tags = {
-    Name = "mgmt",
+    Name  = "mgmt",
     UK-SE = var.uk_se_name
   }
 }
@@ -46,7 +46,7 @@ resource "aws_security_group" "external" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-  
+
   ingress {
     description = "HTTPS"
     from_port   = 443
@@ -62,7 +62,7 @@ resource "aws_security_group" "external" {
     cidr_blocks = ["0.0.0.0/0"]
   }
   tags = {
-    Name = "external",
+    Name  = "external",
     UK-SE = var.uk_se_name
   }
 }
@@ -79,7 +79,7 @@ resource "aws_security_group" "nginx" {
     cidr_blocks = ["10.0.0.0/16"]
   }
 
-    ingress {
+  ingress {
     from_port   = 8
     to_port     = 0
     protocol    = "icmp"
@@ -123,8 +123,8 @@ resource "aws_security_group" "nginx" {
   }
 
   tags = {
-    Name = "nginx",
+    Name  = "nginx",
     UK-SE = var.uk_se_name
   }
-  
+
 }

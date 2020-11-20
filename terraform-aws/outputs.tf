@@ -22,12 +22,16 @@ output "f5_vs1" {
   value = [aws_eip.external-vs1.private_ip, aws_eip.external-vs1.public_ip]
 }
 
+output "f5_vs2" {
+  value = [aws_eip.external-vs2.private_ip, aws_eip.external-vs2.public_ip]
+}
+
 output "f5_vs1_uri" {
   value = "http://${aws_eip.external-vs1.public_ip}"
 }
 
 output "f5_external_self" {
-  value = aws_network_interface.external.private_ip
+  value = element(tolist(aws_network_interface.external.private_ips), 0)
 }
 
 output "f5_internal_self" {

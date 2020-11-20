@@ -1,11 +1,11 @@
 variable "f5_ami_search_name" {
   description = "filter used to find AMI for deployment"
-  default = "F5*BIGIP-15.1.0.4*Best*25Mbps*"
+  default     = "F5*BIGIP-15.1.0.4*Best*25Mbps*"
 }
 
-variable "prefix" { 
+variable "prefix" {
   description = "prefix used for naming objects created in AWS"
-  default = "arch-quickdemo-tf-"
+  default     = "arch-quickdemo-tf-"
 }
 
 variable "uk_se_name" {
@@ -13,19 +13,19 @@ variable "uk_se_name" {
   default     = "arch"
 }
 
-variable "hostname-f5" { 
+variable "hostname-f5" {
   description = "Hostname for the BIG-IP, must be FQDN"
-  default = "bigip-1.f5demo.com"
+  default     = "bigip-1.f5demo.com"
 }
 
-variable "username" { 
+variable "username" {
   description = "big-ip username"
-  default = "admin"
+  default     = "admin"
 }
 
-variable "instance_type" { 
+variable "instance_type" {
   description = "aws ec2 instance type"
-  default = "t2.large"
+  default     = "t2.large"
 }
 
 # The following two vars are placeholder/empty vars.  The values are populated from a separate creds.tfvars file, stored

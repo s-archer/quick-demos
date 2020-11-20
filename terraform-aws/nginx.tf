@@ -58,7 +58,7 @@ resource "aws_launch_configuration" "nginx" {
 }
 
 resource "aws_eip" "nginx_nat_gateway" {
-  vpc                       = true
+  vpc = true
   tags = {
     Name  = "nginx_nat_gateway_eip"
     UK-SE = "arch"
@@ -76,7 +76,7 @@ resource "aws_nat_gateway" "nginx" {
 }
 
 resource "aws_route" "internal" {
-  route_table_id            = module.vpc.private_route_table_ids[0]
-  destination_cidr_block    = "0.0.0.0/0"
-  nat_gateway_id = aws_nat_gateway.nginx.id
+  route_table_id         = module.vpc.private_route_table_ids[0]
+  destination_cidr_block = "0.0.0.0/0"
+  nat_gateway_id         = aws_nat_gateway.nginx.id
 }

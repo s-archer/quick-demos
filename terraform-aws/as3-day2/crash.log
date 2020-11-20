@@ -1,0 +1,1733 @@
+2020/11/20 16:41:32 [INFO] Terraform version: 0.13.4  
+2020/11/20 16:41:32 [INFO] Go runtime version: go1.14.7
+2020/11/20 16:41:32 [INFO] CLI args: []string{"/usr/local/bin/terraform", "apply", "--auto-approve"}
+2020/11/20 16:41:32 [DEBUG] Attempting to open CLI config file: /Users/archer/.terraformrc
+2020/11/20 16:41:32 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2020/11/20 16:41:32 [DEBUG] ignoring non-existing provider search directory terraform.d/plugins
+2020/11/20 16:41:32 [DEBUG] ignoring non-existing provider search directory /Users/archer/.terraform.d/plugins
+2020/11/20 16:41:32 [DEBUG] ignoring non-existing provider search directory /Users/archer/Library/Application Support/io.terraform/plugins
+2020/11/20 16:41:32 [DEBUG] ignoring non-existing provider search directory /Library/Application Support/io.terraform/plugins
+2020/11/20 16:41:32 [INFO] CLI command args: []string{"apply", "--auto-approve"}
+2020/11/20 16:41:32 [TRACE] Meta.Backend: no config given or present on disk, so returning nil config
+2020/11/20 16:41:32 [TRACE] Meta.Backend: backend has not previously been initialized in this working directory
+2020/11/20 16:41:32 [DEBUG] New state was assigned lineage "46f42422-c1c1-6cbd-e266-6c4d88cef654"
+2020/11/20 16:41:32 [TRACE] Meta.Backend: using default local state only (no backend configuration, and no existing initialized backend)
+2020/11/20 16:41:32 [TRACE] Meta.Backend: instantiated backend of type <nil>
+2020/11/20 16:41:32 [TRACE] providercache.fillMetaCache: scanning directory .terraform/plugins
+2020/11/20 16:41:32 [TRACE] getproviders.SearchLocalDirectory: .terraform/plugins is a symlink to .terraform/plugins
+2020/11/20 16:41:32 [TRACE] getproviders.SearchLocalDirectory: found registry.terraform.io/f5networks/bigip v1.4.0 for darwin_amd64 at .terraform/plugins/registry.terraform.io/f5networks/bigip/1.4.0/darwin_amd64
+2020/11/20 16:41:32 [TRACE] providercache.fillMetaCache: including .terraform/plugins/registry.terraform.io/f5networks/bigip/1.4.0/darwin_amd64 as a candidate package for registry.terraform.io/f5networks/bigip 1.4.0
+2020/11/20 16:41:32 [DEBUG] checking for provisioner in "."
+2020/11/20 16:41:32 [DEBUG] checking for provisioner in "/usr/local/bin"
+2020/11/20 16:41:32 [INFO] Failed to read plugin lock file .terraform/plugins/darwin_amd64/lock.json: open .terraform/plugins/darwin_amd64/lock.json: no such file or directory
+2020/11/20 16:41:32 [TRACE] Meta.Backend: backend <nil> does not support operations, so wrapping it in a local backend
+2020/11/20 16:41:32 [INFO] backend/local: starting Apply operation
+2020/11/20 16:41:32 [TRACE] backend/local: requesting state manager for workspace "default"
+2020/11/20 16:41:32 [TRACE] backend/local: state manager for workspace "default" will:
+ - read initial snapshot from terraform.tfstate
+ - write new snapshots to terraform.tfstate
+ - create any backup at terraform.tfstate.backup
+2020/11/20 16:41:32 [TRACE] backend/local: requesting state lock for workspace "default"
+2020/11/20 16:41:32 [TRACE] statemgr.Filesystem: preparing to manage state snapshots at terraform.tfstate
+2020/11/20 16:41:32 [TRACE] statemgr.Filesystem: existing snapshot has lineage "0917174b-08fa-6076-6ffc-032a82b49880" serial 3
+2020/11/20 16:41:32 [TRACE] statemgr.Filesystem: locking terraform.tfstate using fcntl flock
+2020/11/20 16:41:32 [TRACE] statemgr.Filesystem: writing lock metadata to .terraform.tfstate.lock.info
+2020/11/20 16:41:32 [TRACE] backend/local: reading remote state for workspace "default"
+2020/11/20 16:41:32 [TRACE] statemgr.Filesystem: reading latest snapshot from terraform.tfstate
+2020/11/20 16:41:32 [TRACE] statemgr.Filesystem: read snapshot with lineage "0917174b-08fa-6076-6ffc-032a82b49880" serial 3
+2020/11/20 16:41:32 [TRACE] backend/local: retrieving local state snapshot for workspace "default"
+2020/11/20 16:41:32 [TRACE] backend/local: building context for current working directory
+2020/11/20 16:41:32 [TRACE] terraform.NewContext: starting
+2020/11/20 16:41:32 [TRACE] terraform.NewContext: loading provider schemas
+2020/11/20 16:41:32 [TRACE] LoadSchemas: retrieving schema for provider type "registry.terraform.io/f5networks/bigip"
+2020-11-20T16:41:32.903Z [INFO]  plugin: configuring client automatic mTLS
+2020-11-20T16:41:32.926Z [DEBUG] plugin: starting plugin: path=.terraform/plugins/registry.terraform.io/f5networks/bigip/1.4.0/darwin_amd64/terraform-provider-bigip_v1.4.0 args=[.terraform/plugins/registry.terraform.io/f5networks/bigip/1.4.0/darwin_amd64/terraform-provider-bigip_v1.4.0]
+2020-11-20T16:41:32.928Z [DEBUG] plugin: plugin started: path=.terraform/plugins/registry.terraform.io/f5networks/bigip/1.4.0/darwin_amd64/terraform-provider-bigip_v1.4.0 pid=50118
+2020-11-20T16:41:32.928Z [DEBUG] plugin: waiting for RPC address: path=.terraform/plugins/registry.terraform.io/f5networks/bigip/1.4.0/darwin_amd64/terraform-provider-bigip_v1.4.0
+2020-11-20T16:41:32.940Z [INFO]  plugin.terraform-provider-bigip_v1.4.0: configuring server automatic mTLS: timestamp=2020-11-20T16:41:32.939Z
+2020-11-20T16:41:32.966Z [DEBUG] plugin: using plugin: version=5
+2020-11-20T16:41:32.966Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: plugin address: address=/var/folders/kw/pv1mmzqn49d8chjgfr3v0fkrbkvc6k/T/plugin050024573 network=unix timestamp=2020-11-20T16:41:32.966Z
+2020/11/20 16:41:33 [TRACE] GRPCProvider: GetSchema
+2020-11-20T16:41:33.012Z [TRACE] plugin.stdio: waiting for stdio data
+2020-11-20T16:41:33.014Z [WARN]  plugin.stdio: received EOF, stopping recv loop: err="rpc error: code = Unimplemented desc = unknown service plugin.GRPCStdio"
+2020/11/20 16:41:33 [TRACE] No provider meta schema returned
+2020/11/20 16:41:33 [TRACE] GRPCProvider: Close
+2020-11-20T16:41:33.018Z [DEBUG] plugin: plugin process exited: path=.terraform/plugins/registry.terraform.io/f5networks/bigip/1.4.0/darwin_amd64/terraform-provider-bigip_v1.4.0 pid=50118
+2020-11-20T16:41:33.018Z [DEBUG] plugin: plugin exited
+2020/11/20 16:41:33 [TRACE] LoadSchemas: retrieving schema for provider type "terraform.io/builtin/terraform"
+2020/11/20 16:41:33 [TRACE] terraform.NewContext: complete
+2020/11/20 16:41:33 [TRACE] backend/local: finished building terraform.Context
+2020/11/20 16:41:33 [TRACE] backend/local: requesting interactive input, if necessary
+2020/11/20 16:41:33 [TRACE] Context.Input: Prompting for provider arguments
+2020/11/20 16:41:33 [TRACE] Context.Input: Provider provider.bigip declared at main.tf:9,1-17
+2020/11/20 16:41:33 [TRACE] Context.Input: Provider provider.terraform implied by data block at main.tf:1,1-41
+2020/11/20 16:41:33 [TRACE] Context.Input: Input for provider.bigip: map[string]cty.Value{}
+2020/11/20 16:41:33 [TRACE] Context.Input: No schema available for provider type "terraform"
+2020/11/20 16:41:33 [TRACE] backend/local: running validation operation
+2020/11/20 16:41:33 [INFO] terraform: building graph: GraphTypeValidate
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.ConfigTransformer
+2020/11/20 16:41:33 [TRACE] ConfigTransformer: Starting for path: 
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.ConfigTransformer with new graph:
+  bigip_as3.nginx - *terraform.NodeValidatableResource
+  data.terraform_remote_state.aws_demo - *terraform.NodeValidatableResource
+  ------
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.LocalTransformer
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.LocalTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.OutputTransformer
+2020/11/20 16:41:33 [TRACE] OutputTransformer: adding app_url as *terraform.nodeExpandOutput
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.OutputTransformer with new graph:
+  bigip_as3.nginx - *terraform.NodeValidatableResource
+  data.terraform_remote_state.aws_demo - *terraform.NodeValidatableResource
+  output.app_url (expand) - *terraform.nodeExpandOutput
+  ------
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.OrphanResourceInstanceTransformer
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.OrphanResourceInstanceTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.StateTransformer
+2020/11/20 16:41:33 [TRACE] StateTransformer: state is empty, so nothing to do
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.StateTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.OrphanOutputTransformer
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.OrphanOutputTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.AttachResourceConfigTransformer
+2020/11/20 16:41:33 [TRACE] AttachResourceConfigTransformer: attaching to "bigip_as3.nginx" (*terraform.NodeValidatableResource) config from main.tf:16,1-29
+2020/11/20 16:41:33 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to bigip_as3.nginx
+2020/11/20 16:41:33 [TRACE] AttachResourceConfigTransformer: attaching to "data.terraform_remote_state.aws_demo" (*terraform.NodeValidatableResource) config from hcl.Range{Filename:"main.tf", Start:hcl.Pos{Line:1, Column:1, Byte:0}, End:hcl.Pos{Line:1, Column:41, Byte:40}}
+2020/11/20 16:41:33 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to data.terraform_remote_state.aws_demo
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.AttachResourceConfigTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.RootVariableTransformer
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.RootVariableTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.MissingProvisionerTransformer
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.MissingProvisionerTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.ProvisionerTransformer
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.ProvisionerTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.ModuleVariableTransformer
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.ModuleVariableTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.graphTransformerMulti
+2020/11/20 16:41:33 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderConfigTransformer
+2020/11/20 16:41:33 [TRACE] ProviderConfigTransformer: attaching to "provider[\"registry.terraform.io/f5networks/bigip\"]" provider configuration from main.tf:9,1-17
+2020/11/20 16:41:33 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderConfigTransformer with new graph:
+  bigip_as3.nginx - *terraform.NodeValidatableResource
+  data.terraform_remote_state.aws_demo - *terraform.NodeValidatableResource
+  output.app_url (expand) - *terraform.nodeExpandOutput
+  provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  ------
+2020/11/20 16:41:33 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.MissingProviderTransformer
+2020/11/20 16:41:33 [DEBUG] adding implicit provider configuration provider["terraform.io/builtin/terraform"], implied first by data.terraform_remote_state.aws_demo
+2020/11/20 16:41:33 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.MissingProviderTransformer with new graph:
+  bigip_as3.nginx - *terraform.NodeValidatableResource
+  data.terraform_remote_state.aws_demo - *terraform.NodeValidatableResource
+  output.app_url (expand) - *terraform.nodeExpandOutput
+  provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  ------
+2020/11/20 16:41:33 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderTransformer
+2020/11/20 16:41:33 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/f5networks/bigip"] serving bigip_as3.nginx
+2020/11/20 16:41:33 [DEBUG] ProviderTransformer: "bigip_as3.nginx" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/f5networks/bigip"]
+2020/11/20 16:41:33 [TRACE] ProviderTransformer: exact match for provider["terraform.io/builtin/terraform"] serving data.terraform_remote_state.aws_demo
+2020/11/20 16:41:33 [DEBUG] ProviderTransformer: "data.terraform_remote_state.aws_demo" (*terraform.NodeValidatableResource) needs provider["terraform.io/builtin/terraform"]
+2020/11/20 16:41:33 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderTransformer with new graph:
+  bigip_as3.nginx - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  data.terraform_remote_state.aws_demo - *terraform.NodeValidatableResource
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  output.app_url (expand) - *terraform.nodeExpandOutput
+  provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  ------
+2020/11/20 16:41:33 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.PruneProviderTransformer
+2020/11/20 16:41:33 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.PruneProviderTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ParentProviderTransformer
+2020/11/20 16:41:33 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ParentProviderTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.graphTransformerMulti with new graph:
+  bigip_as3.nginx - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  data.terraform_remote_state.aws_demo - *terraform.NodeValidatableResource
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  output.app_url (expand) - *terraform.nodeExpandOutput
+  provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  ------
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.RemovedModuleTransformer
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.RemovedModuleTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.AttachSchemaTransformer
+2020/11/20 16:41:33 [TRACE] AttachSchemaTransformer: attaching resource schema to bigip_as3.nginx
+2020/11/20 16:41:33 [TRACE] AttachSchemaTransformer: attaching resource schema to data.terraform_remote_state.aws_demo
+2020/11/20 16:41:33 [TRACE] AttachSchemaTransformer: attaching provider config schema to provider["registry.terraform.io/f5networks/bigip"]
+2020/11/20 16:41:33 [ERROR] AttachSchemaTransformer: No provider config schema available for provider["terraform.io/builtin/terraform"]
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.AttachSchemaTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.ModuleExpansionTransformer
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.ModuleExpansionTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2020/11/20 16:41:33 [DEBUG] ReferenceTransformer: "bigip_as3.nginx" references: []
+2020/11/20 16:41:33 [WARN] ReferenceTransformer: reference not found: "path.module"
+2020/11/20 16:41:33 [DEBUG] ReferenceTransformer: "data.terraform_remote_state.aws_demo" references: []
+2020/11/20 16:41:33 [DEBUG] ReferenceTransformer: "output.app_url (expand)" references: [data.terraform_remote_state.aws_demo]
+2020/11/20 16:41:33 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/f5networks/bigip\"]" references: [data.terraform_remote_state.aws_demo data.terraform_remote_state.aws_demo data.terraform_remote_state.aws_demo]
+2020/11/20 16:41:33 [DEBUG] ReferenceTransformer: "provider[\"terraform.io/builtin/terraform\"]" references: []
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.ReferenceTransformer with new graph:
+  bigip_as3.nginx - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  data.terraform_remote_state.aws_demo - *terraform.NodeValidatableResource
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  output.app_url (expand) - *terraform.nodeExpandOutput
+    data.terraform_remote_state.aws_demo - *terraform.NodeValidatableResource
+  provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+    data.terraform_remote_state.aws_demo - *terraform.NodeValidatableResource
+  provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  ------
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.attachDataResourceDependenciesTransformer
+2020/11/20 16:41:33 [TRACE] attachDataDependenciesTransformer: data.terraform_remote_state.aws_demo depends on []
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.attachDataResourceDependenciesTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.ForcedCBDTransformer
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.ForcedCBDTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.CountBoundaryTransformer
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.CountBoundaryTransformer with new graph:
+  bigip_as3.nginx - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  data.terraform_remote_state.aws_demo - *terraform.NodeValidatableResource
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    bigip_as3.nginx - *terraform.NodeValidatableResource
+    data.terraform_remote_state.aws_demo - *terraform.NodeValidatableResource
+    output.app_url (expand) - *terraform.nodeExpandOutput
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  output.app_url (expand) - *terraform.nodeExpandOutput
+    data.terraform_remote_state.aws_demo - *terraform.NodeValidatableResource
+  provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+    data.terraform_remote_state.aws_demo - *terraform.NodeValidatableResource
+  provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  ------
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.CloseProviderTransformer
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.CloseProviderTransformer with new graph:
+  bigip_as3.nginx - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  data.terraform_remote_state.aws_demo - *terraform.NodeValidatableResource
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    bigip_as3.nginx - *terraform.NodeValidatableResource
+    data.terraform_remote_state.aws_demo - *terraform.NodeValidatableResource
+    output.app_url (expand) - *terraform.nodeExpandOutput
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  output.app_url (expand) - *terraform.nodeExpandOutput
+    data.terraform_remote_state.aws_demo - *terraform.NodeValidatableResource
+  provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+    data.terraform_remote_state.aws_demo - *terraform.NodeValidatableResource
+  provider["registry.terraform.io/f5networks/bigip"] (close) - *terraform.graphNodeCloseProvider
+    bigip_as3.nginx - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  provider["terraform.io/builtin/terraform"] (close) - *terraform.graphNodeCloseProvider
+    data.terraform_remote_state.aws_demo - *terraform.NodeValidatableResource
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  ------
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.CloseProvisionerTransformer
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.CloseProvisionerTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.CloseRootModuleTransformer
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.CloseRootModuleTransformer with new graph:
+  bigip_as3.nginx - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  data.terraform_remote_state.aws_demo - *terraform.NodeValidatableResource
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    bigip_as3.nginx - *terraform.NodeValidatableResource
+    data.terraform_remote_state.aws_demo - *terraform.NodeValidatableResource
+    output.app_url (expand) - *terraform.nodeExpandOutput
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  output.app_url (expand) - *terraform.nodeExpandOutput
+    data.terraform_remote_state.aws_demo - *terraform.NodeValidatableResource
+  provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+    data.terraform_remote_state.aws_demo - *terraform.NodeValidatableResource
+  provider["registry.terraform.io/f5networks/bigip"] (close) - *terraform.graphNodeCloseProvider
+    bigip_as3.nginx - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  provider["terraform.io/builtin/terraform"] (close) - *terraform.graphNodeCloseProvider
+    data.terraform_remote_state.aws_demo - *terraform.NodeValidatableResource
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  root - *terraform.nodeCloseModule
+    meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider["registry.terraform.io/f5networks/bigip"] (close) - *terraform.graphNodeCloseProvider
+    provider["terraform.io/builtin/terraform"] (close) - *terraform.graphNodeCloseProvider
+  ------
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.TransitiveReductionTransformer
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.TransitiveReductionTransformer with new graph:
+  bigip_as3.nginx - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  data.terraform_remote_state.aws_demo - *terraform.NodeValidatableResource
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    bigip_as3.nginx - *terraform.NodeValidatableResource
+    output.app_url (expand) - *terraform.nodeExpandOutput
+  output.app_url (expand) - *terraform.nodeExpandOutput
+    data.terraform_remote_state.aws_demo - *terraform.NodeValidatableResource
+  provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+    data.terraform_remote_state.aws_demo - *terraform.NodeValidatableResource
+  provider["registry.terraform.io/f5networks/bigip"] (close) - *terraform.graphNodeCloseProvider
+    bigip_as3.nginx - *terraform.NodeValidatableResource
+  provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  provider["terraform.io/builtin/terraform"] (close) - *terraform.graphNodeCloseProvider
+    data.terraform_remote_state.aws_demo - *terraform.NodeValidatableResource
+  root - *terraform.nodeCloseModule
+    meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider["registry.terraform.io/f5networks/bigip"] (close) - *terraform.graphNodeCloseProvider
+    provider["terraform.io/builtin/terraform"] (close) - *terraform.graphNodeCloseProvider
+  ------
+2020/11/20 16:41:33 [DEBUG] Starting graph walk: walkValidate
+2020/11/20 16:41:33 [TRACE] dag/walk: visiting "provider[\"terraform.io/builtin/terraform\"]"
+2020/11/20 16:41:33 [TRACE] vertex "provider[\"terraform.io/builtin/terraform\"]": starting visit (*terraform.NodeApplyableProvider)
+2020/11/20 16:41:33 [TRACE] vertex "provider[\"terraform.io/builtin/terraform\"]": evaluating
+2020/11/20 16:41:33 [TRACE] [walkValidate] Entering eval tree: provider["terraform.io/builtin/terraform"]
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalSequence
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalInitProvider
+2020/11/20 16:41:33 [TRACE] BuiltinEvalContext: Initialized "provider[\"terraform.io/builtin/terraform\"]" provider for provider["terraform.io/builtin/terraform"]
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalOpFilter
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalSequence
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalGetProvider
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalValidateProvider
+2020/11/20 16:41:33 [TRACE] buildProviderConfig for provider["terraform.io/builtin/terraform"]: no configuration at all
+2020/11/20 16:41:33 [WARN] EvalValidateProvider: no config schema is available for provider["terraform.io/builtin/terraform"], so using empty schema
+2020/11/20 16:41:33 [TRACE] eval: terraform.EvalNoop
+2020/11/20 16:41:33 [TRACE] eval: terraform.EvalNoop
+2020/11/20 16:41:33 [TRACE] eval: terraform.EvalNoop
+2020/11/20 16:41:33 [TRACE] [walkValidate] Exiting eval tree: provider["terraform.io/builtin/terraform"]
+2020/11/20 16:41:33 [TRACE] vertex "provider[\"terraform.io/builtin/terraform\"]": visit complete
+2020/11/20 16:41:33 [TRACE] dag/walk: visiting "data.terraform_remote_state.aws_demo"
+2020/11/20 16:41:33 [TRACE] vertex "data.terraform_remote_state.aws_demo": starting visit (*terraform.NodeValidatableResource)
+2020/11/20 16:41:33 [TRACE] vertex "data.terraform_remote_state.aws_demo": evaluating
+2020/11/20 16:41:33 [TRACE] [walkValidate] Entering eval tree: data.terraform_remote_state.aws_demo
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalSequence
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalGetProvider
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalValidateResource
+2020/11/20 16:41:33 [DEBUG] Initializing remote state backend: local
+2020/11/20 16:41:33 [TRACE] [walkValidate] Exiting eval tree: data.terraform_remote_state.aws_demo
+2020/11/20 16:41:33 [TRACE] vertex "data.terraform_remote_state.aws_demo": visit complete
+2020/11/20 16:41:33 [TRACE] dag/walk: visiting "provider[\"terraform.io/builtin/terraform\"] (close)"
+2020/11/20 16:41:33 [TRACE] vertex "provider[\"terraform.io/builtin/terraform\"] (close)": starting visit (*terraform.graphNodeCloseProvider)
+2020/11/20 16:41:33 [TRACE] vertex "provider[\"terraform.io/builtin/terraform\"] (close)": evaluating
+2020/11/20 16:41:33 [TRACE] [walkValidate] Entering eval tree: provider["terraform.io/builtin/terraform"] (close)
+2020/11/20 16:41:33 [TRACE] dag/walk: visiting "output.app_url (expand)"
+2020/11/20 16:41:33 [TRACE] dag/walk: visiting "provider[\"registry.terraform.io/f5networks/bigip\"]"
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalCloseProvider
+2020/11/20 16:41:33 [TRACE] vertex "provider[\"registry.terraform.io/f5networks/bigip\"]": starting visit (*terraform.NodeApplyableProvider)
+2020/11/20 16:41:33 [TRACE] [walkValidate] Exiting eval tree: provider["terraform.io/builtin/terraform"] (close)
+2020/11/20 16:41:33 [TRACE] vertex "provider[\"terraform.io/builtin/terraform\"] (close)": visit complete
+2020/11/20 16:41:33 [TRACE] vertex "provider[\"registry.terraform.io/f5networks/bigip\"]": evaluating
+2020/11/20 16:41:33 [TRACE] [walkValidate] Entering eval tree: provider["registry.terraform.io/f5networks/bigip"]
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalSequence
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalInitProvider
+2020/11/20 16:41:33 [TRACE] vertex "output.app_url (expand)": starting visit (*terraform.nodeExpandOutput)
+2020/11/20 16:41:33 [TRACE] vertex "output.app_url (expand)": expanding dynamic subgraph
+2020/11/20 16:41:33 [TRACE] Expanding output: adding output.app_url as *terraform.NodeApplyableOutput
+2020/11/20 16:41:33 [TRACE] vertex "output.app_url (expand)": entering dynamic subgraph
+2020/11/20 16:41:33 [TRACE] dag/walk: visiting "output.app_url"
+2020/11/20 16:41:33 [TRACE] vertex "output.app_url": starting visit (*terraform.NodeApplyableOutput)
+2020/11/20 16:41:33 [TRACE] vertex "output.app_url": evaluating
+2020/11/20 16:41:33 [TRACE] [walkValidate] Entering eval tree: output.app_url
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalSequence
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalOpFilter
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalWriteOutput
+2020-11-20T16:41:33.020Z [INFO]  plugin: configuring client automatic mTLS
+2020/11/20 16:41:33 [TRACE] EvalWriteOutput: Removing output.app_url from state (it is now null)
+2020/11/20 16:41:33 [TRACE] EvalWriteOutput: Saving Create change for output.app_url in changeset
+2020/11/20 16:41:33 [TRACE] [walkValidate] Exiting eval tree: output.app_url
+2020/11/20 16:41:33 [TRACE] vertex "output.app_url": visit complete
+2020/11/20 16:41:33 [TRACE] vertex "output.app_url (expand)": dynamic subgraph completed successfully
+2020/11/20 16:41:33 [TRACE] vertex "output.app_url (expand)": visit complete
+2020-11-20T16:41:33.042Z [DEBUG] plugin: starting plugin: path=.terraform/plugins/registry.terraform.io/f5networks/bigip/1.4.0/darwin_amd64/terraform-provider-bigip_v1.4.0 args=[.terraform/plugins/registry.terraform.io/f5networks/bigip/1.4.0/darwin_amd64/terraform-provider-bigip_v1.4.0]
+2020-11-20T16:41:33.044Z [DEBUG] plugin: plugin started: path=.terraform/plugins/registry.terraform.io/f5networks/bigip/1.4.0/darwin_amd64/terraform-provider-bigip_v1.4.0 pid=50119
+2020-11-20T16:41:33.044Z [DEBUG] plugin: waiting for RPC address: path=.terraform/plugins/registry.terraform.io/f5networks/bigip/1.4.0/darwin_amd64/terraform-provider-bigip_v1.4.0
+2020-11-20T16:41:33.055Z [INFO]  plugin.terraform-provider-bigip_v1.4.0: configuring server automatic mTLS: timestamp=2020-11-20T16:41:33.055Z
+2020-11-20T16:41:33.078Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: plugin address: address=/var/folders/kw/pv1mmzqn49d8chjgfr3v0fkrbkvc6k/T/plugin035108506 network=unix timestamp=2020-11-20T16:41:33.078Z
+2020-11-20T16:41:33.078Z [DEBUG] plugin: using plugin: version=5
+2020/11/20 16:41:33 [TRACE] BuiltinEvalContext: Initialized "provider[\"registry.terraform.io/f5networks/bigip\"]" provider for provider["registry.terraform.io/f5networks/bigip"]
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalOpFilter
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalSequence
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalGetProvider
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalValidateProvider
+2020-11-20T16:41:33.123Z [TRACE] plugin.stdio: waiting for stdio data
+2020/11/20 16:41:33 [TRACE] buildProviderConfig for provider["registry.terraform.io/f5networks/bigip"]: using explicit config only
+2020/11/20 16:41:33 [TRACE] GRPCProvider: GetSchema
+2020-11-20T16:41:33.123Z [WARN]  plugin.stdio: received EOF, stopping recv loop: err="rpc error: code = Unimplemented desc = unknown service plugin.GRPCStdio"
+2020/11/20 16:41:33 [TRACE] No provider meta schema returned
+2020/11/20 16:41:33 [TRACE] GRPCProvider: PrepareProviderConfig
+2020/11/20 16:41:33 [TRACE] eval: terraform.EvalNoop
+2020/11/20 16:41:33 [TRACE] eval: terraform.EvalNoop
+2020/11/20 16:41:33 [TRACE] eval: terraform.EvalNoop
+2020/11/20 16:41:33 [TRACE] [walkValidate] Exiting eval tree: provider["registry.terraform.io/f5networks/bigip"]
+2020/11/20 16:41:33 [TRACE] vertex "provider[\"registry.terraform.io/f5networks/bigip\"]": visit complete
+2020/11/20 16:41:33 [TRACE] dag/walk: visiting "bigip_as3.nginx"
+2020/11/20 16:41:33 [TRACE] vertex "bigip_as3.nginx": starting visit (*terraform.NodeValidatableResource)
+2020/11/20 16:41:33 [TRACE] vertex "bigip_as3.nginx": evaluating
+2020/11/20 16:41:33 [TRACE] [walkValidate] Entering eval tree: bigip_as3.nginx
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalSequence
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalGetProvider
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalValidateResource
+2020/11/20 16:41:33 [TRACE] GRPCProvider: ValidateResourceTypeConfig
+2020/11/20 16:41:33 [WARN] eval: *terraform.EvalValidateResource, non-fatal err: "tenant_name": [DEPRECATED] this attribute is no longer in use
+2020/11/20 16:41:33 [WARN] eval: *terraform.EvalSequence, non-fatal err: "tenant_name": [DEPRECATED] this attribute is no longer in use
+2020/11/20 16:41:33 [TRACE] [walkValidate] Exiting eval tree: bigip_as3.nginx
+2020/11/20 16:41:33 [WARN] bigip_as3.nginx: "tenant_name": [DEPRECATED] this attribute is no longer in use
+2020/11/20 16:41:33 [TRACE] vertex "bigip_as3.nginx": visit complete
+2020/11/20 16:41:33 [TRACE] dag/walk: visiting "provider[\"registry.terraform.io/f5networks/bigip\"] (close)"
+2020/11/20 16:41:33 [TRACE] vertex "provider[\"registry.terraform.io/f5networks/bigip\"] (close)": starting visit (*terraform.graphNodeCloseProvider)
+2020/11/20 16:41:33 [TRACE] dag/walk: visiting "meta.count-boundary (EachMode fixup)"
+2020/11/20 16:41:33 [TRACE] vertex "provider[\"registry.terraform.io/f5networks/bigip\"] (close)": evaluating
+2020/11/20 16:41:33 [TRACE] vertex "meta.count-boundary (EachMode fixup)": starting visit (*terraform.NodeCountBoundary)
+2020/11/20 16:41:33 [TRACE] [walkValidate] Entering eval tree: provider["registry.terraform.io/f5networks/bigip"] (close)
+2020/11/20 16:41:33 [TRACE] vertex "meta.count-boundary (EachMode fixup)": evaluating
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalCloseProvider
+2020/11/20 16:41:33 [TRACE] [walkValidate] Entering eval tree: meta.count-boundary (EachMode fixup)
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalCountFixZeroOneBoundaryGlobal
+2020/11/20 16:41:33 [TRACE] GRPCProvider: Close
+2020/11/20 16:41:33 [TRACE] [walkValidate] Exiting eval tree: meta.count-boundary (EachMode fixup)
+2020/11/20 16:41:33 [TRACE] vertex "meta.count-boundary (EachMode fixup)": visit complete
+2020-11-20T16:41:33.131Z [DEBUG] plugin: plugin process exited: path=.terraform/plugins/registry.terraform.io/f5networks/bigip/1.4.0/darwin_amd64/terraform-provider-bigip_v1.4.0 pid=50119
+2020-11-20T16:41:33.131Z [DEBUG] plugin: plugin exited
+2020/11/20 16:41:33 [TRACE] [walkValidate] Exiting eval tree: provider["registry.terraform.io/f5networks/bigip"] (close)
+2020/11/20 16:41:33 [TRACE] vertex "provider[\"registry.terraform.io/f5networks/bigip\"] (close)": visit complete
+2020/11/20 16:41:33 [TRACE] dag/walk: visiting "root"
+2020/11/20 16:41:33 [TRACE] vertex "root": starting visit (*terraform.nodeCloseModule)
+2020/11/20 16:41:33 [TRACE] vertex "root": evaluating
+2020/11/20 16:41:33 [TRACE] [walkValidate] Entering eval tree: root
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalSequence
+2020/11/20 16:41:33 [TRACE] eval: terraform.EvalNoop
+2020/11/20 16:41:33 [TRACE] [walkValidate] Exiting eval tree: root
+2020/11/20 16:41:33 [TRACE] vertex "root": visit complete
+2020/11/20 16:41:33 [INFO] backend/local: apply calling Refresh
+2020/11/20 16:41:33 [INFO] terraform: building graph: GraphTypeRefresh
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.ConfigTransformer
+2020/11/20 16:41:33 [TRACE] ConfigTransformer: Starting for path: 
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.ConfigTransformer with new graph:
+  bigip_as3.nginx (expand) - *terraform.nodeExpandRefreshableManagedResource
+  ------
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.ConfigTransformer
+2020/11/20 16:41:33 [TRACE] ConfigTransformer: Starting for path: 
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.ConfigTransformer with new graph:
+  bigip_as3.nginx (expand) - *terraform.nodeExpandRefreshableManagedResource
+  data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandRefreshableDataResource
+  ------
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.OrphanResourceInstanceTransformer
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.OrphanResourceInstanceTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.StateTransformer
+2020/11/20 16:41:33 [TRACE] StateTransformer: creating nodes for deposed instance objects only
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.StateTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.AttachResourceConfigTransformer
+2020/11/20 16:41:33 [TRACE] AttachResourceConfigTransformer: attaching to "bigip_as3.nginx (expand)" (*terraform.nodeExpandRefreshableManagedResource) config from main.tf:16,1-29
+2020/11/20 16:41:33 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to bigip_as3.nginx (expand)
+2020/11/20 16:41:33 [TRACE] AttachResourceConfigTransformer: attaching to "data.terraform_remote_state.aws_demo (expand)" (*terraform.nodeExpandRefreshableDataResource) config from hcl.Range{Filename:"main.tf", Start:hcl.Pos{Line:1, Column:1, Byte:0}, End:hcl.Pos{Line:1, Column:41, Byte:40}}
+2020/11/20 16:41:33 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to data.terraform_remote_state.aws_demo (expand)
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.AttachResourceConfigTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.RootVariableTransformer
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.RootVariableTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.LocalTransformer
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.LocalTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.OutputTransformer
+2020/11/20 16:41:33 [TRACE] OutputTransformer: adding app_url as *terraform.nodeExpandOutput
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.OutputTransformer with new graph:
+  bigip_as3.nginx (expand) - *terraform.nodeExpandRefreshableManagedResource
+  data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandRefreshableDataResource
+  output.app_url (expand) - *terraform.nodeExpandOutput
+  ------
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.ModuleVariableTransformer
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.ModuleVariableTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.graphTransformerMulti
+2020/11/20 16:41:33 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderConfigTransformer
+2020/11/20 16:41:33 [TRACE] ProviderConfigTransformer: attaching to "provider[\"registry.terraform.io/f5networks/bigip\"]" provider configuration from main.tf:9,1-17
+2020/11/20 16:41:33 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderConfigTransformer with new graph:
+  bigip_as3.nginx (expand) - *terraform.nodeExpandRefreshableManagedResource
+  data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandRefreshableDataResource
+  output.app_url (expand) - *terraform.nodeExpandOutput
+  provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  ------
+2020/11/20 16:41:33 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.MissingProviderTransformer
+2020/11/20 16:41:33 [DEBUG] adding implicit provider configuration provider["terraform.io/builtin/terraform"], implied first by data.terraform_remote_state.aws_demo (expand)
+2020/11/20 16:41:33 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.MissingProviderTransformer with new graph:
+  bigip_as3.nginx (expand) - *terraform.nodeExpandRefreshableManagedResource
+  data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandRefreshableDataResource
+  output.app_url (expand) - *terraform.nodeExpandOutput
+  provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  ------
+2020/11/20 16:41:33 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderTransformer
+2020/11/20 16:41:33 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/f5networks/bigip"] serving bigip_as3.nginx (expand)
+2020/11/20 16:41:33 [DEBUG] ProviderTransformer: "bigip_as3.nginx (expand)" (*terraform.nodeExpandRefreshableManagedResource) needs provider["registry.terraform.io/f5networks/bigip"]
+2020/11/20 16:41:33 [TRACE] ProviderTransformer: exact match for provider["terraform.io/builtin/terraform"] serving data.terraform_remote_state.aws_demo (expand)
+2020/11/20 16:41:33 [DEBUG] ProviderTransformer: "data.terraform_remote_state.aws_demo (expand)" (*terraform.nodeExpandRefreshableDataResource) needs provider["terraform.io/builtin/terraform"]
+2020/11/20 16:41:33 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderTransformer with new graph:
+  bigip_as3.nginx (expand) - *terraform.nodeExpandRefreshableManagedResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandRefreshableDataResource
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  output.app_url (expand) - *terraform.nodeExpandOutput
+  provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  ------
+2020/11/20 16:41:33 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.PruneProviderTransformer
+2020/11/20 16:41:33 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.PruneProviderTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ParentProviderTransformer
+2020/11/20 16:41:33 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ParentProviderTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.graphTransformerMulti with new graph:
+  bigip_as3.nginx (expand) - *terraform.nodeExpandRefreshableManagedResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandRefreshableDataResource
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  output.app_url (expand) - *terraform.nodeExpandOutput
+  provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  ------
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.AttachSchemaTransformer
+2020/11/20 16:41:33 [TRACE] AttachSchemaTransformer: attaching provider config schema to provider["registry.terraform.io/f5networks/bigip"]
+2020/11/20 16:41:33 [ERROR] AttachSchemaTransformer: No provider config schema available for provider["terraform.io/builtin/terraform"]
+2020/11/20 16:41:33 [TRACE] AttachSchemaTransformer: attaching resource schema to bigip_as3.nginx (expand)
+2020/11/20 16:41:33 [TRACE] AttachSchemaTransformer: attaching resource schema to data.terraform_remote_state.aws_demo (expand)
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.AttachSchemaTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.ModuleExpansionTransformer
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.ModuleExpansionTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2020/11/20 16:41:33 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/f5networks/bigip\"]" references: [data.terraform_remote_state.aws_demo (expand) data.terraform_remote_state.aws_demo (expand) data.terraform_remote_state.aws_demo (expand)]
+2020/11/20 16:41:33 [DEBUG] ReferenceTransformer: "provider[\"terraform.io/builtin/terraform\"]" references: []
+2020/11/20 16:41:33 [DEBUG] ReferenceTransformer: "bigip_as3.nginx (expand)" references: []
+2020/11/20 16:41:33 [WARN] ReferenceTransformer: reference not found: "path.module"
+2020/11/20 16:41:33 [DEBUG] ReferenceTransformer: "data.terraform_remote_state.aws_demo (expand)" references: []
+2020/11/20 16:41:33 [DEBUG] ReferenceTransformer: "output.app_url (expand)" references: [data.terraform_remote_state.aws_demo (expand)]
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.ReferenceTransformer with new graph:
+  bigip_as3.nginx (expand) - *terraform.nodeExpandRefreshableManagedResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandRefreshableDataResource
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  output.app_url (expand) - *terraform.nodeExpandOutput
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandRefreshableDataResource
+  provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandRefreshableDataResource
+  provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  ------
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.AttachDependenciesTransformer
+2020/11/20 16:41:33 [TRACE] AttachDependenciesTransformer: bigip_as3.nginx depends on [data.terraform_remote_state.aws_demo]
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.AttachDependenciesTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.attachDataResourceDependenciesTransformer
+2020/11/20 16:41:33 [TRACE] attachDataDependenciesTransformer: data.terraform_remote_state.aws_demo depends on []
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.attachDataResourceDependenciesTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.CloseProviderTransformer
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.CloseProviderTransformer with new graph:
+  bigip_as3.nginx (expand) - *terraform.nodeExpandRefreshableManagedResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandRefreshableDataResource
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  output.app_url (expand) - *terraform.nodeExpandOutput
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandRefreshableDataResource
+  provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandRefreshableDataResource
+  provider["registry.terraform.io/f5networks/bigip"] (close) - *terraform.graphNodeCloseProvider
+    bigip_as3.nginx (expand) - *terraform.nodeExpandRefreshableManagedResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  provider["terraform.io/builtin/terraform"] (close) - *terraform.graphNodeCloseProvider
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandRefreshableDataResource
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  ------
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.CloseRootModuleTransformer
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.CloseRootModuleTransformer with new graph:
+  bigip_as3.nginx (expand) - *terraform.nodeExpandRefreshableManagedResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandRefreshableDataResource
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  output.app_url (expand) - *terraform.nodeExpandOutput
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandRefreshableDataResource
+  provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandRefreshableDataResource
+  provider["registry.terraform.io/f5networks/bigip"] (close) - *terraform.graphNodeCloseProvider
+    bigip_as3.nginx (expand) - *terraform.nodeExpandRefreshableManagedResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  provider["terraform.io/builtin/terraform"] (close) - *terraform.graphNodeCloseProvider
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandRefreshableDataResource
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  root - *terraform.nodeCloseModule
+    output.app_url (expand) - *terraform.nodeExpandOutput
+    provider["registry.terraform.io/f5networks/bigip"] (close) - *terraform.graphNodeCloseProvider
+    provider["terraform.io/builtin/terraform"] (close) - *terraform.graphNodeCloseProvider
+  ------
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.TransitiveReductionTransformer
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.TransitiveReductionTransformer with new graph:
+  bigip_as3.nginx (expand) - *terraform.nodeExpandRefreshableManagedResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandRefreshableDataResource
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  output.app_url (expand) - *terraform.nodeExpandOutput
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandRefreshableDataResource
+  provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandRefreshableDataResource
+  provider["registry.terraform.io/f5networks/bigip"] (close) - *terraform.graphNodeCloseProvider
+    bigip_as3.nginx (expand) - *terraform.nodeExpandRefreshableManagedResource
+  provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  provider["terraform.io/builtin/terraform"] (close) - *terraform.graphNodeCloseProvider
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandRefreshableDataResource
+  root - *terraform.nodeCloseModule
+    output.app_url (expand) - *terraform.nodeExpandOutput
+    provider["registry.terraform.io/f5networks/bigip"] (close) - *terraform.graphNodeCloseProvider
+    provider["terraform.io/builtin/terraform"] (close) - *terraform.graphNodeCloseProvider
+  ------
+2020/11/20 16:41:33 [DEBUG] Starting graph walk: walkRefresh
+2020/11/20 16:41:33 [TRACE] dag/walk: visiting "provider[\"terraform.io/builtin/terraform\"]"
+2020/11/20 16:41:33 [TRACE] vertex "provider[\"terraform.io/builtin/terraform\"]": starting visit (*terraform.NodeApplyableProvider)
+2020/11/20 16:41:33 [TRACE] vertex "provider[\"terraform.io/builtin/terraform\"]": evaluating
+2020/11/20 16:41:33 [TRACE] [walkRefresh] Entering eval tree: provider["terraform.io/builtin/terraform"]
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalSequence
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalInitProvider
+2020/11/20 16:41:33 [TRACE] BuiltinEvalContext: Initialized "provider[\"terraform.io/builtin/terraform\"]" provider for provider["terraform.io/builtin/terraform"]
+2020/11/20 16:41:33 [TRACE] eval: terraform.EvalNoop
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalOpFilter
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalSequence
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalGetProvider
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalOpFilter
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalSequence
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalConfigProvider
+2020/11/20 16:41:33 [TRACE] buildProviderConfig for provider["terraform.io/builtin/terraform"]: no configuration at all
+2020/11/20 16:41:33 [TRACE] eval: terraform.EvalNoop
+2020/11/20 16:41:33 [TRACE] [walkRefresh] Exiting eval tree: provider["terraform.io/builtin/terraform"]
+2020/11/20 16:41:33 [TRACE] vertex "provider[\"terraform.io/builtin/terraform\"]": visit complete
+2020/11/20 16:41:33 [TRACE] dag/walk: visiting "data.terraform_remote_state.aws_demo (expand)"
+2020/11/20 16:41:33 [TRACE] vertex "data.terraform_remote_state.aws_demo (expand)": starting visit (*terraform.nodeExpandRefreshableDataResource)
+2020/11/20 16:41:33 [TRACE] vertex "data.terraform_remote_state.aws_demo (expand)": expanding dynamic subgraph
+2020/11/20 16:41:33 [TRACE] vertex "data.terraform_remote_state.aws_demo (expand)": entering dynamic subgraph
+2020/11/20 16:41:33 [TRACE] dag/walk: visiting "data.terraform_remote_state.aws_demo"
+2020/11/20 16:41:33 [TRACE] vertex "data.terraform_remote_state.aws_demo": starting visit (*terraform.NodeRefreshableDataResource)
+2020/11/20 16:41:33 [TRACE] vertex "data.terraform_remote_state.aws_demo": expanding dynamic subgraph
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.ResourceCountTransformer
+2020/11/20 16:41:33 [TRACE] ResourceCountTransformer: adding data.terraform_remote_state.aws_demo as *terraform.NodeRefreshableDataResourceInstance
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.ResourceCountTransformer with new graph:
+  data.terraform_remote_state.aws_demo - *terraform.NodeRefreshableDataResourceInstance
+  ------
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.OrphanResourceInstanceCountTransformer
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.OrphanResourceInstanceCountTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2020/11/20 16:41:33 [WARN] ReferenceTransformer: reference not found: "path.module"
+2020/11/20 16:41:33 [DEBUG] ReferenceTransformer: "data.terraform_remote_state.aws_demo" references: []
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.ReferenceTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.RootTransformer
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.RootTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] vertex "data.terraform_remote_state.aws_demo": entering dynamic subgraph
+2020/11/20 16:41:33 [TRACE] dag/walk: visiting "data.terraform_remote_state.aws_demo"
+2020/11/20 16:41:33 [TRACE] vertex "data.terraform_remote_state.aws_demo": starting visit (*terraform.NodeRefreshableDataResourceInstance)
+2020/11/20 16:41:33 [TRACE] vertex "data.terraform_remote_state.aws_demo": evaluating
+2020/11/20 16:41:33 [TRACE] [walkRefresh] Entering eval tree: data.terraform_remote_state.aws_demo
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalSequence
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalGetProvider
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalReadState
+2020/11/20 16:41:33 [TRACE] EvalReadState: reading state for data.terraform_remote_state.aws_demo
+2020/11/20 16:41:33 [DEBUG] UpgradeResourceState: ignoring dynamic block: map[string]interface {}{"type":[]interface {}{"object", map[string]interface {}{"path":"string"}}, "value":map[string]interface {}{"path":"./../terraform.tfstate"}}
+2020/11/20 16:41:33 [DEBUG] UpgradeResourceState: ignoring dynamic block: map[string]interface {}{"type":[]interface {}{"object", map[string]interface {}{"f5-ami":"string", "f5_external_self":"string", "f5_internal_self":"string", "f5_password":"string", "f5_ssh":"string", "f5_ui":"string", "f5_username":"string", "f5_vs1":[]interface {}{"tuple", []interface {}{"string", "string"}}, "f5_vs1_uri":"string"}}, "value":map[string]interface {}{"f5-ami":"Some other text with the AMI ID: ami-01a73c06de111cc9c", "f5_external_self":"10.0.2.101", "f5_internal_self":"10.0.3.10", "f5_password":"ExlMVysSlc", "f5_ssh":"ssh admin@18.135.23.102 -i ssh-key.pem", "f5_ui":"https://18.135.23.102", "f5_username":"admin", "f5_vs1":[]interface {}{"10.0.2.101", "18.135.20.99"}, "f5_vs1_uri":"http://18.135.20.99"}}
+2020/11/20 16:41:33 [TRACE] eval: *terraform.evalReadDataRefresh
+2020/11/20 16:41:33 [TRACE] EvalReadData: Re-validating config for data.terraform_remote_state.aws_demo
+2020/11/20 16:41:33 [DEBUG] Initializing remote state backend: local
+2020/11/20 16:41:33 [TRACE] EvalReadData: data.terraform_remote_state.aws_demo configuration is complete, so reading from provider
+2020/11/20 16:41:33 [DEBUG] Initializing remote state backend: local
+2020/11/20 16:41:33 [TRACE] backend/local: state manager for workspace "default" will:
+ - read initial snapshot from ./../terraform.tfstate
+ - write new snapshots to ./../terraform.tfstate
+ - create any backup at ./../terraform.tfstate.backup
+2020/11/20 16:41:33 [TRACE] statemgr.Filesystem: reading initial snapshot from ./../terraform.tfstate
+2020/11/20 16:41:33 [TRACE] statemgr.Filesystem: read snapshot with lineage "d6795e0c-c638-70e3-4711-17afea2b31b5" serial 1998
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalIf
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalSequence
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalWriteState
+2020/11/20 16:41:33 [TRACE] EvalWriteState: writing current state object for data.terraform_remote_state.aws_demo
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalUpdateStateHook
+2020/11/20 16:41:33 [TRACE] [walkRefresh] Exiting eval tree: data.terraform_remote_state.aws_demo
+2020/11/20 16:41:33 [TRACE] vertex "data.terraform_remote_state.aws_demo": visit complete
+2020/11/20 16:41:33 [TRACE] vertex "data.terraform_remote_state.aws_demo": dynamic subgraph completed successfully
+2020/11/20 16:41:33 [TRACE] vertex "data.terraform_remote_state.aws_demo": visit complete
+2020/11/20 16:41:33 [TRACE] vertex "data.terraform_remote_state.aws_demo (expand)": dynamic subgraph completed successfully
+2020/11/20 16:41:33 [TRACE] vertex "data.terraform_remote_state.aws_demo (expand)": visit complete
+2020/11/20 16:41:33 [TRACE] dag/walk: visiting "provider[\"terraform.io/builtin/terraform\"] (close)"
+2020/11/20 16:41:33 [TRACE] dag/walk: visiting "output.app_url (expand)"
+2020/11/20 16:41:33 [TRACE] vertex "provider[\"terraform.io/builtin/terraform\"] (close)": starting visit (*terraform.graphNodeCloseProvider)
+2020/11/20 16:41:33 [TRACE] vertex "output.app_url (expand)": starting visit (*terraform.nodeExpandOutput)
+2020/11/20 16:41:33 [TRACE] vertex "provider[\"terraform.io/builtin/terraform\"] (close)": evaluating
+2020/11/20 16:41:33 [TRACE] vertex "output.app_url (expand)": expanding dynamic subgraph
+2020/11/20 16:41:33 [TRACE] [walkRefresh] Entering eval tree: provider["terraform.io/builtin/terraform"] (close)
+2020/11/20 16:41:33 [TRACE] dag/walk: visiting "provider[\"registry.terraform.io/f5networks/bigip\"]"
+2020/11/20 16:41:33 [TRACE] Expanding output: adding output.app_url as *terraform.NodeApplyableOutput
+2020/11/20 16:41:33 [TRACE] vertex "output.app_url (expand)": entering dynamic subgraph
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalCloseProvider
+2020/11/20 16:41:33 [TRACE] vertex "provider[\"registry.terraform.io/f5networks/bigip\"]": starting visit (*terraform.NodeApplyableProvider)
+2020/11/20 16:41:33 [TRACE] [walkRefresh] Exiting eval tree: provider["terraform.io/builtin/terraform"] (close)
+2020/11/20 16:41:33 [TRACE] vertex "provider[\"terraform.io/builtin/terraform\"] (close)": visit complete
+2020/11/20 16:41:33 [TRACE] dag/walk: visiting "output.app_url"
+2020/11/20 16:41:33 [TRACE] vertex "provider[\"registry.terraform.io/f5networks/bigip\"]": evaluating
+2020/11/20 16:41:33 [TRACE] vertex "output.app_url": starting visit (*terraform.NodeApplyableOutput)
+2020/11/20 16:41:33 [TRACE] [walkRefresh] Entering eval tree: provider["registry.terraform.io/f5networks/bigip"]
+2020/11/20 16:41:33 [TRACE] vertex "output.app_url": evaluating
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalSequence
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalInitProvider
+2020/11/20 16:41:33 [TRACE] [walkRefresh] Entering eval tree: output.app_url
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalSequence
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalOpFilter
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalWriteOutput
+2020-11-20T16:41:33.137Z [INFO]  plugin: configuring client automatic mTLS
+2020/11/20 16:41:33 [TRACE] EvalWriteOutput: Saving value for output.app_url in state
+2020/11/20 16:41:33 [TRACE] EvalWriteOutput: Saving Create change for output.app_url in changeset
+2020/11/20 16:41:33 [TRACE] [walkRefresh] Exiting eval tree: output.app_url
+2020/11/20 16:41:33 [TRACE] vertex "output.app_url": visit complete
+2020/11/20 16:41:33 [TRACE] vertex "output.app_url (expand)": dynamic subgraph completed successfully
+2020/11/20 16:41:33 [TRACE] vertex "output.app_url (expand)": visit complete
+2020-11-20T16:41:33.159Z [DEBUG] plugin: starting plugin: path=.terraform/plugins/registry.terraform.io/f5networks/bigip/1.4.0/darwin_amd64/terraform-provider-bigip_v1.4.0 args=[.terraform/plugins/registry.terraform.io/f5networks/bigip/1.4.0/darwin_amd64/terraform-provider-bigip_v1.4.0]
+2020-11-20T16:41:33.161Z [DEBUG] plugin: plugin started: path=.terraform/plugins/registry.terraform.io/f5networks/bigip/1.4.0/darwin_amd64/terraform-provider-bigip_v1.4.0 pid=50120
+2020-11-20T16:41:33.161Z [DEBUG] plugin: waiting for RPC address: path=.terraform/plugins/registry.terraform.io/f5networks/bigip/1.4.0/darwin_amd64/terraform-provider-bigip_v1.4.0
+2020-11-20T16:41:33.191Z [INFO]  plugin.terraform-provider-bigip_v1.4.0: configuring server automatic mTLS: timestamp=2020-11-20T16:41:33.190Z
+2020-11-20T16:41:33.213Z [DEBUG] plugin: using plugin: version=5
+2020-11-20T16:41:33.213Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: plugin address: address=/var/folders/kw/pv1mmzqn49d8chjgfr3v0fkrbkvc6k/T/plugin506305623 network=unix timestamp=2020-11-20T16:41:33.213Z
+2020-11-20T16:41:33.259Z [TRACE] plugin.stdio: waiting for stdio data
+2020/11/20 16:41:33 [TRACE] BuiltinEvalContext: Initialized "provider[\"registry.terraform.io/f5networks/bigip\"]" provider for provider["registry.terraform.io/f5networks/bigip"]
+2020/11/20 16:41:33 [TRACE] eval: terraform.EvalNoop
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalOpFilter
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalSequence
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalGetProvider
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalOpFilter
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalSequence
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalConfigProvider
+2020/11/20 16:41:33 [TRACE] buildProviderConfig for provider["registry.terraform.io/f5networks/bigip"]: using explicit config only
+2020/11/20 16:41:33 [TRACE] GRPCProvider: GetSchema
+2020-11-20T16:41:33.259Z [WARN]  plugin.stdio: received EOF, stopping recv loop: err="rpc error: code = Unimplemented desc = unknown service plugin.GRPCStdio"
+2020/11/20 16:41:33 [TRACE] No provider meta schema returned
+2020/11/20 16:41:33 [TRACE] GRPCProvider: Configure
+2020-11-20T16:41:33.262Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: 2020/11/20 16:41:33 [INFO] Initializing BigIP connection
+2020/11/20 16:41:33 [TRACE] eval: terraform.EvalNoop
+2020/11/20 16:41:33 [TRACE] [walkRefresh] Exiting eval tree: provider["registry.terraform.io/f5networks/bigip"]
+2020/11/20 16:41:33 [TRACE] vertex "provider[\"registry.terraform.io/f5networks/bigip\"]": visit complete
+2020/11/20 16:41:33 [TRACE] dag/walk: visiting "bigip_as3.nginx (expand)"
+2020/11/20 16:41:33 [TRACE] vertex "bigip_as3.nginx (expand)": starting visit (*terraform.nodeExpandRefreshableManagedResource)
+2020/11/20 16:41:33 [TRACE] vertex "bigip_as3.nginx (expand)": expanding dynamic subgraph
+2020/11/20 16:41:33 [TRACE] vertex "bigip_as3.nginx (expand)": entering dynamic subgraph
+2020/11/20 16:41:33 [TRACE] dag/walk: visiting "bigip_as3.nginx"
+2020/11/20 16:41:33 [TRACE] vertex "bigip_as3.nginx": starting visit (*terraform.NodeRefreshableManagedResource)
+2020/11/20 16:41:33 [TRACE] vertex "bigip_as3.nginx": expanding dynamic subgraph
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.ResourceCountTransformer
+2020/11/20 16:41:33 [TRACE] ResourceCountTransformer: adding bigip_as3.nginx as *terraform.NodeRefreshableManagedResourceInstance
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.ResourceCountTransformer with new graph:
+  bigip_as3.nginx - *terraform.NodeRefreshableManagedResourceInstance
+  ------
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.OrphanResourceInstanceCountTransformer
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.OrphanResourceInstanceCountTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.ReferenceTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] Executing graph transform *terraform.RootTransformer
+2020/11/20 16:41:33 [TRACE] Completed graph transform *terraform.RootTransformer (no changes)
+2020/11/20 16:41:33 [TRACE] vertex "bigip_as3.nginx": entering dynamic subgraph
+2020/11/20 16:41:33 [TRACE] dag/walk: visiting "bigip_as3.nginx"
+2020/11/20 16:41:33 [TRACE] vertex "bigip_as3.nginx": starting visit (*terraform.NodeRefreshableManagedResourceInstance)
+2020/11/20 16:41:33 [TRACE] NodeRefreshableManagedResourceInstance: bigip_as3.nginx will be refreshed
+2020/11/20 16:41:33 [TRACE] vertex "bigip_as3.nginx": evaluating
+2020/11/20 16:41:33 [TRACE] [walkRefresh] Entering eval tree: bigip_as3.nginx
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalSequence
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalGetProvider
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalReadState
+2020/11/20 16:41:33 [TRACE] EvalReadState: reading state for bigip_as3.nginx
+2020/11/20 16:41:33 [TRACE] UpgradeResourceState: schema version of bigip_as3.nginx is still 0; calling provider "bigip" for any other minor fixups
+2020/11/20 16:41:33 [TRACE] GRPCProvider: UpgradeResourceState
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalRefreshDependencies
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalRefreshLifecycle
+2020/11/20 16:41:33 [TRACE] eval: *terraform.EvalRefresh
+2020/11/20 16:41:33 [TRACE] GRPCProvider: ReadResource
+2020-11-20T16:41:33.395Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: 2020/11/20 16:41:33 [INFO] Checking if As3 config exists in BIGIP
+2020-11-20T16:41:33.963Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: 2020/11/20 16:41:33 [INFO] AS3 response Body:{"action":"deploy","class":"AS3","declaration":{"arch_day2":{"class":"Tenant","nginx2":{"class":"Application","service":{"class":"Service_HTTPS","pool":"web_pool","serverTLS":"webtls","virtualAddresses":["10.0.5.101"]},"web_pool":{"class":"Pool","loadBalancingMode":"predictive-node","members":[{"serverAddresses":["192.0.2.12","192.0.2.13"],"servicePort":80}],"monitors":["http"]},"webcert":{"certificate":"-----BEGIN CERTIFICATE-----\nMIICnDCCAgWgAwIBAgIJAJ5n2b0OCEjwMA0GCSqGSIb3DQEBCwUAMGcxCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApXYXNoaW5ndG9uMRAwDgYDVQQHDAdTZWF0dGxlMRQwEgYDVQQKDAtmNV9OZXR3b3JrczEbMBkGA1UEAwwSc2FtcGxlLmV4YW1wbGUubmV0MB4XDTE3MTEyNjE5NTAyNFoXDTE4MDIyNTE5NTAyNFowZzELMAkGA1UEBhMCVVMxEzARBgNVBAgMCldhc2hpbmd0b24xEDAOBgNVBAcMB1NlYXR0bGUxFDASBgNVBAoMC2Y1X05ldHdvcmtzMRswGQYDVQQDDBJzYW1wbGUuZXhhbXBsZS5uZXQwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBALEsuXmSXVQpYjrZPW+WiTBjn491mwZYT7Q92V1HlSBtM6WdWlK1aZN5sovfKtOX7Yrm8xa+e4o/zJ2QYLyyv5O+t2EGN/4qUEjEAPY9mwJdfzRQy6Hyzm84J0QkTuUJ/EjNuPji3D0QJRALUTzu1UqqDCEtiN9OGyXEkh7uvb7BAgMBAAGjUDBOMB0GA1UdDgQWBBSVHPNrGWrjWyZvckQxFYWO59FRFjAfBgNVHSMEGDAWgBSVHPNrGWrjWyZvckQxFYWO59FRFjAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBCwUAA4GBAJeJ9SEckEwPhkXOm+IuqfbUS/RcziifBCTmVyE+Fa/j9pKSYTgiEBNdbJeBEa+gPMlQtbV7Y2dy8TKx/8axVBHiXC5geDML7caxOrAyHYBpnx690xJTh5OIORBBM/a/NvaR+P3CoVebr/NPRh9oRNxnntnqvqD7SW0U3ZPe3tJc\n-----END CERTIFICATE-----","class":"Certificate","passphrase":{"ciphertext":"JE0kaHEkTW5sVEg5b05WWllDUi94US9MN3NEQT09","miniJWE":true,"protected":"eyJhbGciOiJkaXIiLCJlbmMiOiJmNXN2In0="},"privateKey":"-----BEGIN RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-256-CBC,D8FFCE6B255601587CB54EC29B737D31\n\nkv4Fc3Jn0Ujkj0yRjt+gQQfBLSNF2aRLUENXnlr7Xpzqu0Ahr3jS1bAAnd8IWnsR\nyILqVmKsYF2DoHh0tWiEAQ7/y/fe5DTFhK7N4Wml6kp2yVMkP6KC4ssyYPw27kjK\nDBwBZ5O8Ioej08A5sgsLCmglbmtSPHJUn14pQnMTmLOpEtOsu6S+2ibPgSNpdg0b\nCAJNG/KHe+Vkx59qNDyDeKb7FZOlsX30+y67zUq9GQqJEDuysPJ2BUNP0IJXAjst\nFIt1qNoZew+5KDYs7u/lPxcMGTirUhgI84Jy4WcDvSOsP/tKlxj04TbIE3epmSKy\n+TihHkwY7ngIGtcm3Sfqk5jz2RXoj1/Ac3SW8kVTYaOUogBhn7zAq4Wju6Et4hQG\nRGapsJp1aCeZ/a4RCDTxspcKoMaRa97/URQb0hBRGx3DGUhzpmX9zl7JI2Xa5D3R\nmdBXtjLKYJTdIMdd27prBEKhMUpae2rz5Mw4J907wZeBq/wu+zp8LAnecfTe2nGY\nE32x1U7gSEdYOGqnwxsOexb1jKgCa67Nw9TmcMPV8zmH7R9qdvgxAbAtwBl1F9OS\nfcGaC7epf1AjJLtaX7krWmzgASHl28Ynh9lmGMdv+5QYMZvKG0LOg/n3m8uJ6sKy\nIzzvaJswwn0j5P5+czyoV5CvvdCfKnNb+3jUEN8I0PPwjBGKr4B1ojwhogTM248V\nHR69D6TxFVMfGpyJhCPkbGEGbpEpcffpgKuC/mEtMqyDQXJNaV5HO6HgAJ9F1P6v\n5ehHHTMRvzCCFiwndHdlMXUjqSNjww6me6dr6LiAPbejdzhL2vWx1YqebOcwQx3G\n-----END RSA PRIVATE KEY-----","remark":"in practice we recommend using a passphrase"},"webtls":{"certificates":[{"certificate":"webcert"}],"class":"TLS_Server"}}},"class":"ADC","id":"123abc","label":"Sample 2","remark":"HTTPS with predictive-node pool","schemaVersion":"3.0.0"},"persist":true}
+2020-11-20T16:41:33.963Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: 2020/11/20 16:41:33 [INFO] Reading As3 config
+2020-11-20T16:41:33.963Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: 2020/11/20 16:41:33 [DEBUG] Tenants in AS3 get call : arch_day2
+2020-11-20T16:41:34.841Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: 2020/11/20 16:41:34 [DEBUG] AS3 json retreived from the GET call in Read function : {"action":"deploy","class":"AS3","declaration":{"arch_day2":{"class":"Tenant","nginx2":{"class":"Application","service":{"class":"Service_HTTPS","pool":"web_pool","serverTLS":"webtls","virtualAddresses":["10.0.5.101"]},"web_pool":{"class":"Pool","loadBalancingMode":"predictive-node","members":[{"serverAddresses":["192.0.2.12","192.0.2.13"],"servicePort":80}],"monitors":["http"]},"webcert":{"certificate":"-----BEGIN CERTIFICATE-----\nMIICnDCCAgWgAwIBAgIJAJ5n2b0OCEjwMA0GCSqGSIb3DQEBCwUAMGcxCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApXYXNoaW5ndG9uMRAwDgYDVQQHDAdTZWF0dGxlMRQwEgYDVQQKDAtmNV9OZXR3b3JrczEbMBkGA1UEAwwSc2FtcGxlLmV4YW1wbGUubmV0MB4XDTE3MTEyNjE5NTAyNFoXDTE4MDIyNTE5NTAyNFowZzELMAkGA1UEBhMCVVMxEzARBgNVBAgMCldhc2hpbmd0b24xEDAOBgNVBAcMB1NlYXR0bGUxFDASBgNVBAoMC2Y1X05ldHdvcmtzMRswGQYDVQQDDBJzYW1wbGUuZXhhbXBsZS5uZXQwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBALEsuXmSXVQpYjrZPW+WiTBjn491mwZYT7Q92V1HlSBtM6WdWlK1aZN5sovfKtOX7Yrm8xa+e4o/zJ2QYLyyv5O+t2EGN/4qUEjEAPY9mwJdfzRQy6Hyzm84J0QkTuUJ/EjNuPji3D0QJRALUTzu1UqqDCEtiN9OGyXEkh7uvb7BAgMBAAGjUDBOMB0GA1UdDgQWBBSVHPNrGWrjWyZvckQxFYWO59FRFjAfBgNVHSMEGDAWgBSVHPNrGWrjWyZvckQxFYWO59FRFjAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBCwUAA4GBAJeJ9SEckEwPhkXOm+IuqfbUS/RcziifBCTmVyE+Fa/j9pKSYTgiEBNdbJeBEa+gPMlQtbV7Y2dy8TKx/8axVBHiXC5geDML7caxOrAyHYBpnx690xJTh5OIORBBM/a/NvaR+P3CoVebr/NPRh9oRNxnntnqvqD7SW0U3ZPe3tJc\n-----END CERTIFICATE-----","class":"Certificate","passphrase":{"ciphertext":"JE0kaHEkTW5sVEg5b05WWllDUi94US9MN3NEQT09","miniJWE":true,"protected":"eyJhbGciOiJkaXIiLCJlbmMiOiJmNXN2In0="},"privateKey":"-----BEGIN RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-256-CBC,D8FFCE6B255601587CB54EC29B737D31\n\nkv4Fc3Jn0Ujkj0yRjt+gQQfBLSNF2aRLUENXnlr7Xpzqu0Ahr3jS1bAAnd8IWnsR\nyILqVmKsYF2DoHh0tWiEAQ7/y/fe5DTFhK7N4Wml6kp2yVMkP6KC4ssyYPw27kjK\nDBwBZ5O8Ioej08A5sgsLCmglbmtSPHJUn14pQnMTmLOpEtOsu6S+2ibPgSNpdg0b\nCAJNG/KHe+Vkx59qNDyDeKb7FZOlsX30+y67zUq9GQqJEDuysPJ2BUNP0IJXAjst\nFIt1qNoZew+5KDYs7u/lPxcMGTirUhgI84Jy4WcDvSOsP/tKlxj04TbIE3epmSKy\n+TihHkwY7ngIGtcm3Sfqk5jz2RXoj1/Ac3SW8kVTYaOUogBhn7zAq4Wju6Et4hQG\nRGapsJp1aCeZ/a4RCDTxspcKoMaRa97/URQb0hBRGx3DGUhzpmX9zl7JI2Xa5D3R\nmdBXtjLKYJTdIMdd27prBEKhMUpae2rz5Mw4J907wZeBq/wu+zp8LAnecfTe2nGY\nE32x1U7gSEdYOGqnwxsOexb1jKgCa67Nw9TmcMPV8zmH7R9qdvgxAbAtwBl1F9OS\nfcGaC7epf1AjJLtaX7krWmzgASHl28Ynh9lmGMdv+5QYMZvKG0LOg/n3m8uJ6sKy\nIzzvaJswwn0j5P5+czyoV5CvvdCfKnNb+3jUEN8I0PPwjBGKr4B1ojwhogTM248V\nHR69D6TxFVMfGpyJhCPkbGEGbpEpcffpgKuC/mEtMqyDQXJNaV5HO6HgAJ9F1P6v\n5ehHHTMRvzCCFiwndHdlMXUjqSNjww6me6dr6LiAPbejdzhL2vWx1YqebOcwQx3G\n-----END RSA PRIVATE KEY-----","remark":"in practice we recommend using a passphrase"},"webtls":{"certificates":[{"certificate":"webcert"}],"class":"TLS_Server"}}},"class":"ADC","id":"123abc","label":"Sample 2","remark":"HTTPS with predictive-node pool","schemaVersion":"3.0.0"},"persist":true}
+2020/11/20 16:41:34 [TRACE] eval: *terraform.EvalWriteState
+2020/11/20 16:41:34 [TRACE] EvalWriteState: recording 1 dependencies for bigip_as3.nginx
+2020/11/20 16:41:34 [TRACE] EvalWriteState: writing current state object for bigip_as3.nginx
+2020/11/20 16:41:34 [TRACE] [walkRefresh] Exiting eval tree: bigip_as3.nginx
+2020/11/20 16:41:34 [TRACE] vertex "bigip_as3.nginx": visit complete
+2020/11/20 16:41:34 [TRACE] vertex "bigip_as3.nginx": dynamic subgraph completed successfully
+2020/11/20 16:41:34 [TRACE] vertex "bigip_as3.nginx": visit complete
+2020/11/20 16:41:34 [TRACE] vertex "bigip_as3.nginx (expand)": dynamic subgraph completed successfully
+2020/11/20 16:41:34 [TRACE] vertex "bigip_as3.nginx (expand)": visit complete
+2020/11/20 16:41:34 [TRACE] dag/walk: visiting "provider[\"registry.terraform.io/f5networks/bigip\"] (close)"
+2020/11/20 16:41:34 [TRACE] vertex "provider[\"registry.terraform.io/f5networks/bigip\"] (close)": starting visit (*terraform.graphNodeCloseProvider)
+2020/11/20 16:41:34 [TRACE] vertex "provider[\"registry.terraform.io/f5networks/bigip\"] (close)": evaluating
+2020/11/20 16:41:34 [TRACE] [walkRefresh] Entering eval tree: provider["registry.terraform.io/f5networks/bigip"] (close)
+2020/11/20 16:41:34 [TRACE] eval: *terraform.EvalCloseProvider
+2020/11/20 16:41:34 [TRACE] GRPCProvider: Close
+2020-11-20T16:41:34.844Z [DEBUG] plugin: plugin process exited: path=.terraform/plugins/registry.terraform.io/f5networks/bigip/1.4.0/darwin_amd64/terraform-provider-bigip_v1.4.0 pid=50120
+2020-11-20T16:41:34.844Z [DEBUG] plugin: plugin exited
+2020/11/20 16:41:34 [TRACE] [walkRefresh] Exiting eval tree: provider["registry.terraform.io/f5networks/bigip"] (close)
+2020/11/20 16:41:34 [TRACE] vertex "provider[\"registry.terraform.io/f5networks/bigip\"] (close)": visit complete
+2020/11/20 16:41:34 [TRACE] dag/walk: visiting "root"
+2020/11/20 16:41:34 [TRACE] vertex "root": starting visit (*terraform.nodeCloseModule)
+2020/11/20 16:41:34 [TRACE] vertex "root": evaluating
+2020/11/20 16:41:34 [TRACE] [walkRefresh] Entering eval tree: root
+2020/11/20 16:41:34 [TRACE] eval: *terraform.EvalSequence
+2020/11/20 16:41:34 [TRACE] eval: terraform.EvalNoop
+2020/11/20 16:41:34 [TRACE] [walkRefresh] Exiting eval tree: root
+2020/11/20 16:41:34 [TRACE] vertex "root": visit complete
+2020/11/20 16:41:34 [INFO] backend/local: apply calling Plan
+2020/11/20 16:41:34 [INFO] terraform: building graph: GraphTypePlan
+2020/11/20 16:41:34 [TRACE] Executing graph transform *terraform.ConfigTransformer
+2020/11/20 16:41:34 [TRACE] ConfigTransformer: Starting for path: 
+2020/11/20 16:41:34 [TRACE] Completed graph transform *terraform.ConfigTransformer with new graph:
+  bigip_as3.nginx (expand) - *terraform.nodeExpandPlannableResource
+  data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandPlannableResource
+  ------
+2020/11/20 16:41:34 [TRACE] Executing graph transform *terraform.LocalTransformer
+2020/11/20 16:41:34 [TRACE] Completed graph transform *terraform.LocalTransformer (no changes)
+2020/11/20 16:41:34 [TRACE] Executing graph transform *terraform.OutputTransformer
+2020/11/20 16:41:34 [TRACE] OutputTransformer: adding app_url as *terraform.nodeExpandOutput
+2020/11/20 16:41:34 [TRACE] Completed graph transform *terraform.OutputTransformer with new graph:
+  bigip_as3.nginx (expand) - *terraform.nodeExpandPlannableResource
+  data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandPlannableResource
+  output.app_url (expand) - *terraform.nodeExpandOutput
+  ------
+2020/11/20 16:41:34 [TRACE] Executing graph transform *terraform.OrphanResourceInstanceTransformer
+2020/11/20 16:41:34 [TRACE] Completed graph transform *terraform.OrphanResourceInstanceTransformer (no changes)
+2020/11/20 16:41:34 [TRACE] Executing graph transform *terraform.StateTransformer
+2020/11/20 16:41:34 [TRACE] StateTransformer: creating nodes for deposed instance objects only
+2020/11/20 16:41:34 [TRACE] Completed graph transform *terraform.StateTransformer (no changes)
+2020/11/20 16:41:34 [TRACE] Executing graph transform *terraform.OrphanOutputTransformer
+2020/11/20 16:41:34 [TRACE] Completed graph transform *terraform.OrphanOutputTransformer (no changes)
+2020/11/20 16:41:34 [TRACE] Executing graph transform *terraform.AttachResourceConfigTransformer
+2020/11/20 16:41:34 [TRACE] AttachResourceConfigTransformer: attaching to "bigip_as3.nginx (expand)" (*terraform.nodeExpandPlannableResource) config from main.tf:16,1-29
+2020/11/20 16:41:34 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to bigip_as3.nginx (expand)
+2020/11/20 16:41:34 [TRACE] AttachResourceConfigTransformer: attaching to "data.terraform_remote_state.aws_demo (expand)" (*terraform.nodeExpandPlannableResource) config from hcl.Range{Filename:"main.tf", Start:hcl.Pos{Line:1, Column:1, Byte:0}, End:hcl.Pos{Line:1, Column:41, Byte:40}}
+2020/11/20 16:41:34 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to data.terraform_remote_state.aws_demo (expand)
+2020/11/20 16:41:34 [TRACE] Completed graph transform *terraform.AttachResourceConfigTransformer (no changes)
+2020/11/20 16:41:34 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2020/11/20 16:41:34 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2020/11/20 16:41:34 [TRACE] Executing graph transform *terraform.RootVariableTransformer
+2020/11/20 16:41:34 [TRACE] Completed graph transform *terraform.RootVariableTransformer (no changes)
+2020/11/20 16:41:34 [TRACE] Executing graph transform *terraform.MissingProvisionerTransformer
+2020/11/20 16:41:34 [TRACE] Completed graph transform *terraform.MissingProvisionerTransformer (no changes)
+2020/11/20 16:41:34 [TRACE] Executing graph transform *terraform.ProvisionerTransformer
+2020/11/20 16:41:34 [TRACE] Completed graph transform *terraform.ProvisionerTransformer (no changes)
+2020/11/20 16:41:34 [TRACE] Executing graph transform *terraform.ModuleVariableTransformer
+2020/11/20 16:41:34 [TRACE] Completed graph transform *terraform.ModuleVariableTransformer (no changes)
+2020/11/20 16:41:34 [TRACE] Executing graph transform *terraform.graphTransformerMulti
+2020/11/20 16:41:34 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderConfigTransformer
+2020/11/20 16:41:34 [TRACE] ProviderConfigTransformer: attaching to "provider[\"registry.terraform.io/f5networks/bigip\"]" provider configuration from main.tf:9,1-17
+2020/11/20 16:41:34 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderConfigTransformer with new graph:
+  bigip_as3.nginx (expand) - *terraform.nodeExpandPlannableResource
+  data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandPlannableResource
+  output.app_url (expand) - *terraform.nodeExpandOutput
+  provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  ------
+2020/11/20 16:41:34 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.MissingProviderTransformer
+2020/11/20 16:41:34 [DEBUG] adding implicit provider configuration provider["terraform.io/builtin/terraform"], implied first by data.terraform_remote_state.aws_demo (expand)
+2020/11/20 16:41:34 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.MissingProviderTransformer with new graph:
+  bigip_as3.nginx (expand) - *terraform.nodeExpandPlannableResource
+  data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandPlannableResource
+  output.app_url (expand) - *terraform.nodeExpandOutput
+  provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  ------
+2020/11/20 16:41:34 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderTransformer
+2020/11/20 16:41:34 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/f5networks/bigip"] serving bigip_as3.nginx (expand)
+2020/11/20 16:41:34 [DEBUG] ProviderTransformer: "bigip_as3.nginx (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/f5networks/bigip"]
+2020/11/20 16:41:34 [TRACE] ProviderTransformer: exact match for provider["terraform.io/builtin/terraform"] serving data.terraform_remote_state.aws_demo (expand)
+2020/11/20 16:41:34 [DEBUG] ProviderTransformer: "data.terraform_remote_state.aws_demo (expand)" (*terraform.nodeExpandPlannableResource) needs provider["terraform.io/builtin/terraform"]
+2020/11/20 16:41:34 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderTransformer with new graph:
+  bigip_as3.nginx (expand) - *terraform.nodeExpandPlannableResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandPlannableResource
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  output.app_url (expand) - *terraform.nodeExpandOutput
+  provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  ------
+2020/11/20 16:41:34 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.PruneProviderTransformer
+2020/11/20 16:41:34 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.PruneProviderTransformer (no changes)
+2020/11/20 16:41:34 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ParentProviderTransformer
+2020/11/20 16:41:34 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ParentProviderTransformer (no changes)
+2020/11/20 16:41:34 [TRACE] Completed graph transform *terraform.graphTransformerMulti with new graph:
+  bigip_as3.nginx (expand) - *terraform.nodeExpandPlannableResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandPlannableResource
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  output.app_url (expand) - *terraform.nodeExpandOutput
+  provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  ------
+2020/11/20 16:41:34 [TRACE] Executing graph transform *terraform.RemovedModuleTransformer
+2020/11/20 16:41:34 [TRACE] Completed graph transform *terraform.RemovedModuleTransformer (no changes)
+2020/11/20 16:41:34 [TRACE] Executing graph transform *terraform.AttachSchemaTransformer
+2020/11/20 16:41:34 [TRACE] AttachSchemaTransformer: attaching provider config schema to provider["registry.terraform.io/f5networks/bigip"]
+2020/11/20 16:41:34 [ERROR] AttachSchemaTransformer: No provider config schema available for provider["terraform.io/builtin/terraform"]
+2020/11/20 16:41:34 [TRACE] AttachSchemaTransformer: attaching resource schema to bigip_as3.nginx (expand)
+2020/11/20 16:41:34 [TRACE] AttachSchemaTransformer: attaching resource schema to data.terraform_remote_state.aws_demo (expand)
+2020/11/20 16:41:34 [TRACE] Completed graph transform *terraform.AttachSchemaTransformer (no changes)
+2020/11/20 16:41:34 [TRACE] Executing graph transform *terraform.ModuleExpansionTransformer
+2020/11/20 16:41:34 [TRACE] Completed graph transform *terraform.ModuleExpansionTransformer (no changes)
+2020/11/20 16:41:34 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2020/11/20 16:41:34 [DEBUG] ReferenceTransformer: "bigip_as3.nginx (expand)" references: []
+2020/11/20 16:41:34 [WARN] ReferenceTransformer: reference not found: "path.module"
+2020/11/20 16:41:34 [DEBUG] ReferenceTransformer: "data.terraform_remote_state.aws_demo (expand)" references: []
+2020/11/20 16:41:34 [DEBUG] ReferenceTransformer: "output.app_url (expand)" references: [data.terraform_remote_state.aws_demo (expand)]
+2020/11/20 16:41:34 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/f5networks/bigip\"]" references: [data.terraform_remote_state.aws_demo (expand) data.terraform_remote_state.aws_demo (expand) data.terraform_remote_state.aws_demo (expand)]
+2020/11/20 16:41:34 [DEBUG] ReferenceTransformer: "provider[\"terraform.io/builtin/terraform\"]" references: []
+2020/11/20 16:41:34 [TRACE] Completed graph transform *terraform.ReferenceTransformer with new graph:
+  bigip_as3.nginx (expand) - *terraform.nodeExpandPlannableResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandPlannableResource
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  output.app_url (expand) - *terraform.nodeExpandOutput
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandPlannableResource
+  provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandPlannableResource
+  provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  ------
+2020/11/20 16:41:34 [TRACE] Executing graph transform *terraform.attachDataResourceDependenciesTransformer
+2020/11/20 16:41:34 [TRACE] attachDataDependenciesTransformer: data.terraform_remote_state.aws_demo depends on []
+2020/11/20 16:41:34 [TRACE] Completed graph transform *terraform.attachDataResourceDependenciesTransformer (no changes)
+2020/11/20 16:41:34 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2020/11/20 16:41:34 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2020/11/20 16:41:34 [TRACE] Executing graph transform *terraform.ForcedCBDTransformer
+2020/11/20 16:41:34 [TRACE] ForcedCBDTransformer: "bigip_as3.nginx (expand)" (*terraform.nodeExpandPlannableResource) has no CBD descendent, so skipping
+2020/11/20 16:41:34 [TRACE] ForcedCBDTransformer: "data.terraform_remote_state.aws_demo (expand)" (*terraform.nodeExpandPlannableResource) has no CBD descendent, so skipping
+2020/11/20 16:41:34 [TRACE] Completed graph transform *terraform.ForcedCBDTransformer (no changes)
+2020/11/20 16:41:34 [TRACE] Executing graph transform *terraform.CountBoundaryTransformer
+2020/11/20 16:41:34 [TRACE] Completed graph transform *terraform.CountBoundaryTransformer with new graph:
+  bigip_as3.nginx (expand) - *terraform.nodeExpandPlannableResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandPlannableResource
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    bigip_as3.nginx (expand) - *terraform.nodeExpandPlannableResource
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandPlannableResource
+    output.app_url (expand) - *terraform.nodeExpandOutput
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  output.app_url (expand) - *terraform.nodeExpandOutput
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandPlannableResource
+  provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandPlannableResource
+  provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  ------
+2020/11/20 16:41:34 [TRACE] Executing graph transform *terraform.CloseProviderTransformer
+2020/11/20 16:41:34 [TRACE] Completed graph transform *terraform.CloseProviderTransformer with new graph:
+  bigip_as3.nginx (expand) - *terraform.nodeExpandPlannableResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandPlannableResource
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    bigip_as3.nginx (expand) - *terraform.nodeExpandPlannableResource
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandPlannableResource
+    output.app_url (expand) - *terraform.nodeExpandOutput
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  output.app_url (expand) - *terraform.nodeExpandOutput
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandPlannableResource
+  provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandPlannableResource
+  provider["registry.terraform.io/f5networks/bigip"] (close) - *terraform.graphNodeCloseProvider
+    bigip_as3.nginx (expand) - *terraform.nodeExpandPlannableResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  provider["terraform.io/builtin/terraform"] (close) - *terraform.graphNodeCloseProvider
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandPlannableResource
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  ------
+2020/11/20 16:41:34 [TRACE] Executing graph transform *terraform.CloseProvisionerTransformer
+2020/11/20 16:41:34 [TRACE] Completed graph transform *terraform.CloseProvisionerTransformer (no changes)
+2020/11/20 16:41:34 [TRACE] Executing graph transform *terraform.CloseRootModuleTransformer
+2020/11/20 16:41:34 [TRACE] Completed graph transform *terraform.CloseRootModuleTransformer with new graph:
+  bigip_as3.nginx (expand) - *terraform.nodeExpandPlannableResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandPlannableResource
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    bigip_as3.nginx (expand) - *terraform.nodeExpandPlannableResource
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandPlannableResource
+    output.app_url (expand) - *terraform.nodeExpandOutput
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  output.app_url (expand) - *terraform.nodeExpandOutput
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandPlannableResource
+  provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandPlannableResource
+  provider["registry.terraform.io/f5networks/bigip"] (close) - *terraform.graphNodeCloseProvider
+    bigip_as3.nginx (expand) - *terraform.nodeExpandPlannableResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  provider["terraform.io/builtin/terraform"] (close) - *terraform.graphNodeCloseProvider
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandPlannableResource
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  root - *terraform.nodeCloseModule
+    meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider["registry.terraform.io/f5networks/bigip"] (close) - *terraform.graphNodeCloseProvider
+    provider["terraform.io/builtin/terraform"] (close) - *terraform.graphNodeCloseProvider
+  ------
+2020/11/20 16:41:34 [TRACE] Executing graph transform *terraform.TransitiveReductionTransformer
+2020/11/20 16:41:34 [TRACE] Completed graph transform *terraform.TransitiveReductionTransformer with new graph:
+  bigip_as3.nginx (expand) - *terraform.nodeExpandPlannableResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandPlannableResource
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    bigip_as3.nginx (expand) - *terraform.nodeExpandPlannableResource
+    output.app_url (expand) - *terraform.nodeExpandOutput
+  output.app_url (expand) - *terraform.nodeExpandOutput
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandPlannableResource
+  provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandPlannableResource
+  provider["registry.terraform.io/f5networks/bigip"] (close) - *terraform.graphNodeCloseProvider
+    bigip_as3.nginx (expand) - *terraform.nodeExpandPlannableResource
+  provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  provider["terraform.io/builtin/terraform"] (close) - *terraform.graphNodeCloseProvider
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandPlannableResource
+  root - *terraform.nodeCloseModule
+    meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider["registry.terraform.io/f5networks/bigip"] (close) - *terraform.graphNodeCloseProvider
+    provider["terraform.io/builtin/terraform"] (close) - *terraform.graphNodeCloseProvider
+  ------
+2020/11/20 16:41:34 [DEBUG] Starting graph walk: walkPlan
+2020/11/20 16:41:34 [TRACE] dag/walk: visiting "provider[\"terraform.io/builtin/terraform\"]"
+2020/11/20 16:41:34 [TRACE] vertex "provider[\"terraform.io/builtin/terraform\"]": starting visit (*terraform.NodeApplyableProvider)
+2020/11/20 16:41:34 [TRACE] vertex "provider[\"terraform.io/builtin/terraform\"]": evaluating
+2020/11/20 16:41:34 [TRACE] [walkPlan] Entering eval tree: provider["terraform.io/builtin/terraform"]
+2020/11/20 16:41:34 [TRACE] eval: *terraform.EvalSequence
+2020/11/20 16:41:34 [TRACE] eval: *terraform.EvalInitProvider
+2020/11/20 16:41:34 [TRACE] BuiltinEvalContext: Initialized "provider[\"terraform.io/builtin/terraform\"]" provider for provider["terraform.io/builtin/terraform"]
+2020/11/20 16:41:34 [TRACE] eval: terraform.EvalNoop
+2020/11/20 16:41:34 [TRACE] eval: *terraform.EvalOpFilter
+2020/11/20 16:41:34 [TRACE] eval: *terraform.EvalSequence
+2020/11/20 16:41:34 [TRACE] eval: *terraform.EvalGetProvider
+2020/11/20 16:41:34 [TRACE] eval: *terraform.EvalOpFilter
+2020/11/20 16:41:34 [TRACE] eval: *terraform.EvalSequence
+2020/11/20 16:41:34 [TRACE] eval: *terraform.EvalConfigProvider
+2020/11/20 16:41:34 [TRACE] buildProviderConfig for provider["terraform.io/builtin/terraform"]: no configuration at all
+2020/11/20 16:41:34 [TRACE] eval: terraform.EvalNoop
+2020/11/20 16:41:34 [TRACE] [walkPlan] Exiting eval tree: provider["terraform.io/builtin/terraform"]
+2020/11/20 16:41:34 [TRACE] vertex "provider[\"terraform.io/builtin/terraform\"]": visit complete
+2020/11/20 16:41:34 [TRACE] dag/walk: visiting "data.terraform_remote_state.aws_demo (expand)"
+2020/11/20 16:41:34 [TRACE] vertex "data.terraform_remote_state.aws_demo (expand)": starting visit (*terraform.nodeExpandPlannableResource)
+2020/11/20 16:41:34 [TRACE] vertex "data.terraform_remote_state.aws_demo (expand)": expanding dynamic subgraph
+2020/11/20 16:41:34 [TRACE] vertex "data.terraform_remote_state.aws_demo (expand)": entering dynamic subgraph
+2020/11/20 16:41:34 [TRACE] dag/walk: visiting "data.terraform_remote_state.aws_demo"
+2020/11/20 16:41:34 [TRACE] vertex "data.terraform_remote_state.aws_demo": starting visit (*terraform.NodePlannableResource)
+2020/11/20 16:41:34 [TRACE] vertex "data.terraform_remote_state.aws_demo": evaluating
+2020/11/20 16:41:34 [TRACE] [walkPlan] Entering eval tree: data.terraform_remote_state.aws_demo
+2020/11/20 16:41:34 [TRACE] eval: *terraform.EvalWriteResourceState
+2020/11/20 16:41:34 [TRACE] [walkPlan] Exiting eval tree: data.terraform_remote_state.aws_demo
+2020/11/20 16:41:34 [TRACE] vertex "data.terraform_remote_state.aws_demo": expanding dynamic subgraph
+2020/11/20 16:41:34 [TRACE] Executing graph transform *terraform.ResourceCountTransformer
+2020/11/20 16:41:34 [TRACE] ResourceCountTransformer: adding data.terraform_remote_state.aws_demo as *terraform.NodePlannableResourceInstance
+2020/11/20 16:41:34 [TRACE] Completed graph transform *terraform.ResourceCountTransformer with new graph:
+  data.terraform_remote_state.aws_demo - *terraform.NodePlannableResourceInstance
+  ------
+2020/11/20 16:41:34 [TRACE] Executing graph transform *terraform.OrphanResourceInstanceCountTransformer
+2020/11/20 16:41:34 [TRACE] Completed graph transform *terraform.OrphanResourceInstanceCountTransformer (no changes)
+2020/11/20 16:41:34 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2020/11/20 16:41:34 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2020/11/20 16:41:34 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2020/11/20 16:41:34 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2020/11/20 16:41:34 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2020/11/20 16:41:34 [WARN] ReferenceTransformer: reference not found: "path.module"
+2020/11/20 16:41:34 [DEBUG] ReferenceTransformer: "data.terraform_remote_state.aws_demo" references: []
+2020/11/20 16:41:34 [TRACE] Completed graph transform *terraform.ReferenceTransformer (no changes)
+2020/11/20 16:41:34 [TRACE] Executing graph transform *terraform.RootTransformer
+2020/11/20 16:41:34 [TRACE] Completed graph transform *terraform.RootTransformer (no changes)
+2020/11/20 16:41:34 [TRACE] vertex "data.terraform_remote_state.aws_demo": entering dynamic subgraph
+2020/11/20 16:41:34 [TRACE] dag/walk: visiting "data.terraform_remote_state.aws_demo"
+2020/11/20 16:41:34 [TRACE] vertex "data.terraform_remote_state.aws_demo": starting visit (*terraform.NodePlannableResourceInstance)
+2020/11/20 16:41:34 [TRACE] vertex "data.terraform_remote_state.aws_demo": evaluating
+2020/11/20 16:41:34 [TRACE] [walkPlan] Entering eval tree: data.terraform_remote_state.aws_demo
+2020/11/20 16:41:34 [TRACE] eval: *terraform.EvalSequence
+2020/11/20 16:41:34 [TRACE] eval: *terraform.EvalGetProvider
+2020/11/20 16:41:34 [TRACE] eval: *terraform.EvalReadState
+2020/11/20 16:41:34 [TRACE] EvalReadState: reading state for data.terraform_remote_state.aws_demo
+2020/11/20 16:41:34 [DEBUG] UpgradeResourceState: ignoring dynamic block: map[string]interface {}{"type":[]interface {}{"object", map[string]interface {}{"path":"string"}}, "value":map[string]interface {}{"path":"./../terraform.tfstate"}}
+2020/11/20 16:41:34 [DEBUG] UpgradeResourceState: ignoring dynamic block: map[string]interface {}{"type":[]interface {}{"object", map[string]interface {}{"f5-ami":"string", "f5_external_self":"string", "f5_internal_self":"string", "f5_password":"string", "f5_ssh":"string", "f5_ui":"string", "f5_username":"string", "f5_vs1":[]interface {}{"tuple", []interface {}{"string", "string"}}, "f5_vs1_uri":"string"}}, "value":map[string]interface {}{"f5-ami":"Some other text with the AMI ID: ami-01a73c06de111cc9c", "f5_external_self":"10.0.2.101", "f5_internal_self":"10.0.3.10", "f5_password":"ExlMVysSlc", "f5_ssh":"ssh admin@18.135.23.102 -i ssh-key.pem", "f5_ui":"https://18.135.23.102", "f5_username":"admin", "f5_vs1":[]interface {}{"10.0.2.101", "18.135.20.99"}, "f5_vs1_uri":"http://18.135.20.99"}}
+2020/11/20 16:41:34 [TRACE] eval: *terraform.EvalValidateSelfRef
+2020/11/20 16:41:34 [TRACE] eval: *terraform.evalReadDataPlan
+2020/11/20 16:41:34 [TRACE] evalReadDataPlan: data.terraform_remote_state.aws_demo no change detected, using existing state
+2020/11/20 16:41:34 [TRACE] eval: *terraform.EvalWriteState
+2020/11/20 16:41:34 [TRACE] EvalWriteState: writing current state object for data.terraform_remote_state.aws_demo
+2020/11/20 16:41:34 [TRACE] eval: *terraform.EvalWriteDiff
+2020/11/20 16:41:34 [TRACE] [walkPlan] Exiting eval tree: data.terraform_remote_state.aws_demo
+2020/11/20 16:41:34 [TRACE] vertex "data.terraform_remote_state.aws_demo": visit complete
+2020/11/20 16:41:34 [TRACE] vertex "data.terraform_remote_state.aws_demo": dynamic subgraph completed successfully
+2020/11/20 16:41:34 [TRACE] vertex "data.terraform_remote_state.aws_demo": visit complete
+2020/11/20 16:41:34 [TRACE] vertex "data.terraform_remote_state.aws_demo (expand)": dynamic subgraph completed successfully
+2020/11/20 16:41:34 [TRACE] vertex "data.terraform_remote_state.aws_demo (expand)": visit complete
+2020/11/20 16:41:34 [TRACE] dag/walk: visiting "provider[\"registry.terraform.io/f5networks/bigip\"]"
+2020/11/20 16:41:34 [TRACE] vertex "provider[\"registry.terraform.io/f5networks/bigip\"]": starting visit (*terraform.NodeApplyableProvider)
+2020/11/20 16:41:34 [TRACE] vertex "provider[\"registry.terraform.io/f5networks/bigip\"]": evaluating
+2020/11/20 16:41:34 [TRACE] dag/walk: visiting "provider[\"terraform.io/builtin/terraform\"] (close)"
+2020/11/20 16:41:34 [TRACE] [walkPlan] Entering eval tree: provider["registry.terraform.io/f5networks/bigip"]
+2020/11/20 16:41:34 [TRACE] eval: *terraform.EvalSequence
+2020/11/20 16:41:34 [TRACE] eval: *terraform.EvalInitProvider
+2020/11/20 16:41:34 [TRACE] vertex "provider[\"terraform.io/builtin/terraform\"] (close)": starting visit (*terraform.graphNodeCloseProvider)
+2020/11/20 16:41:34 [TRACE] vertex "provider[\"terraform.io/builtin/terraform\"] (close)": evaluating
+2020/11/20 16:41:34 [TRACE] [walkPlan] Entering eval tree: provider["terraform.io/builtin/terraform"] (close)
+2020/11/20 16:41:34 [TRACE] eval: *terraform.EvalCloseProvider
+2020/11/20 16:41:34 [TRACE] dag/walk: visiting "output.app_url (expand)"
+2020/11/20 16:41:34 [TRACE] vertex "output.app_url (expand)": starting visit (*terraform.nodeExpandOutput)
+2020/11/20 16:41:34 [TRACE] vertex "output.app_url (expand)": expanding dynamic subgraph
+2020/11/20 16:41:34 [TRACE] Expanding output: adding output.app_url as *terraform.NodeApplyableOutput
+2020/11/20 16:41:34 [TRACE] vertex "output.app_url (expand)": entering dynamic subgraph
+2020/11/20 16:41:34 [TRACE] dag/walk: visiting "output.app_url"
+2020/11/20 16:41:34 [TRACE] vertex "output.app_url": starting visit (*terraform.NodeApplyableOutput)
+2020/11/20 16:41:34 [TRACE] vertex "output.app_url": evaluating
+2020/11/20 16:41:34 [TRACE] [walkPlan] Entering eval tree: output.app_url
+2020/11/20 16:41:34 [TRACE] eval: *terraform.EvalSequence
+2020/11/20 16:41:34 [TRACE] eval: *terraform.EvalOpFilter
+2020/11/20 16:41:34 [TRACE] eval: *terraform.EvalWriteOutput
+2020-11-20T16:41:34.847Z [INFO]  plugin: configuring client automatic mTLS
+2020/11/20 16:41:34 [TRACE] EvalWriteOutput: Saving value for output.app_url in state
+2020/11/20 16:41:34 [TRACE] EvalWriteOutput: Saving Create change for output.app_url in changeset
+2020/11/20 16:41:34 [TRACE] [walkPlan] Exiting eval tree: output.app_url
+2020/11/20 16:41:34 [TRACE] vertex "output.app_url": visit complete
+2020/11/20 16:41:34 [TRACE] vertex "output.app_url (expand)": dynamic subgraph completed successfully
+2020/11/20 16:41:34 [TRACE] vertex "output.app_url (expand)": visit complete
+2020-11-20T16:41:34.875Z [DEBUG] plugin: starting plugin: path=.terraform/plugins/registry.terraform.io/f5networks/bigip/1.4.0/darwin_amd64/terraform-provider-bigip_v1.4.0 args=[.terraform/plugins/registry.terraform.io/f5networks/bigip/1.4.0/darwin_amd64/terraform-provider-bigip_v1.4.0]
+2020-11-20T16:41:34.878Z [DEBUG] plugin: plugin started: path=.terraform/plugins/registry.terraform.io/f5networks/bigip/1.4.0/darwin_amd64/terraform-provider-bigip_v1.4.0 pid=50132
+2020-11-20T16:41:34.878Z [DEBUG] plugin: waiting for RPC address: path=.terraform/plugins/registry.terraform.io/f5networks/bigip/1.4.0/darwin_amd64/terraform-provider-bigip_v1.4.0
+2020-11-20T16:41:34.892Z [INFO]  plugin.terraform-provider-bigip_v1.4.0: configuring server automatic mTLS: timestamp=2020-11-20T16:41:34.892Z
+2020-11-20T16:41:34.919Z [DEBUG] plugin: using plugin: version=5
+2020-11-20T16:41:34.919Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: plugin address: address=/var/folders/kw/pv1mmzqn49d8chjgfr3v0fkrbkvc6k/T/plugin664190035 network=unix timestamp=2020-11-20T16:41:34.919Z
+2020/11/20 16:41:34 [TRACE] BuiltinEvalContext: Initialized "provider[\"registry.terraform.io/f5networks/bigip\"]" provider for provider["registry.terraform.io/f5networks/bigip"]
+2020/11/20 16:41:34 [TRACE] eval: terraform.EvalNoop
+2020/11/20 16:41:34 [TRACE] eval: *terraform.EvalOpFilter
+2020/11/20 16:41:34 [TRACE] eval: *terraform.EvalSequence
+2020/11/20 16:41:34 [TRACE] eval: *terraform.EvalGetProvider
+2020/11/20 16:41:34 [TRACE] eval: *terraform.EvalOpFilter
+2020/11/20 16:41:34 [TRACE] eval: *terraform.EvalSequence
+2020-11-20T16:41:34.965Z [TRACE] plugin.stdio: waiting for stdio data
+2020/11/20 16:41:34 [TRACE] eval: *terraform.EvalConfigProvider
+2020/11/20 16:41:34 [TRACE] [walkPlan] Exiting eval tree: provider["terraform.io/builtin/terraform"] (close)
+2020/11/20 16:41:34 [TRACE] vertex "provider[\"terraform.io/builtin/terraform\"] (close)": visit complete
+2020/11/20 16:41:34 [TRACE] buildProviderConfig for provider["registry.terraform.io/f5networks/bigip"]: using explicit config only
+2020/11/20 16:41:34 [TRACE] GRPCProvider: GetSchema
+2020-11-20T16:41:34.965Z [WARN]  plugin.stdio: received EOF, stopping recv loop: err="rpc error: code = Unimplemented desc = unknown service plugin.GRPCStdio"
+2020/11/20 16:41:34 [TRACE] No provider meta schema returned
+2020/11/20 16:41:34 [TRACE] GRPCProvider: Configure
+2020-11-20T16:41:34.969Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: 2020/11/20 16:41:34 [INFO] Initializing BigIP connection
+2020/11/20 16:41:35 [TRACE] eval: terraform.EvalNoop
+2020/11/20 16:41:35 [TRACE] [walkPlan] Exiting eval tree: provider["registry.terraform.io/f5networks/bigip"]
+2020/11/20 16:41:35 [TRACE] vertex "provider[\"registry.terraform.io/f5networks/bigip\"]": visit complete
+2020/11/20 16:41:35 [TRACE] dag/walk: visiting "bigip_as3.nginx (expand)"
+2020/11/20 16:41:35 [TRACE] vertex "bigip_as3.nginx (expand)": starting visit (*terraform.nodeExpandPlannableResource)
+2020/11/20 16:41:35 [TRACE] vertex "bigip_as3.nginx (expand)": expanding dynamic subgraph
+2020/11/20 16:41:35 [TRACE] vertex "bigip_as3.nginx (expand)": entering dynamic subgraph
+2020/11/20 16:41:35 [TRACE] dag/walk: visiting "bigip_as3.nginx"
+2020/11/20 16:41:35 [TRACE] vertex "bigip_as3.nginx": starting visit (*terraform.NodePlannableResource)
+2020/11/20 16:41:35 [TRACE] vertex "bigip_as3.nginx": evaluating
+2020/11/20 16:41:35 [TRACE] [walkPlan] Entering eval tree: bigip_as3.nginx
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalWriteResourceState
+2020/11/20 16:41:35 [TRACE] [walkPlan] Exiting eval tree: bigip_as3.nginx
+2020/11/20 16:41:35 [TRACE] vertex "bigip_as3.nginx": expanding dynamic subgraph
+2020/11/20 16:41:35 [TRACE] Executing graph transform *terraform.ResourceCountTransformer
+2020/11/20 16:41:35 [TRACE] ResourceCountTransformer: adding bigip_as3.nginx as *terraform.NodePlannableResourceInstance
+2020/11/20 16:41:35 [TRACE] Completed graph transform *terraform.ResourceCountTransformer with new graph:
+  bigip_as3.nginx - *terraform.NodePlannableResourceInstance
+  ------
+2020/11/20 16:41:35 [TRACE] Executing graph transform *terraform.OrphanResourceInstanceCountTransformer
+2020/11/20 16:41:35 [TRACE] Completed graph transform *terraform.OrphanResourceInstanceCountTransformer (no changes)
+2020/11/20 16:41:35 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2020/11/20 16:41:35 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2020/11/20 16:41:35 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2020/11/20 16:41:35 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2020/11/20 16:41:35 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2020/11/20 16:41:35 [DEBUG] ReferenceTransformer: "bigip_as3.nginx" references: []
+2020/11/20 16:41:35 [TRACE] Completed graph transform *terraform.ReferenceTransformer (no changes)
+2020/11/20 16:41:35 [TRACE] Executing graph transform *terraform.RootTransformer
+2020/11/20 16:41:35 [TRACE] Completed graph transform *terraform.RootTransformer (no changes)
+2020/11/20 16:41:35 [TRACE] vertex "bigip_as3.nginx": entering dynamic subgraph
+2020/11/20 16:41:35 [TRACE] dag/walk: visiting "bigip_as3.nginx"
+2020/11/20 16:41:35 [TRACE] vertex "bigip_as3.nginx": starting visit (*terraform.NodePlannableResourceInstance)
+2020/11/20 16:41:35 [TRACE] vertex "bigip_as3.nginx": evaluating
+2020/11/20 16:41:35 [TRACE] [walkPlan] Entering eval tree: bigip_as3.nginx
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalSequence
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalGetProvider
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalReadState
+2020/11/20 16:41:35 [TRACE] EvalReadState: reading state for bigip_as3.nginx
+2020/11/20 16:41:35 [TRACE] UpgradeResourceState: schema version of bigip_as3.nginx is still 0; calling provider "bigip" for any other minor fixups
+2020/11/20 16:41:35 [TRACE] GRPCProvider: UpgradeResourceState
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalValidateSelfRef
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalDiff
+2020/11/20 16:41:35 [TRACE] Re-validating config for "bigip_as3.nginx"
+2020/11/20 16:41:35 [TRACE] GRPCProvider: ValidateResourceTypeConfig
+2020/11/20 16:41:35 [TRACE] GRPCProvider: PlanResourceChange
+2020/11/20 16:41:35 [WARN] Provider "registry.terraform.io/f5networks/bigip" produced an invalid plan for bigip_as3.nginx, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .as3_json: planned value cty.StringVal("{\"action\":\"deploy\",\"class\":\"AS3\",\"declaration\":{\"class\":\"ADC\",\"demo_day_2\":{\"class\":\"Tenant\",\"nginx2\":{\"alan\":{\"class\":\"Service_HTTPS\",\"pool\":\"web_pool\",\"serverTLS\":\"webtls\",\"virtualAddresses\":[\"10.0.6.101\"]},\"class\":\"Application\",\"web_pool\":{\"class\":\"Pool\",\"loadBalancingMode\":\"predictive-node\",\"members\":[{\"serverAddresses\":[\"192.0.2.12\",\"192.0.2.13\"],\"servicePort\":80}],\"monitors\":[\"http\"]},\"webcert\":{\"certificate\":\"-----BEGIN CERTIFICATE-----\\nMIICnDCCAgWgAwIBAgIJAJ5n2b0OCEjwMA0GCSqGSIb3DQEBCwUAMGcxCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApXYXNoaW5ndG9uMRAwDgYDVQQHDAdTZWF0dGxlMRQwEgYDVQQKDAtmNV9OZXR3b3JrczEbMBkGA1UEAwwSc2FtcGxlLmV4YW1wbGUubmV0MB4XDTE3MTEyNjE5NTAyNFoXDTE4MDIyNTE5NTAyNFowZzELMAkGA1UEBhMCVVMxEzARBgNVBAgMCldhc2hpbmd0b24xEDAOBgNVBAcMB1NlYXR0bGUxFDASBgNVBAoMC2Y1X05ldHdvcmtzMRswGQYDVQQDDBJzYW1wbGUuZXhhbXBsZS5uZXQwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBALEsuXmSXVQpYjrZPW+WiTBjn491mwZYT7Q92V1HlSBtM6WdWlK1aZN5sovfKtOX7Yrm8xa+e4o/zJ2QYLyyv5O+t2EGN/4qUEjEAPY9mwJdfzRQy6Hyzm84J0QkTuUJ/EjNuPji3D0QJRALUTzu1UqqDCEtiN9OGyXEkh7uvb7BAgMBAAGjUDBOMB0GA1UdDgQWBBSVHPNrGWrjWyZvckQxFYWO59FRFjAfBgNVHSMEGDAWgBSVHPNrGWrjWyZvckQxFYWO59FRFjAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBCwUAA4GBAJeJ9SEckEwPhkXOm+IuqfbUS/RcziifBCTmVyE+Fa/j9pKSYTgiEBNdbJeBEa+gPMlQtbV7Y2dy8TKx/8axVBHiXC5geDML7caxOrAyHYBpnx690xJTh5OIORBBM/a/NvaR+P3CoVebr/NPRh9oRNxnntnqvqD7SW0U3ZPe3tJc\\n-----END CERTIFICATE-----\",\"class\":\"Certificate\",\"passphrase\":{\"ciphertext\":\"ZjVmNQ==\",\"protected\":\"eyJhbGciOiJkaXIiLCJlbmMiOiJub25lIn0\"},\"privateKey\":\"-----BEGIN RSA PRIVATE KEY-----\\nProc-Type: 4,ENCRYPTED\\nDEK-Info: AES-256-CBC,D8FFCE6B255601587CB54EC29B737D31\\n\\nkv4Fc3Jn0Ujkj0yRjt+gQQfBLSNF2aRLUENXnlr7Xpzqu0Ahr3jS1bAAnd8IWnsR\\nyILqVmKsYF2DoHh0tWiEAQ7/y/fe5DTFhK7N4Wml6kp2yVMkP6KC4ssyYPw27kjK\\nDBwBZ5O8Ioej08A5sgsLCmglbmtSPHJUn14pQnMTmLOpEtOsu6S+2ibPgSNpdg0b\\nCAJNG/KHe+Vkx59qNDyDeKb7FZOlsX30+y67zUq9GQqJEDuysPJ2BUNP0IJXAjst\\nFIt1qNoZew+5KDYs7u/lPxcMGTirUhgI84Jy4WcDvSOsP/tKlxj04TbIE3epmSKy\\n+TihHkwY7ngIGtcm3Sfqk5jz2RXoj1/Ac3SW8kVTYaOUogBhn7zAq4Wju6Et4hQG\\nRGapsJp1aCeZ/a4RCDTxspcKoMaRa97/URQb0hBRGx3DGUhzpmX9zl7JI2Xa5D3R\\nmdBXtjLKYJTdIMdd27prBEKhMUpae2rz5Mw4J907wZeBq/wu+zp8LAnecfTe2nGY\\nE32x1U7gSEdYOGqnwxsOexb1jKgCa67Nw9TmcMPV8zmH7R9qdvgxAbAtwBl1F9OS\\nfcGaC7epf1AjJLtaX7krWmzgASHl28Ynh9lmGMdv+5QYMZvKG0LOg/n3m8uJ6sKy\\nIzzvaJswwn0j5P5+czyoV5CvvdCfKnNb+3jUEN8I0PPwjBGKr4B1ojwhogTM248V\\nHR69D6TxFVMfGpyJhCPkbGEGbpEpcffpgKuC/mEtMqyDQXJNaV5HO6HgAJ9F1P6v\\n5ehHHTMRvzCCFiwndHdlMXUjqSNjww6me6dr6LiAPbejdzhL2vWx1YqebOcwQx3G\\n-----END RSA PRIVATE KEY-----\",\"remark\":\"in practice we recommend using a passphrase\"},\"webtls\":{\"certificates\":[{\"certificate\":\"webcert\"}],\"class\":\"TLS_Server\"}}},\"id\":\"123abc\",\"label\":\"Sample 2\",\"remark\":\"HTTPS with predictive-node pool\",\"schemaVersion\":\"3.0.0\"},\"persist\":true}") does not match config value cty.StringVal("{\n  \"class\": \"AS3\",\n  \"action\": \"deploy\",\n  \"persist\": true,\n  \"declaration\": {\n      \"class\": \"ADC\",\n      \"schemaVersion\": \"3.0.0\",\n      \"id\": \"123abc\",\n      \"label\": \"Sample 2\",\n      \"remark\": \"HTTPS with predictive-node pool\",\n      \"demo_day_2\": {\n          \"class\": \"Tenant\",\n          \"nginx2\": {\n              \"class\": \"Application\",\n              \"alan\": {\n                  \"class\": \"Service_HTTPS\",\n                  \"virtualAddresses\": [\n                      \"10.0.6.101\"\n                  ],\n                  \"pool\": \"web_pool\",\n                  \"serverTLS\": \"webtls\"\n              },\n              \"web_pool\": {\n                  \"class\": \"Pool\",\n                  \"loadBalancingMode\": \"predictive-node\",\n                  \"monitors\": [\n                      \"http\"\n                  ],\n                  \"members\": [\n                      {\n                          \"servicePort\": 80,\n                          \"serverAddresses\": [\n                              \"192.0.2.12\",\n                              \"192.0.2.13\"\n                          ]\n                      }\n                  ]\n              },\n              \"webtls\": {\n                  \"class\": \"TLS_Server\",\n                  \"certificates\": [\n                      {\n                          \"certificate\": \"webcert\"\n                      }\n                  ]\n              },\n              \"webcert\": {\n                  \"class\": \"Certificate\",\n                  \"remark\": \"in practice we recommend using a passphrase\",\n                  \"certificate\": \"-----BEGIN CERTIFICATE-----\\nMIICnDCCAgWgAwIBAgIJAJ5n2b0OCEjwMA0GCSqGSIb3DQEBCwUAMGcxCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApXYXNoaW5ndG9uMRAwDgYDVQQHDAdTZWF0dGxlMRQwEgYDVQQKDAtmNV9OZXR3b3JrczEbMBkGA1UEAwwSc2FtcGxlLmV4YW1wbGUubmV0MB4XDTE3MTEyNjE5NTAyNFoXDTE4MDIyNTE5NTAyNFowZzELMAkGA1UEBhMCVVMxEzARBgNVBAgMCldhc2hpbmd0b24xEDAOBgNVBAcMB1NlYXR0bGUxFDASBgNVBAoMC2Y1X05ldHdvcmtzMRswGQYDVQQDDBJzYW1wbGUuZXhhbXBsZS5uZXQwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBALEsuXmSXVQpYjrZPW+WiTBjn491mwZYT7Q92V1HlSBtM6WdWlK1aZN5sovfKtOX7Yrm8xa+e4o/zJ2QYLyyv5O+t2EGN/4qUEjEAPY9mwJdfzRQy6Hyzm84J0QkTuUJ/EjNuPji3D0QJRALUTzu1UqqDCEtiN9OGyXEkh7uvb7BAgMBAAGjUDBOMB0GA1UdDgQWBBSVHPNrGWrjWyZvckQxFYWO59FRFjAfBgNVHSMEGDAWgBSVHPNrGWrjWyZvckQxFYWO59FRFjAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBCwUAA4GBAJeJ9SEckEwPhkXOm+IuqfbUS/RcziifBCTmVyE+Fa/j9pKSYTgiEBNdbJeBEa+gPMlQtbV7Y2dy8TKx/8axVBHiXC5geDML7caxOrAyHYBpnx690xJTh5OIORBBM/a/NvaR+P3CoVebr/NPRh9oRNxnntnqvqD7SW0U3ZPe3tJc\\n-----END CERTIFICATE-----\",\n                  \"privateKey\": \"-----BEGIN RSA PRIVATE KEY-----\\nProc-Type: 4,ENCRYPTED\\nDEK-Info: AES-256-CBC,D8FFCE6B255601587CB54EC29B737D31\\n\\nkv4Fc3Jn0Ujkj0yRjt+gQQfBLSNF2aRLUENXnlr7Xpzqu0Ahr3jS1bAAnd8IWnsR\\nyILqVmKsYF2DoHh0tWiEAQ7/y/fe5DTFhK7N4Wml6kp2yVMkP6KC4ssyYPw27kjK\\nDBwBZ5O8Ioej08A5sgsLCmglbmtSPHJUn14pQnMTmLOpEtOsu6S+2ibPgSNpdg0b\\nCAJNG/KHe+Vkx59qNDyDeKb7FZOlsX30+y67zUq9GQqJEDuysPJ2BUNP0IJXAjst\\nFIt1qNoZew+5KDYs7u/lPxcMGTirUhgI84Jy4WcDvSOsP/tKlxj04TbIE3epmSKy\\n+TihHkwY7ngIGtcm3Sfqk5jz2RXoj1/Ac3SW8kVTYaOUogBhn7zAq4Wju6Et4hQG\\nRGapsJp1aCeZ/a4RCDTxspcKoMaRa97/URQb0hBRGx3DGUhzpmX9zl7JI2Xa5D3R\\nmdBXtjLKYJTdIMdd27prBEKhMUpae2rz5Mw4J907wZeBq/wu+zp8LAnecfTe2nGY\\nE32x1U7gSEdYOGqnwxsOexb1jKgCa67Nw9TmcMPV8zmH7R9qdvgxAbAtwBl1F9OS\\nfcGaC7epf1AjJLtaX7krWmzgASHl28Ynh9lmGMdv+5QYMZvKG0LOg/n3m8uJ6sKy\\nIzzvaJswwn0j5P5+czyoV5CvvdCfKnNb+3jUEN8I0PPwjBGKr4B1ojwhogTM248V\\nHR69D6TxFVMfGpyJhCPkbGEGbpEpcffpgKuC/mEtMqyDQXJNaV5HO6HgAJ9F1P6v\\n5ehHHTMRvzCCFiwndHdlMXUjqSNjww6me6dr6LiAPbejdzhL2vWx1YqebOcwQx3G\\n-----END RSA PRIVATE KEY-----\",\n                  \"passphrase\": {\n                      \"ciphertext\": \"ZjVmNQ==\",\n                      \"protected\": \"eyJhbGciOiJkaXIiLCJlbmMiOiJub25lIn0\"\n                  }\n              }\n          }\n      }\n  }\n}") nor prior value cty.StringVal("{\"action\":\"deploy\",\"class\":\"AS3\",\"declaration\":{\"arch_day2\":{\"class\":\"Tenant\",\"nginx2\":{\"class\":\"Application\",\"service\":{\"class\":\"Service_HTTPS\",\"pool\":\"web_pool\",\"serverTLS\":\"webtls\",\"virtualAddresses\":[\"10.0.5.101\"]},\"web_pool\":{\"class\":\"Pool\",\"loadBalancingMode\":\"predictive-node\",\"members\":[{\"serverAddresses\":[\"192.0.2.12\",\"192.0.2.13\"],\"servicePort\":80}],\"monitors\":[\"http\"]},\"webcert\":{\"certificate\":\"-----BEGIN CERTIFICATE-----\\nMIICnDCCAgWgAwIBAgIJAJ5n2b0OCEjwMA0GCSqGSIb3DQEBCwUAMGcxCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApXYXNoaW5ndG9uMRAwDgYDVQQHDAdTZWF0dGxlMRQwEgYDVQQKDAtmNV9OZXR3b3JrczEbMBkGA1UEAwwSc2FtcGxlLmV4YW1wbGUubmV0MB4XDTE3MTEyNjE5NTAyNFoXDTE4MDIyNTE5NTAyNFowZzELMAkGA1UEBhMCVVMxEzARBgNVBAgMCldhc2hpbmd0b24xEDAOBgNVBAcMB1NlYXR0bGUxFDASBgNVBAoMC2Y1X05ldHdvcmtzMRswGQYDVQQDDBJzYW1wbGUuZXhhbXBsZS5uZXQwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBALEsuXmSXVQpYjrZPW+WiTBjn491mwZYT7Q92V1HlSBtM6WdWlK1aZN5sovfKtOX7Yrm8xa+e4o/zJ2QYLyyv5O+t2EGN/4qUEjEAPY9mwJdfzRQy6Hyzm84J0QkTuUJ/EjNuPji3D0QJRALUTzu1UqqDCEtiN9OGyXEkh7uvb7BAgMBAAGjUDBOMB0GA1UdDgQWBBSVHPNrGWrjWyZvckQxFYWO59FRFjAfBgNVHSMEGDAWgBSVHPNrGWrjWyZvckQxFYWO59FRFjAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBCwUAA4GBAJeJ9SEckEwPhkXOm+IuqfbUS/RcziifBCTmVyE+Fa/j9pKSYTgiEBNdbJeBEa+gPMlQtbV7Y2dy8TKx/8axVBHiXC5geDML7caxOrAyHYBpnx690xJTh5OIORBBM/a/NvaR+P3CoVebr/NPRh9oRNxnntnqvqD7SW0U3ZPe3tJc\\n-----END CERTIFICATE-----\",\"class\":\"Certificate\",\"passphrase\":{\"ciphertext\":\"JE0kaHEkTW5sVEg5b05WWllDUi94US9MN3NEQT09\",\"miniJWE\":true,\"protected\":\"eyJhbGciOiJkaXIiLCJlbmMiOiJmNXN2In0=\"},\"privateKey\":\"-----BEGIN RSA PRIVATE KEY-----\\nProc-Type: 4,ENCRYPTED\\nDEK-Info: AES-256-CBC,D8FFCE6B255601587CB54EC29B737D31\\n\\nkv4Fc3Jn0Ujkj0yRjt+gQQfBLSNF2aRLUENXnlr7Xpzqu0Ahr3jS1bAAnd8IWnsR\\nyILqVmKsYF2DoHh0tWiEAQ7/y/fe5DTFhK7N4Wml6kp2yVMkP6KC4ssyYPw27kjK\\nDBwBZ5O8Ioej08A5sgsLCmglbmtSPHJUn14pQnMTmLOpEtOsu6S+2ibPgSNpdg0b\\nCAJNG/KHe+Vkx59qNDyDeKb7FZOlsX30+y67zUq9GQqJEDuysPJ2BUNP0IJXAjst\\nFIt1qNoZew+5KDYs7u/lPxcMGTirUhgI84Jy4WcDvSOsP/tKlxj04TbIE3epmSKy\\n+TihHkwY7ngIGtcm3Sfqk5jz2RXoj1/Ac3SW8kVTYaOUogBhn7zAq4Wju6Et4hQG\\nRGapsJp1aCeZ/a4RCDTxspcKoMaRa97/URQb0hBRGx3DGUhzpmX9zl7JI2Xa5D3R\\nmdBXtjLKYJTdIMdd27prBEKhMUpae2rz5Mw4J907wZeBq/wu+zp8LAnecfTe2nGY\\nE32x1U7gSEdYOGqnwxsOexb1jKgCa67Nw9TmcMPV8zmH7R9qdvgxAbAtwBl1F9OS\\nfcGaC7epf1AjJLtaX7krWmzgASHl28Ynh9lmGMdv+5QYMZvKG0LOg/n3m8uJ6sKy\\nIzzvaJswwn0j5P5+czyoV5CvvdCfKnNb+3jUEN8I0PPwjBGKr4B1ojwhogTM248V\\nHR69D6TxFVMfGpyJhCPkbGEGbpEpcffpgKuC/mEtMqyDQXJNaV5HO6HgAJ9F1P6v\\n5ehHHTMRvzCCFiwndHdlMXUjqSNjww6me6dr6LiAPbejdzhL2vWx1YqebOcwQx3G\\n-----END RSA PRIVATE KEY-----\",\"remark\":\"in practice we recommend using a passphrase\"},\"webtls\":{\"certificates\":[{\"certificate\":\"webcert\"}],\"class\":\"TLS_Server\"}}},\"class\":\"ADC\",\"id\":\"123abc\",\"label\":\"Sample 2\",\"remark\":\"HTTPS with predictive-node pool\",\"schemaVersion\":\"3.0.0\"},\"persist\":true}")
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalCheckPreventDestroy
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalWriteState
+2020/11/20 16:41:35 [TRACE] EvalWriteState: writing current state object for bigip_as3.nginx
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalWriteDiff
+2020/11/20 16:41:35 [TRACE] EvalWriteDiff: recorded Update change for bigip_as3.nginx
+2020/11/20 16:41:35 [TRACE] [walkPlan] Exiting eval tree: bigip_as3.nginx
+2020/11/20 16:41:35 [TRACE] vertex "bigip_as3.nginx": visit complete
+2020/11/20 16:41:35 [TRACE] vertex "bigip_as3.nginx": dynamic subgraph completed successfully
+2020/11/20 16:41:35 [TRACE] vertex "bigip_as3.nginx": visit complete
+2020/11/20 16:41:35 [TRACE] vertex "bigip_as3.nginx (expand)": dynamic subgraph completed successfully
+2020/11/20 16:41:35 [TRACE] vertex "bigip_as3.nginx (expand)": visit complete
+2020/11/20 16:41:35 [TRACE] dag/walk: visiting "provider[\"registry.terraform.io/f5networks/bigip\"] (close)"
+2020/11/20 16:41:35 [TRACE] vertex "provider[\"registry.terraform.io/f5networks/bigip\"] (close)": starting visit (*terraform.graphNodeCloseProvider)
+2020/11/20 16:41:35 [TRACE] vertex "provider[\"registry.terraform.io/f5networks/bigip\"] (close)": evaluating
+2020/11/20 16:41:35 [TRACE] dag/walk: visiting "meta.count-boundary (EachMode fixup)"
+2020/11/20 16:41:35 [TRACE] [walkPlan] Entering eval tree: provider["registry.terraform.io/f5networks/bigip"] (close)
+2020/11/20 16:41:35 [TRACE] vertex "meta.count-boundary (EachMode fixup)": starting visit (*terraform.NodeCountBoundary)
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalCloseProvider
+2020/11/20 16:41:35 [TRACE] vertex "meta.count-boundary (EachMode fixup)": evaluating
+2020/11/20 16:41:35 [TRACE] GRPCProvider: Close
+2020/11/20 16:41:35 [TRACE] [walkPlan] Entering eval tree: meta.count-boundary (EachMode fixup)
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalCountFixZeroOneBoundaryGlobal
+2020/11/20 16:41:35 [TRACE] [walkPlan] Exiting eval tree: meta.count-boundary (EachMode fixup)
+2020/11/20 16:41:35 [TRACE] vertex "meta.count-boundary (EachMode fixup)": visit complete
+2020-11-20T16:41:35.107Z [DEBUG] plugin: plugin process exited: path=.terraform/plugins/registry.terraform.io/f5networks/bigip/1.4.0/darwin_amd64/terraform-provider-bigip_v1.4.0 pid=50132
+2020-11-20T16:41:35.107Z [DEBUG] plugin: plugin exited
+2020/11/20 16:41:35 [TRACE] [walkPlan] Exiting eval tree: provider["registry.terraform.io/f5networks/bigip"] (close)
+2020/11/20 16:41:35 [TRACE] vertex "provider[\"registry.terraform.io/f5networks/bigip\"] (close)": visit complete
+2020/11/20 16:41:35 [TRACE] dag/walk: visiting "root"
+2020/11/20 16:41:35 [TRACE] vertex "root": starting visit (*terraform.nodeCloseModule)
+2020/11/20 16:41:35 [TRACE] vertex "root": evaluating
+2020/11/20 16:41:35 [TRACE] [walkPlan] Entering eval tree: root
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalSequence
+2020/11/20 16:41:35 [TRACE] eval: terraform.EvalNoop
+2020/11/20 16:41:35 [TRACE] [walkPlan] Exiting eval tree: root
+2020/11/20 16:41:35 [TRACE] vertex "root": visit complete
+2020/11/20 16:41:35 [INFO] backend/local: apply calling Apply
+2020/11/20 16:41:35 [INFO] terraform: building graph: GraphTypeApply
+2020/11/20 16:41:35 [TRACE] Executing graph transform *terraform.ConfigTransformer
+2020/11/20 16:41:35 [TRACE] ConfigTransformer: Starting for path: 
+2020/11/20 16:41:35 [TRACE] Completed graph transform *terraform.ConfigTransformer with new graph:
+  bigip_as3.nginx (expand) - *terraform.nodeExpandApplyableResource
+  data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandApplyableResource
+  ------
+2020/11/20 16:41:35 [TRACE] Executing graph transform *terraform.DiffTransformer
+2020/11/20 16:41:35 [TRACE] DiffTransformer starting
+2020/11/20 16:41:35 [TRACE] DiffTransformer: found Update change for bigip_as3.nginx 
+2020/11/20 16:41:35 [TRACE] DiffTransformer: bigip_as3.nginx will be represented by bigip_as3.nginx
+2020/11/20 16:41:35 [TRACE] DiffTransformer complete
+2020/11/20 16:41:35 [TRACE] Completed graph transform *terraform.DiffTransformer with new graph:
+  bigip_as3.nginx - *terraform.NodeApplyableResourceInstance
+    bigip_as3.nginx (expand) - *terraform.nodeExpandApplyableResource
+  bigip_as3.nginx (expand) - *terraform.nodeExpandApplyableResource
+  data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandApplyableResource
+  ------
+2020/11/20 16:41:35 [TRACE] Executing graph transform *terraform.OrphanOutputTransformer
+2020/11/20 16:41:35 [TRACE] Completed graph transform *terraform.OrphanOutputTransformer (no changes)
+2020/11/20 16:41:35 [TRACE] Executing graph transform *terraform.AttachResourceConfigTransformer
+2020/11/20 16:41:35 [TRACE] AttachResourceConfigTransformer: attaching to "bigip_as3.nginx" (*terraform.NodeApplyableResourceInstance) config from main.tf:16,1-29
+2020/11/20 16:41:35 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to bigip_as3.nginx
+2020/11/20 16:41:35 [TRACE] AttachResourceConfigTransformer: attaching to "bigip_as3.nginx (expand)" (*terraform.nodeExpandApplyableResource) config from main.tf:16,1-29
+2020/11/20 16:41:35 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to bigip_as3.nginx (expand)
+2020/11/20 16:41:35 [TRACE] AttachResourceConfigTransformer: attaching to "data.terraform_remote_state.aws_demo (expand)" (*terraform.nodeExpandApplyableResource) config from hcl.Range{Filename:"main.tf", Start:hcl.Pos{Line:1, Column:1, Byte:0}, End:hcl.Pos{Line:1, Column:41, Byte:40}}
+2020/11/20 16:41:35 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to data.terraform_remote_state.aws_demo (expand)
+2020/11/20 16:41:35 [TRACE] Completed graph transform *terraform.AttachResourceConfigTransformer (no changes)
+2020/11/20 16:41:35 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2020/11/20 16:41:35 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2020/11/20 16:41:35 [TRACE] Executing graph transform *terraform.MissingProvisionerTransformer
+2020/11/20 16:41:35 [TRACE] Completed graph transform *terraform.MissingProvisionerTransformer (no changes)
+2020/11/20 16:41:35 [TRACE] Executing graph transform *terraform.ProvisionerTransformer
+2020/11/20 16:41:35 [TRACE] Completed graph transform *terraform.ProvisionerTransformer (no changes)
+2020/11/20 16:41:35 [TRACE] Executing graph transform *terraform.RootVariableTransformer
+2020/11/20 16:41:35 [TRACE] Completed graph transform *terraform.RootVariableTransformer (no changes)
+2020/11/20 16:41:35 [TRACE] Executing graph transform *terraform.LocalTransformer
+2020/11/20 16:41:35 [TRACE] Completed graph transform *terraform.LocalTransformer (no changes)
+2020/11/20 16:41:35 [TRACE] Executing graph transform *terraform.OutputTransformer
+2020/11/20 16:41:35 [TRACE] OutputTransformer: adding app_url as *terraform.nodeExpandOutput
+2020/11/20 16:41:35 [TRACE] Completed graph transform *terraform.OutputTransformer with new graph:
+  bigip_as3.nginx - *terraform.NodeApplyableResourceInstance
+    bigip_as3.nginx (expand) - *terraform.nodeExpandApplyableResource
+  bigip_as3.nginx (expand) - *terraform.nodeExpandApplyableResource
+  data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandApplyableResource
+  output.app_url (expand) - *terraform.nodeExpandOutput
+  ------
+2020/11/20 16:41:35 [TRACE] Executing graph transform *terraform.ModuleVariableTransformer
+2020/11/20 16:41:35 [TRACE] Completed graph transform *terraform.ModuleVariableTransformer (no changes)
+2020/11/20 16:41:35 [TRACE] Executing graph transform *terraform.graphTransformerMulti
+2020/11/20 16:41:35 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderConfigTransformer
+2020/11/20 16:41:35 [TRACE] ProviderConfigTransformer: attaching to "provider[\"registry.terraform.io/f5networks/bigip\"]" provider configuration from main.tf:9,1-17
+2020/11/20 16:41:35 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderConfigTransformer with new graph:
+  bigip_as3.nginx - *terraform.NodeApplyableResourceInstance
+    bigip_as3.nginx (expand) - *terraform.nodeExpandApplyableResource
+  bigip_as3.nginx (expand) - *terraform.nodeExpandApplyableResource
+  data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandApplyableResource
+  output.app_url (expand) - *terraform.nodeExpandOutput
+  provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  ------
+2020/11/20 16:41:35 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.MissingProviderTransformer
+2020/11/20 16:41:35 [DEBUG] adding implicit provider configuration provider["terraform.io/builtin/terraform"], implied first by data.terraform_remote_state.aws_demo (expand)
+2020/11/20 16:41:35 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.MissingProviderTransformer with new graph:
+  bigip_as3.nginx - *terraform.NodeApplyableResourceInstance
+    bigip_as3.nginx (expand) - *terraform.nodeExpandApplyableResource
+  bigip_as3.nginx (expand) - *terraform.nodeExpandApplyableResource
+  data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandApplyableResource
+  output.app_url (expand) - *terraform.nodeExpandOutput
+  provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  ------
+2020/11/20 16:41:35 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderTransformer
+2020/11/20 16:41:35 [TRACE] ProviderTransformer: exact match for provider["terraform.io/builtin/terraform"] serving data.terraform_remote_state.aws_demo (expand)
+2020/11/20 16:41:35 [DEBUG] ProviderTransformer: "data.terraform_remote_state.aws_demo (expand)" (*terraform.nodeExpandApplyableResource) needs provider["terraform.io/builtin/terraform"]
+2020/11/20 16:41:35 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/f5networks/bigip"] serving bigip_as3.nginx
+2020/11/20 16:41:35 [DEBUG] ProviderTransformer: "bigip_as3.nginx" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/f5networks/bigip"]
+2020/11/20 16:41:35 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/f5networks/bigip"] serving bigip_as3.nginx (expand)
+2020/11/20 16:41:35 [DEBUG] ProviderTransformer: "bigip_as3.nginx (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/f5networks/bigip"]
+2020/11/20 16:41:35 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderTransformer with new graph:
+  bigip_as3.nginx - *terraform.NodeApplyableResourceInstance
+    bigip_as3.nginx (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  bigip_as3.nginx (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandApplyableResource
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  output.app_url (expand) - *terraform.nodeExpandOutput
+  provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  ------
+2020/11/20 16:41:35 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.PruneProviderTransformer
+2020/11/20 16:41:35 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.PruneProviderTransformer (no changes)
+2020/11/20 16:41:35 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ParentProviderTransformer
+2020/11/20 16:41:35 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ParentProviderTransformer (no changes)
+2020/11/20 16:41:35 [TRACE] Completed graph transform *terraform.graphTransformerMulti with new graph:
+  bigip_as3.nginx - *terraform.NodeApplyableResourceInstance
+    bigip_as3.nginx (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  bigip_as3.nginx (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandApplyableResource
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  output.app_url (expand) - *terraform.nodeExpandOutput
+  provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  ------
+2020/11/20 16:41:35 [TRACE] Executing graph transform *terraform.RemovedModuleTransformer
+2020/11/20 16:41:35 [TRACE] Completed graph transform *terraform.RemovedModuleTransformer (no changes)
+2020/11/20 16:41:35 [TRACE] Executing graph transform *terraform.AttachSchemaTransformer
+2020/11/20 16:41:35 [TRACE] AttachSchemaTransformer: attaching resource schema to data.terraform_remote_state.aws_demo (expand)
+2020/11/20 16:41:35 [TRACE] AttachSchemaTransformer: attaching resource schema to bigip_as3.nginx
+2020/11/20 16:41:35 [TRACE] AttachSchemaTransformer: attaching provider config schema to provider["registry.terraform.io/f5networks/bigip"]
+2020/11/20 16:41:35 [ERROR] AttachSchemaTransformer: No provider config schema available for provider["terraform.io/builtin/terraform"]
+2020/11/20 16:41:35 [TRACE] AttachSchemaTransformer: attaching resource schema to bigip_as3.nginx (expand)
+2020/11/20 16:41:35 [TRACE] Completed graph transform *terraform.AttachSchemaTransformer (no changes)
+2020/11/20 16:41:35 [TRACE] Executing graph transform *terraform.ModuleExpansionTransformer
+2020/11/20 16:41:35 [TRACE] Completed graph transform *terraform.ModuleExpansionTransformer (no changes)
+2020/11/20 16:41:35 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2020/11/20 16:41:35 [DEBUG] ReferenceTransformer: "provider[\"terraform.io/builtin/terraform\"]" references: []
+2020/11/20 16:41:35 [DEBUG] ReferenceTransformer: "bigip_as3.nginx (expand)" references: []
+2020/11/20 16:41:35 [DEBUG] ReferenceTransformer: "data.terraform_remote_state.aws_demo (expand)" references: []
+2020/11/20 16:41:35 [DEBUG] ReferenceTransformer: "bigip_as3.nginx" references: []
+2020/11/20 16:41:35 [DEBUG] ReferenceTransformer: "output.app_url (expand)" references: [data.terraform_remote_state.aws_demo (expand)]
+2020/11/20 16:41:35 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/f5networks/bigip\"]" references: [data.terraform_remote_state.aws_demo (expand) data.terraform_remote_state.aws_demo (expand) data.terraform_remote_state.aws_demo (expand)]
+2020/11/20 16:41:35 [TRACE] Completed graph transform *terraform.ReferenceTransformer with new graph:
+  bigip_as3.nginx - *terraform.NodeApplyableResourceInstance
+    bigip_as3.nginx (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  bigip_as3.nginx (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandApplyableResource
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  output.app_url (expand) - *terraform.nodeExpandOutput
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandApplyableResource
+  provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandApplyableResource
+  provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  ------
+2020/11/20 16:41:35 [TRACE] Executing graph transform *terraform.AttachDependenciesTransformer
+2020/11/20 16:41:35 [TRACE] AttachDependenciesTransformer: bigip_as3.nginx depends on [data.terraform_remote_state.aws_demo]
+2020/11/20 16:41:35 [TRACE] Completed graph transform *terraform.AttachDependenciesTransformer (no changes)
+2020/11/20 16:41:35 [TRACE] Executing graph transform *terraform.ForcedCBDTransformer
+2020/11/20 16:41:35 [TRACE] ForcedCBDTransformer: "bigip_as3.nginx" (*terraform.NodeApplyableResourceInstance) has no CBD descendent, so skipping
+2020/11/20 16:41:35 [TRACE] Completed graph transform *terraform.ForcedCBDTransformer (no changes)
+2020/11/20 16:41:35 [TRACE] Executing graph transform *terraform.DestroyEdgeTransformer
+2020/11/20 16:41:35 [TRACE] Completed graph transform *terraform.DestroyEdgeTransformer (no changes)
+2020/11/20 16:41:35 [TRACE] Executing graph transform *terraform.CBDEdgeTransformer
+2020/11/20 16:41:35 [TRACE] Completed graph transform *terraform.CBDEdgeTransformer (no changes)
+2020/11/20 16:41:35 [TRACE] Executing graph transform *terraform.destroyRootOutputTransformer
+2020/11/20 16:41:35 [TRACE] Completed graph transform *terraform.destroyRootOutputTransformer (no changes)
+2020/11/20 16:41:35 [TRACE] Executing graph transform *terraform.pruneUnusedNodesTransformer
+2020/11/20 16:41:35 [TRACE] Completed graph transform *terraform.pruneUnusedNodesTransformer (no changes)
+2020/11/20 16:41:35 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2020/11/20 16:41:35 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2020/11/20 16:41:35 [TRACE] Executing graph transform *terraform.CountBoundaryTransformer
+2020/11/20 16:41:35 [TRACE] Completed graph transform *terraform.CountBoundaryTransformer with new graph:
+  bigip_as3.nginx - *terraform.NodeApplyableResourceInstance
+    bigip_as3.nginx (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  bigip_as3.nginx (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandApplyableResource
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    bigip_as3.nginx - *terraform.NodeApplyableResourceInstance
+    bigip_as3.nginx (expand) - *terraform.nodeExpandApplyableResource
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandApplyableResource
+    output.app_url (expand) - *terraform.nodeExpandOutput
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  output.app_url (expand) - *terraform.nodeExpandOutput
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandApplyableResource
+  provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandApplyableResource
+  provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  ------
+2020/11/20 16:41:35 [TRACE] Executing graph transform *terraform.CloseProviderTransformer
+2020/11/20 16:41:35 [TRACE] Completed graph transform *terraform.CloseProviderTransformer with new graph:
+  bigip_as3.nginx - *terraform.NodeApplyableResourceInstance
+    bigip_as3.nginx (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  bigip_as3.nginx (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandApplyableResource
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    bigip_as3.nginx - *terraform.NodeApplyableResourceInstance
+    bigip_as3.nginx (expand) - *terraform.nodeExpandApplyableResource
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandApplyableResource
+    output.app_url (expand) - *terraform.nodeExpandOutput
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  output.app_url (expand) - *terraform.nodeExpandOutput
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandApplyableResource
+  provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandApplyableResource
+  provider["registry.terraform.io/f5networks/bigip"] (close) - *terraform.graphNodeCloseProvider
+    bigip_as3.nginx - *terraform.NodeApplyableResourceInstance
+    bigip_as3.nginx (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  provider["terraform.io/builtin/terraform"] (close) - *terraform.graphNodeCloseProvider
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandApplyableResource
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  ------
+2020/11/20 16:41:35 [TRACE] Executing graph transform *terraform.CloseProvisionerTransformer
+2020/11/20 16:41:35 [TRACE] Completed graph transform *terraform.CloseProvisionerTransformer (no changes)
+2020/11/20 16:41:35 [TRACE] Executing graph transform *terraform.applyDestroyNodeReferenceFixupTransformer
+2020/11/20 16:41:35 [TRACE] Completed graph transform *terraform.applyDestroyNodeReferenceFixupTransformer (no changes)
+2020/11/20 16:41:35 [TRACE] Executing graph transform *terraform.CloseRootModuleTransformer
+2020/11/20 16:41:35 [TRACE] Completed graph transform *terraform.CloseRootModuleTransformer with new graph:
+  bigip_as3.nginx - *terraform.NodeApplyableResourceInstance
+    bigip_as3.nginx (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  bigip_as3.nginx (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandApplyableResource
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    bigip_as3.nginx - *terraform.NodeApplyableResourceInstance
+    bigip_as3.nginx (expand) - *terraform.nodeExpandApplyableResource
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandApplyableResource
+    output.app_url (expand) - *terraform.nodeExpandOutput
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  output.app_url (expand) - *terraform.nodeExpandOutput
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandApplyableResource
+  provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandApplyableResource
+  provider["registry.terraform.io/f5networks/bigip"] (close) - *terraform.graphNodeCloseProvider
+    bigip_as3.nginx - *terraform.NodeApplyableResourceInstance
+    bigip_as3.nginx (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  provider["terraform.io/builtin/terraform"] (close) - *terraform.graphNodeCloseProvider
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandApplyableResource
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  root - *terraform.nodeCloseModule
+    meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider["registry.terraform.io/f5networks/bigip"] (close) - *terraform.graphNodeCloseProvider
+    provider["terraform.io/builtin/terraform"] (close) - *terraform.graphNodeCloseProvider
+  ------
+2020/11/20 16:41:35 [TRACE] Executing graph transform *terraform.TransitiveReductionTransformer
+2020/11/20 16:41:35 [TRACE] Completed graph transform *terraform.TransitiveReductionTransformer with new graph:
+  bigip_as3.nginx - *terraform.NodeApplyableResourceInstance
+    bigip_as3.nginx (expand) - *terraform.nodeExpandApplyableResource
+  bigip_as3.nginx (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+  data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandApplyableResource
+    provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    bigip_as3.nginx - *terraform.NodeApplyableResourceInstance
+    output.app_url (expand) - *terraform.nodeExpandOutput
+  output.app_url (expand) - *terraform.nodeExpandOutput
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandApplyableResource
+  provider["registry.terraform.io/f5networks/bigip"] - *terraform.NodeApplyableProvider
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandApplyableResource
+  provider["registry.terraform.io/f5networks/bigip"] (close) - *terraform.graphNodeCloseProvider
+    bigip_as3.nginx - *terraform.NodeApplyableResourceInstance
+  provider["terraform.io/builtin/terraform"] - *terraform.NodeApplyableProvider
+  provider["terraform.io/builtin/terraform"] (close) - *terraform.graphNodeCloseProvider
+    data.terraform_remote_state.aws_demo (expand) - *terraform.nodeExpandApplyableResource
+  root - *terraform.nodeCloseModule
+    meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider["registry.terraform.io/f5networks/bigip"] (close) - *terraform.graphNodeCloseProvider
+    provider["terraform.io/builtin/terraform"] (close) - *terraform.graphNodeCloseProvider
+  ------
+2020/11/20 16:41:35 [DEBUG] Starting graph walk: walkApply
+2020/11/20 16:41:35 [TRACE] dag/walk: visiting "provider[\"terraform.io/builtin/terraform\"]"
+2020/11/20 16:41:35 [TRACE] vertex "provider[\"terraform.io/builtin/terraform\"]": starting visit (*terraform.NodeApplyableProvider)
+2020/11/20 16:41:35 [TRACE] vertex "provider[\"terraform.io/builtin/terraform\"]": evaluating
+2020/11/20 16:41:35 [TRACE] [walkApply] Entering eval tree: provider["terraform.io/builtin/terraform"]
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalSequence
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalInitProvider
+2020/11/20 16:41:35 [TRACE] BuiltinEvalContext: Initialized "provider[\"terraform.io/builtin/terraform\"]" provider for provider["terraform.io/builtin/terraform"]
+2020/11/20 16:41:35 [TRACE] eval: terraform.EvalNoop
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalOpFilter
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalSequence
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalGetProvider
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalOpFilter
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalSequence
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalConfigProvider
+2020/11/20 16:41:35 [TRACE] buildProviderConfig for provider["terraform.io/builtin/terraform"]: no configuration at all
+2020/11/20 16:41:35 [TRACE] eval: terraform.EvalNoop
+2020/11/20 16:41:35 [TRACE] [walkApply] Exiting eval tree: provider["terraform.io/builtin/terraform"]
+2020/11/20 16:41:35 [TRACE] vertex "provider[\"terraform.io/builtin/terraform\"]": visit complete
+2020/11/20 16:41:35 [TRACE] dag/walk: visiting "data.terraform_remote_state.aws_demo (expand)"
+2020/11/20 16:41:35 [TRACE] vertex "data.terraform_remote_state.aws_demo (expand)": starting visit (*terraform.nodeExpandApplyableResource)
+2020/11/20 16:41:35 [TRACE] vertex "data.terraform_remote_state.aws_demo (expand)": expanding dynamic subgraph
+2020/11/20 16:41:35 [TRACE] vertex "data.terraform_remote_state.aws_demo (expand)": entering dynamic subgraph
+2020/11/20 16:41:35 [TRACE] dag/walk: visiting "data.terraform_remote_state.aws_demo"
+2020/11/20 16:41:35 [TRACE] vertex "data.terraform_remote_state.aws_demo": starting visit (*terraform.NodeApplyableResource)
+2020/11/20 16:41:35 [TRACE] vertex "data.terraform_remote_state.aws_demo": evaluating
+2020/11/20 16:41:35 [TRACE] [walkApply] Entering eval tree: data.terraform_remote_state.aws_demo
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalWriteResourceState
+2020/11/20 16:41:35 [TRACE] [walkApply] Exiting eval tree: data.terraform_remote_state.aws_demo
+2020/11/20 16:41:35 [TRACE] vertex "data.terraform_remote_state.aws_demo": visit complete
+2020/11/20 16:41:35 [TRACE] vertex "data.terraform_remote_state.aws_demo (expand)": dynamic subgraph completed successfully
+2020/11/20 16:41:35 [TRACE] vertex "data.terraform_remote_state.aws_demo (expand)": visit complete
+2020/11/20 16:41:35 [TRACE] dag/walk: visiting "provider[\"registry.terraform.io/f5networks/bigip\"]"
+2020/11/20 16:41:35 [TRACE] vertex "provider[\"registry.terraform.io/f5networks/bigip\"]": starting visit (*terraform.NodeApplyableProvider)
+2020/11/20 16:41:35 [TRACE] vertex "provider[\"registry.terraform.io/f5networks/bigip\"]": evaluating
+2020/11/20 16:41:35 [TRACE] [walkApply] Entering eval tree: provider["registry.terraform.io/f5networks/bigip"]
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalSequence
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalInitProvider
+2020/11/20 16:41:35 [TRACE] dag/walk: visiting "provider[\"terraform.io/builtin/terraform\"] (close)"
+2020/11/20 16:41:35 [TRACE] dag/walk: visiting "output.app_url (expand)"
+2020/11/20 16:41:35 [TRACE] vertex "output.app_url (expand)": starting visit (*terraform.nodeExpandOutput)
+2020/11/20 16:41:35 [TRACE] vertex "output.app_url (expand)": expanding dynamic subgraph
+2020/11/20 16:41:35 [TRACE] vertex "provider[\"terraform.io/builtin/terraform\"] (close)": starting visit (*terraform.graphNodeCloseProvider)
+2020/11/20 16:41:35 [TRACE] Expanding output: adding output.app_url as *terraform.NodeApplyableOutput
+2020/11/20 16:41:35 [TRACE] vertex "provider[\"terraform.io/builtin/terraform\"] (close)": evaluating
+2020/11/20 16:41:35 [TRACE] vertex "output.app_url (expand)": entering dynamic subgraph
+2020/11/20 16:41:35 [TRACE] [walkApply] Entering eval tree: provider["terraform.io/builtin/terraform"] (close)
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalCloseProvider
+2020/11/20 16:41:35 [TRACE] dag/walk: visiting "output.app_url"
+2020/11/20 16:41:35 [TRACE] vertex "output.app_url": starting visit (*terraform.NodeApplyableOutput)
+2020/11/20 16:41:35 [TRACE] vertex "output.app_url": evaluating
+2020/11/20 16:41:35 [TRACE] [walkApply] Entering eval tree: output.app_url
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalSequence
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalOpFilter
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalWriteOutput
+2020-11-20T16:41:35.109Z [INFO]  plugin: configuring client automatic mTLS
+2020/11/20 16:41:35 [TRACE] EvalWriteOutput: Saving value for output.app_url in state
+2020/11/20 16:41:35 [TRACE] EvalWriteOutput: Saving Create change for output.app_url in changeset
+2020/11/20 16:41:35 [TRACE] [walkApply] Exiting eval tree: output.app_url
+2020/11/20 16:41:35 [TRACE] vertex "output.app_url": visit complete
+2020/11/20 16:41:35 [TRACE] vertex "output.app_url (expand)": dynamic subgraph completed successfully
+2020/11/20 16:41:35 [TRACE] vertex "output.app_url (expand)": visit complete
+2020-11-20T16:41:35.135Z [DEBUG] plugin: starting plugin: path=.terraform/plugins/registry.terraform.io/f5networks/bigip/1.4.0/darwin_amd64/terraform-provider-bigip_v1.4.0 args=[.terraform/plugins/registry.terraform.io/f5networks/bigip/1.4.0/darwin_amd64/terraform-provider-bigip_v1.4.0]
+2020-11-20T16:41:35.138Z [DEBUG] plugin: plugin started: path=.terraform/plugins/registry.terraform.io/f5networks/bigip/1.4.0/darwin_amd64/terraform-provider-bigip_v1.4.0 pid=50133
+2020-11-20T16:41:35.138Z [DEBUG] plugin: waiting for RPC address: path=.terraform/plugins/registry.terraform.io/f5networks/bigip/1.4.0/darwin_amd64/terraform-provider-bigip_v1.4.0
+2020-11-20T16:41:35.165Z [INFO]  plugin.terraform-provider-bigip_v1.4.0: configuring server automatic mTLS: timestamp=2020-11-20T16:41:35.165Z
+2020-11-20T16:41:35.188Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: plugin address: address=/var/folders/kw/pv1mmzqn49d8chjgfr3v0fkrbkvc6k/T/plugin734987240 network=unix timestamp=2020-11-20T16:41:35.188Z
+2020-11-20T16:41:35.188Z [DEBUG] plugin: using plugin: version=5
+2020/11/20 16:41:35 [TRACE] BuiltinEvalContext: Initialized "provider[\"registry.terraform.io/f5networks/bigip\"]" provider for provider["registry.terraform.io/f5networks/bigip"]
+2020/11/20 16:41:35 [TRACE] eval: terraform.EvalNoop
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalOpFilter
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalSequence
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalGetProvider
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalOpFilter
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalSequence
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalConfigProvider
+2020/11/20 16:41:35 [TRACE] buildProviderConfig for provider["registry.terraform.io/f5networks/bigip"]: using explicit config only
+2020/11/20 16:41:35 [TRACE] GRPCProvider: GetSchema
+2020-11-20T16:41:35.233Z [TRACE] plugin.stdio: waiting for stdio data
+2020/11/20 16:41:35 [TRACE] [walkApply] Exiting eval tree: provider["terraform.io/builtin/terraform"] (close)
+2020/11/20 16:41:35 [TRACE] vertex "provider[\"terraform.io/builtin/terraform\"] (close)": visit complete
+2020-11-20T16:41:35.233Z [WARN]  plugin.stdio: received EOF, stopping recv loop: err="rpc error: code = Unimplemented desc = unknown service plugin.GRPCStdio"
+2020/11/20 16:41:35 [TRACE] No provider meta schema returned
+2020/11/20 16:41:35 [TRACE] GRPCProvider: Configure
+2020-11-20T16:41:35.238Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: 2020/11/20 16:41:35 [INFO] Initializing BigIP connection
+2020/11/20 16:41:35 [TRACE] eval: terraform.EvalNoop
+2020/11/20 16:41:35 [TRACE] [walkApply] Exiting eval tree: provider["registry.terraform.io/f5networks/bigip"]
+2020/11/20 16:41:35 [TRACE] vertex "provider[\"registry.terraform.io/f5networks/bigip\"]": visit complete
+2020/11/20 16:41:35 [TRACE] dag/walk: visiting "bigip_as3.nginx (expand)"
+2020/11/20 16:41:35 [TRACE] vertex "bigip_as3.nginx (expand)": starting visit (*terraform.nodeExpandApplyableResource)
+2020/11/20 16:41:35 [TRACE] vertex "bigip_as3.nginx (expand)": expanding dynamic subgraph
+2020/11/20 16:41:35 [TRACE] vertex "bigip_as3.nginx (expand)": entering dynamic subgraph
+2020/11/20 16:41:35 [TRACE] dag/walk: visiting "bigip_as3.nginx"
+2020/11/20 16:41:35 [TRACE] vertex "bigip_as3.nginx": starting visit (*terraform.NodeApplyableResource)
+2020/11/20 16:41:35 [TRACE] vertex "bigip_as3.nginx": evaluating
+2020/11/20 16:41:35 [TRACE] [walkApply] Entering eval tree: bigip_as3.nginx
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalWriteResourceState
+2020/11/20 16:41:35 [TRACE] [walkApply] Exiting eval tree: bigip_as3.nginx
+2020/11/20 16:41:35 [TRACE] vertex "bigip_as3.nginx": visit complete
+2020/11/20 16:41:35 [TRACE] vertex "bigip_as3.nginx (expand)": dynamic subgraph completed successfully
+2020/11/20 16:41:35 [TRACE] vertex "bigip_as3.nginx (expand)": visit complete
+2020/11/20 16:41:35 [TRACE] dag/walk: visiting "bigip_as3.nginx"
+2020/11/20 16:41:35 [TRACE] vertex "bigip_as3.nginx": starting visit (*terraform.NodeApplyableResourceInstance)
+2020/11/20 16:41:35 [TRACE] vertex "bigip_as3.nginx": evaluating
+2020/11/20 16:41:35 [TRACE] [walkApply] Entering eval tree: bigip_as3.nginx
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalSequence
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalGetProvider
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalReadDiff
+2020/11/20 16:41:35 [TRACE] EvalReadDiff: Read Update change from plan for bigip_as3.nginx
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalIf
+2020/11/20 16:41:35 [TRACE] eval: terraform.EvalNoop
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalIf
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalReadState
+2020/11/20 16:41:35 [TRACE] EvalReadState: reading state for bigip_as3.nginx
+2020/11/20 16:41:35 [TRACE] UpgradeResourceState: schema version of bigip_as3.nginx is still 0; calling provider "bigip" for any other minor fixups
+2020/11/20 16:41:35 [TRACE] GRPCProvider: UpgradeResourceState
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalReadDiff
+2020/11/20 16:41:35 [TRACE] EvalReadDiff: Read Update change from plan for bigip_as3.nginx
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalDiff
+2020/11/20 16:41:35 [TRACE] Re-validating config for "bigip_as3.nginx"
+2020/11/20 16:41:35 [TRACE] GRPCProvider: ValidateResourceTypeConfig
+2020/11/20 16:41:35 [TRACE] GRPCProvider: PlanResourceChange
+2020/11/20 16:41:35 [WARN] Provider "registry.terraform.io/f5networks/bigip" produced an invalid plan for bigip_as3.nginx, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .as3_json: planned value cty.StringVal("{\"action\":\"deploy\",\"class\":\"AS3\",\"declaration\":{\"class\":\"ADC\",\"demo_day_2\":{\"class\":\"Tenant\",\"nginx2\":{\"alan\":{\"class\":\"Service_HTTPS\",\"pool\":\"web_pool\",\"serverTLS\":\"webtls\",\"virtualAddresses\":[\"10.0.6.101\"]},\"class\":\"Application\",\"web_pool\":{\"class\":\"Pool\",\"loadBalancingMode\":\"predictive-node\",\"members\":[{\"serverAddresses\":[\"192.0.2.12\",\"192.0.2.13\"],\"servicePort\":80}],\"monitors\":[\"http\"]},\"webcert\":{\"certificate\":\"-----BEGIN CERTIFICATE-----\\nMIICnDCCAgWgAwIBAgIJAJ5n2b0OCEjwMA0GCSqGSIb3DQEBCwUAMGcxCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApXYXNoaW5ndG9uMRAwDgYDVQQHDAdTZWF0dGxlMRQwEgYDVQQKDAtmNV9OZXR3b3JrczEbMBkGA1UEAwwSc2FtcGxlLmV4YW1wbGUubmV0MB4XDTE3MTEyNjE5NTAyNFoXDTE4MDIyNTE5NTAyNFowZzELMAkGA1UEBhMCVVMxEzARBgNVBAgMCldhc2hpbmd0b24xEDAOBgNVBAcMB1NlYXR0bGUxFDASBgNVBAoMC2Y1X05ldHdvcmtzMRswGQYDVQQDDBJzYW1wbGUuZXhhbXBsZS5uZXQwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBALEsuXmSXVQpYjrZPW+WiTBjn491mwZYT7Q92V1HlSBtM6WdWlK1aZN5sovfKtOX7Yrm8xa+e4o/zJ2QYLyyv5O+t2EGN/4qUEjEAPY9mwJdfzRQy6Hyzm84J0QkTuUJ/EjNuPji3D0QJRALUTzu1UqqDCEtiN9OGyXEkh7uvb7BAgMBAAGjUDBOMB0GA1UdDgQWBBSVHPNrGWrjWyZvckQxFYWO59FRFjAfBgNVHSMEGDAWgBSVHPNrGWrjWyZvckQxFYWO59FRFjAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBCwUAA4GBAJeJ9SEckEwPhkXOm+IuqfbUS/RcziifBCTmVyE+Fa/j9pKSYTgiEBNdbJeBEa+gPMlQtbV7Y2dy8TKx/8axVBHiXC5geDML7caxOrAyHYBpnx690xJTh5OIORBBM/a/NvaR+P3CoVebr/NPRh9oRNxnntnqvqD7SW0U3ZPe3tJc\\n-----END CERTIFICATE-----\",\"class\":\"Certificate\",\"passphrase\":{\"ciphertext\":\"ZjVmNQ==\",\"protected\":\"eyJhbGciOiJkaXIiLCJlbmMiOiJub25lIn0\"},\"privateKey\":\"-----BEGIN RSA PRIVATE KEY-----\\nProc-Type: 4,ENCRYPTED\\nDEK-Info: AES-256-CBC,D8FFCE6B255601587CB54EC29B737D31\\n\\nkv4Fc3Jn0Ujkj0yRjt+gQQfBLSNF2aRLUENXnlr7Xpzqu0Ahr3jS1bAAnd8IWnsR\\nyILqVmKsYF2DoHh0tWiEAQ7/y/fe5DTFhK7N4Wml6kp2yVMkP6KC4ssyYPw27kjK\\nDBwBZ5O8Ioej08A5sgsLCmglbmtSPHJUn14pQnMTmLOpEtOsu6S+2ibPgSNpdg0b\\nCAJNG/KHe+Vkx59qNDyDeKb7FZOlsX30+y67zUq9GQqJEDuysPJ2BUNP0IJXAjst\\nFIt1qNoZew+5KDYs7u/lPxcMGTirUhgI84Jy4WcDvSOsP/tKlxj04TbIE3epmSKy\\n+TihHkwY7ngIGtcm3Sfqk5jz2RXoj1/Ac3SW8kVTYaOUogBhn7zAq4Wju6Et4hQG\\nRGapsJp1aCeZ/a4RCDTxspcKoMaRa97/URQb0hBRGx3DGUhzpmX9zl7JI2Xa5D3R\\nmdBXtjLKYJTdIMdd27prBEKhMUpae2rz5Mw4J907wZeBq/wu+zp8LAnecfTe2nGY\\nE32x1U7gSEdYOGqnwxsOexb1jKgCa67Nw9TmcMPV8zmH7R9qdvgxAbAtwBl1F9OS\\nfcGaC7epf1AjJLtaX7krWmzgASHl28Ynh9lmGMdv+5QYMZvKG0LOg/n3m8uJ6sKy\\nIzzvaJswwn0j5P5+czyoV5CvvdCfKnNb+3jUEN8I0PPwjBGKr4B1ojwhogTM248V\\nHR69D6TxFVMfGpyJhCPkbGEGbpEpcffpgKuC/mEtMqyDQXJNaV5HO6HgAJ9F1P6v\\n5ehHHTMRvzCCFiwndHdlMXUjqSNjww6me6dr6LiAPbejdzhL2vWx1YqebOcwQx3G\\n-----END RSA PRIVATE KEY-----\",\"remark\":\"in practice we recommend using a passphrase\"},\"webtls\":{\"certificates\":[{\"certificate\":\"webcert\"}],\"class\":\"TLS_Server\"}}},\"id\":\"123abc\",\"label\":\"Sample 2\",\"remark\":\"HTTPS with predictive-node pool\",\"schemaVersion\":\"3.0.0\"},\"persist\":true}") does not match config value cty.StringVal("{\n  \"class\": \"AS3\",\n  \"action\": \"deploy\",\n  \"persist\": true,\n  \"declaration\": {\n      \"class\": \"ADC\",\n      \"schemaVersion\": \"3.0.0\",\n      \"id\": \"123abc\",\n      \"label\": \"Sample 2\",\n      \"remark\": \"HTTPS with predictive-node pool\",\n      \"demo_day_2\": {\n          \"class\": \"Tenant\",\n          \"nginx2\": {\n              \"class\": \"Application\",\n              \"alan\": {\n                  \"class\": \"Service_HTTPS\",\n                  \"virtualAddresses\": [\n                      \"10.0.6.101\"\n                  ],\n                  \"pool\": \"web_pool\",\n                  \"serverTLS\": \"webtls\"\n              },\n              \"web_pool\": {\n                  \"class\": \"Pool\",\n                  \"loadBalancingMode\": \"predictive-node\",\n                  \"monitors\": [\n                      \"http\"\n                  ],\n                  \"members\": [\n                      {\n                          \"servicePort\": 80,\n                          \"serverAddresses\": [\n                              \"192.0.2.12\",\n                              \"192.0.2.13\"\n                          ]\n                      }\n                  ]\n              },\n              \"webtls\": {\n                  \"class\": \"TLS_Server\",\n                  \"certificates\": [\n                      {\n                          \"certificate\": \"webcert\"\n                      }\n                  ]\n              },\n              \"webcert\": {\n                  \"class\": \"Certificate\",\n                  \"remark\": \"in practice we recommend using a passphrase\",\n                  \"certificate\": \"-----BEGIN CERTIFICATE-----\\nMIICnDCCAgWgAwIBAgIJAJ5n2b0OCEjwMA0GCSqGSIb3DQEBCwUAMGcxCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApXYXNoaW5ndG9uMRAwDgYDVQQHDAdTZWF0dGxlMRQwEgYDVQQKDAtmNV9OZXR3b3JrczEbMBkGA1UEAwwSc2FtcGxlLmV4YW1wbGUubmV0MB4XDTE3MTEyNjE5NTAyNFoXDTE4MDIyNTE5NTAyNFowZzELMAkGA1UEBhMCVVMxEzARBgNVBAgMCldhc2hpbmd0b24xEDAOBgNVBAcMB1NlYXR0bGUxFDASBgNVBAoMC2Y1X05ldHdvcmtzMRswGQYDVQQDDBJzYW1wbGUuZXhhbXBsZS5uZXQwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBALEsuXmSXVQpYjrZPW+WiTBjn491mwZYT7Q92V1HlSBtM6WdWlK1aZN5sovfKtOX7Yrm8xa+e4o/zJ2QYLyyv5O+t2EGN/4qUEjEAPY9mwJdfzRQy6Hyzm84J0QkTuUJ/EjNuPji3D0QJRALUTzu1UqqDCEtiN9OGyXEkh7uvb7BAgMBAAGjUDBOMB0GA1UdDgQWBBSVHPNrGWrjWyZvckQxFYWO59FRFjAfBgNVHSMEGDAWgBSVHPNrGWrjWyZvckQxFYWO59FRFjAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBCwUAA4GBAJeJ9SEckEwPhkXOm+IuqfbUS/RcziifBCTmVyE+Fa/j9pKSYTgiEBNdbJeBEa+gPMlQtbV7Y2dy8TKx/8axVBHiXC5geDML7caxOrAyHYBpnx690xJTh5OIORBBM/a/NvaR+P3CoVebr/NPRh9oRNxnntnqvqD7SW0U3ZPe3tJc\\n-----END CERTIFICATE-----\",\n                  \"privateKey\": \"-----BEGIN RSA PRIVATE KEY-----\\nProc-Type: 4,ENCRYPTED\\nDEK-Info: AES-256-CBC,D8FFCE6B255601587CB54EC29B737D31\\n\\nkv4Fc3Jn0Ujkj0yRjt+gQQfBLSNF2aRLUENXnlr7Xpzqu0Ahr3jS1bAAnd8IWnsR\\nyILqVmKsYF2DoHh0tWiEAQ7/y/fe5DTFhK7N4Wml6kp2yVMkP6KC4ssyYPw27kjK\\nDBwBZ5O8Ioej08A5sgsLCmglbmtSPHJUn14pQnMTmLOpEtOsu6S+2ibPgSNpdg0b\\nCAJNG/KHe+Vkx59qNDyDeKb7FZOlsX30+y67zUq9GQqJEDuysPJ2BUNP0IJXAjst\\nFIt1qNoZew+5KDYs7u/lPxcMGTirUhgI84Jy4WcDvSOsP/tKlxj04TbIE3epmSKy\\n+TihHkwY7ngIGtcm3Sfqk5jz2RXoj1/Ac3SW8kVTYaOUogBhn7zAq4Wju6Et4hQG\\nRGapsJp1aCeZ/a4RCDTxspcKoMaRa97/URQb0hBRGx3DGUhzpmX9zl7JI2Xa5D3R\\nmdBXtjLKYJTdIMdd27prBEKhMUpae2rz5Mw4J907wZeBq/wu+zp8LAnecfTe2nGY\\nE32x1U7gSEdYOGqnwxsOexb1jKgCa67Nw9TmcMPV8zmH7R9qdvgxAbAtwBl1F9OS\\nfcGaC7epf1AjJLtaX7krWmzgASHl28Ynh9lmGMdv+5QYMZvKG0LOg/n3m8uJ6sKy\\nIzzvaJswwn0j5P5+czyoV5CvvdCfKnNb+3jUEN8I0PPwjBGKr4B1ojwhogTM248V\\nHR69D6TxFVMfGpyJhCPkbGEGbpEpcffpgKuC/mEtMqyDQXJNaV5HO6HgAJ9F1P6v\\n5ehHHTMRvzCCFiwndHdlMXUjqSNjww6me6dr6LiAPbejdzhL2vWx1YqebOcwQx3G\\n-----END RSA PRIVATE KEY-----\",\n                  \"passphrase\": {\n                      \"ciphertext\": \"ZjVmNQ==\",\n                      \"protected\": \"eyJhbGciOiJkaXIiLCJlbmMiOiJub25lIn0\"\n                  }\n              }\n          }\n      }\n  }\n}") nor prior value cty.StringVal("{\"action\":\"deploy\",\"class\":\"AS3\",\"declaration\":{\"arch_day2\":{\"class\":\"Tenant\",\"nginx2\":{\"class\":\"Application\",\"service\":{\"class\":\"Service_HTTPS\",\"pool\":\"web_pool\",\"serverTLS\":\"webtls\",\"virtualAddresses\":[\"10.0.5.101\"]},\"web_pool\":{\"class\":\"Pool\",\"loadBalancingMode\":\"predictive-node\",\"members\":[{\"serverAddresses\":[\"192.0.2.12\",\"192.0.2.13\"],\"servicePort\":80}],\"monitors\":[\"http\"]},\"webcert\":{\"certificate\":\"-----BEGIN CERTIFICATE-----\\nMIICnDCCAgWgAwIBAgIJAJ5n2b0OCEjwMA0GCSqGSIb3DQEBCwUAMGcxCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApXYXNoaW5ndG9uMRAwDgYDVQQHDAdTZWF0dGxlMRQwEgYDVQQKDAtmNV9OZXR3b3JrczEbMBkGA1UEAwwSc2FtcGxlLmV4YW1wbGUubmV0MB4XDTE3MTEyNjE5NTAyNFoXDTE4MDIyNTE5NTAyNFowZzELMAkGA1UEBhMCVVMxEzARBgNVBAgMCldhc2hpbmd0b24xEDAOBgNVBAcMB1NlYXR0bGUxFDASBgNVBAoMC2Y1X05ldHdvcmtzMRswGQYDVQQDDBJzYW1wbGUuZXhhbXBsZS5uZXQwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBALEsuXmSXVQpYjrZPW+WiTBjn491mwZYT7Q92V1HlSBtM6WdWlK1aZN5sovfKtOX7Yrm8xa+e4o/zJ2QYLyyv5O+t2EGN/4qUEjEAPY9mwJdfzRQy6Hyzm84J0QkTuUJ/EjNuPji3D0QJRALUTzu1UqqDCEtiN9OGyXEkh7uvb7BAgMBAAGjUDBOMB0GA1UdDgQWBBSVHPNrGWrjWyZvckQxFYWO59FRFjAfBgNVHSMEGDAWgBSVHPNrGWrjWyZvckQxFYWO59FRFjAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBCwUAA4GBAJeJ9SEckEwPhkXOm+IuqfbUS/RcziifBCTmVyE+Fa/j9pKSYTgiEBNdbJeBEa+gPMlQtbV7Y2dy8TKx/8axVBHiXC5geDML7caxOrAyHYBpnx690xJTh5OIORBBM/a/NvaR+P3CoVebr/NPRh9oRNxnntnqvqD7SW0U3ZPe3tJc\\n-----END CERTIFICATE-----\",\"class\":\"Certificate\",\"passphrase\":{\"ciphertext\":\"JE0kaHEkTW5sVEg5b05WWllDUi94US9MN3NEQT09\",\"miniJWE\":true,\"protected\":\"eyJhbGciOiJkaXIiLCJlbmMiOiJmNXN2In0=\"},\"privateKey\":\"-----BEGIN RSA PRIVATE KEY-----\\nProc-Type: 4,ENCRYPTED\\nDEK-Info: AES-256-CBC,D8FFCE6B255601587CB54EC29B737D31\\n\\nkv4Fc3Jn0Ujkj0yRjt+gQQfBLSNF2aRLUENXnlr7Xpzqu0Ahr3jS1bAAnd8IWnsR\\nyILqVmKsYF2DoHh0tWiEAQ7/y/fe5DTFhK7N4Wml6kp2yVMkP6KC4ssyYPw27kjK\\nDBwBZ5O8Ioej08A5sgsLCmglbmtSPHJUn14pQnMTmLOpEtOsu6S+2ibPgSNpdg0b\\nCAJNG/KHe+Vkx59qNDyDeKb7FZOlsX30+y67zUq9GQqJEDuysPJ2BUNP0IJXAjst\\nFIt1qNoZew+5KDYs7u/lPxcMGTirUhgI84Jy4WcDvSOsP/tKlxj04TbIE3epmSKy\\n+TihHkwY7ngIGtcm3Sfqk5jz2RXoj1/Ac3SW8kVTYaOUogBhn7zAq4Wju6Et4hQG\\nRGapsJp1aCeZ/a4RCDTxspcKoMaRa97/URQb0hBRGx3DGUhzpmX9zl7JI2Xa5D3R\\nmdBXtjLKYJTdIMdd27prBEKhMUpae2rz5Mw4J907wZeBq/wu+zp8LAnecfTe2nGY\\nE32x1U7gSEdYOGqnwxsOexb1jKgCa67Nw9TmcMPV8zmH7R9qdvgxAbAtwBl1F9OS\\nfcGaC7epf1AjJLtaX7krWmzgASHl28Ynh9lmGMdv+5QYMZvKG0LOg/n3m8uJ6sKy\\nIzzvaJswwn0j5P5+czyoV5CvvdCfKnNb+3jUEN8I0PPwjBGKr4B1ojwhogTM248V\\nHR69D6TxFVMfGpyJhCPkbGEGbpEpcffpgKuC/mEtMqyDQXJNaV5HO6HgAJ9F1P6v\\n5ehHHTMRvzCCFiwndHdlMXUjqSNjww6me6dr6LiAPbejdzhL2vWx1YqebOcwQx3G\\n-----END RSA PRIVATE KEY-----\",\"remark\":\"in practice we recommend using a passphrase\"},\"webtls\":{\"certificates\":[{\"certificate\":\"webcert\"}],\"class\":\"TLS_Server\"}}},\"class\":\"ADC\",\"id\":\"123abc\",\"label\":\"Sample 2\",\"remark\":\"HTTPS with predictive-node pool\",\"schemaVersion\":\"3.0.0\"},\"persist\":true}")
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalCheckPlannedChange
+2020/11/20 16:41:35 [TRACE] EvalCheckPlannedChange: Verifying that actual change (action Update) matches planned change (action Update)
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalGetProvider
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalReadState
+2020/11/20 16:41:35 [TRACE] EvalReadState: reading state for bigip_as3.nginx
+2020/11/20 16:41:35 [TRACE] UpgradeResourceState: schema version of bigip_as3.nginx is still 0; calling provider "bigip" for any other minor fixups
+2020/11/20 16:41:35 [TRACE] GRPCProvider: UpgradeResourceState
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalReduceDiff
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalIf
+2020/11/20 16:41:35 [TRACE] eval: terraform.EvalNoop
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalApplyPre
+2020/11/20 16:41:35 [TRACE] eval: *terraform.EvalApply
+2020/11/20 16:41:35 [DEBUG] EvalApply: ProviderMeta config value set
+2020/11/20 16:41:35 [DEBUG] bigip_as3.nginx: applying the planned Update change
+2020/11/20 16:41:35 [TRACE] GRPCProvider: ApplyResourceChange
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: 2020/11/20 16:41:35 [INFO] Updating As3 Config :{
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:   "class": "AS3",
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:   "action": "deploy",
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:   "persist": true,
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:   "declaration": {
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:       "class": "ADC",
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:       "schemaVersion": "3.0.0",
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:       "id": "123abc",
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:       "label": "Sample 2",
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:       "remark": "HTTPS with predictive-node pool",
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:       "demo_day_2": {
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:           "class": "Tenant",
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:           "nginx2": {
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:               "class": "Application",
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:               "alan": {
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:                   "class": "Service_HTTPS",
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:                   "virtualAddresses": [
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:                       "10.0.6.101"
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:                   ],
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:                   "pool": "web_pool",
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:                   "serverTLS": "webtls"
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:               },
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:               "web_pool": {
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:                   "class": "Pool",
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:                   "loadBalancingMode": "predictive-node",
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:                   "monitors": [
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:                       "http"
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:                   ],
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:                   "members": [
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:                       {
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:                           "servicePort": 80,
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:                           "serverAddresses": [
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:                               "192.0.2.12",
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:                               "192.0.2.13"
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:                           ]
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:                       }
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:                   ]
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:               },
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:               "webtls": {
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:                   "class": "TLS_Server",
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:                   "certificates": [
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:                       {
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:                           "certificate": "webcert"
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:                       }
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:                   ]
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:               },
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:               "webcert": {
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:                   "class": "Certificate",
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:                   "remark": "in practice we recommend using a passphrase",
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:                   "certificate": "-----BEGIN CERTIFICATE-----\nMIICnDCCAgWgAwIBAgIJAJ5n2b0OCEjwMA0GCSqGSIb3DQEBCwUAMGcxCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApXYXNoaW5ndG9uMRAwDgYDVQQHDAdTZWF0dGxlMRQwEgYDVQQKDAtmNV9OZXR3b3JrczEbMBkGA1UEAwwSc2FtcGxlLmV4YW1wbGUubmV0MB4XDTE3MTEyNjE5NTAyNFoXDTE4MDIyNTE5NTAyNFowZzELMAkGA1UEBhMCVVMxEzARBgNVBAgMCldhc2hpbmd0b24xEDAOBgNVBAcMB1NlYXR0bGUxFDASBgNVBAoMC2Y1X05ldHdvcmtzMRswGQYDVQQDDBJzYW1wbGUuZXhhbXBsZS5uZXQwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBALEsuXmSXVQpYjrZPW+WiTBjn491mwZYT7Q92V1HlSBtM6WdWlK1aZN5sovfKtOX7Yrm8xa+e4o/zJ2QYLyyv5O+t2EGN/4qUEjEAPY9mwJdfzRQy6Hyzm84J0QkTuUJ/EjNuPji3D0QJRALUTzu1UqqDCEtiN9OGyXEkh7uvb7BAgMBAAGjUDBOMB0GA1UdDgQWBBSVHPNrGWrjWyZvckQxFYWO59FRFjAfBgNVHSMEGDAWgBSVHPNrGWrjWyZvckQxFYWO59FRFjAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBCwUAA4GBAJeJ9SEckEwPhkXOm+IuqfbUS/RcziifBCTmVyE+Fa/j9pKSYTgiEBNdbJeBEa+gPMlQtbV7Y2dy8TKx/8axVBHiXC5geDML7caxOrAyHYBpnx690xJTh5OIORBBM/a/NvaR+P3CoVebr/NPRh9oRNxnntnqvqD7SW0U3ZPe3tJc\n-----END CERTIFICATE-----",
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:                   "privateKey": "-----BEGIN RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-256-CBC,D8FFCE6B255601587CB54EC29B737D31\n\nkv4Fc3Jn0Ujkj0yRjt+gQQfBLSNF2aRLUENXnlr7Xpzqu0Ahr3jS1bAAnd8IWnsR\nyILqVmKsYF2DoHh0tWiEAQ7/y/fe5DTFhK7N4Wml6kp2yVMkP6KC4ssyYPw27kjK\nDBwBZ5O8Ioej08A5sgsLCmglbmtSPHJUn14pQnMTmLOpEtOsu6S+2ibPgSNpdg0b\nCAJNG/KHe+Vkx59qNDyDeKb7FZOlsX30+y67zUq9GQqJEDuysPJ2BUNP0IJXAjst\nFIt1qNoZew+5KDYs7u/lPxcMGTirUhgI84Jy4WcDvSOsP/tKlxj04TbIE3epmSKy\n+TihHkwY7ngIGtcm3Sfqk5jz2RXoj1/Ac3SW8kVTYaOUogBhn7zAq4Wju6Et4hQG\nRGapsJp1aCeZ/a4RCDTxspcKoMaRa97/URQb0hBRGx3DGUhzpmX9zl7JI2Xa5D3R\nmdBXtjLKYJTdIMdd27prBEKhMUpae2rz5Mw4J907wZeBq/wu+zp8LAnecfTe2nGY\nE32x1U7gSEdYOGqnwxsOexb1jKgCa67Nw9TmcMPV8zmH7R9qdvgxAbAtwBl1F9OS\nfcGaC7epf1AjJLtaX7krWmzgASHl28Ynh9lmGMdv+5QYMZvKG0LOg/n3m8uJ6sKy\nIzzvaJswwn0j5P5+czyoV5CvvdCfKnNb+3jUEN8I0PPwjBGKr4B1ojwhogTM248V\nHR69D6TxFVMfGpyJhCPkbGEGbpEpcffpgKuC/mEtMqyDQXJNaV5HO6HgAJ9F1P6v\n5ehHHTMRvzCCFiwndHdlMXUjqSNjww6me6dr6LiAPbejdzhL2vWx1YqebOcwQx3G\n-----END RSA PRIVATE KEY-----",
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:                   "passphrase": {
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:                       "ciphertext": "ZjVmNQ==",
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:                       "protected": "eyJhbGciOiJkaXIiLCJlbmMiOiJub25lIn0"
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:                   }
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:               }
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:           }
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:       }
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0:   }
+2020-11-20T16:41:35.372Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: }
+2020-11-20T16:41:35.698Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: 2020/11/20 16:41:35 [DEBUG]Delete Code = 0,ID = e4d4766c-b2a0-48bb-af9f-ea37908d09ac
+2020/11/20 16:41:40 [TRACE] dag/walk: vertex "provider[\"registry.terraform.io/f5networks/bigip\"] (close)" is waiting for "bigip_as3.nginx"
+2020/11/20 16:41:40 [TRACE] dag/walk: vertex "meta.count-boundary (EachMode fixup)" is waiting for "bigip_as3.nginx"
+2020/11/20 16:41:40 [TRACE] dag/walk: vertex "root" is waiting for "provider[\"registry.terraform.io/f5networks/bigip\"] (close)"
+2020/11/20 16:41:45 [TRACE] dag/walk: vertex "provider[\"registry.terraform.io/f5networks/bigip\"] (close)" is waiting for "bigip_as3.nginx"
+2020/11/20 16:41:45 [TRACE] dag/walk: vertex "meta.count-boundary (EachMode fixup)" is waiting for "bigip_as3.nginx"
+2020/11/20 16:41:45 [TRACE] dag/walk: vertex "root" is waiting for "provider[\"registry.terraform.io/f5networks/bigip\"] (close)"
+2020-11-20T16:41:47.872Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: panic: runtime error: index out of range [1] with length 1
+2020-11-20T16:41:47.872Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: 
+2020-11-20T16:41:47.872Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: goroutine 82 [running]:
+2020-11-20T16:41:47.872Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: github.com/f5devcentral/go-bigip.(*BigIP).DeleteAs3Bigip(0xc0005025b0, 0xc0002902c0, 0x13, 0x1, 0xc000378970, 0x1, 0x1)
+2020-11-20T16:41:47.872Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: 	github.com/f5devcentral/go-bigip@v0.0.0-20201023175349-07af362653f5/as3bigip.go:157 +0xce9
+2020-11-20T16:41:47.872Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: github.com/F5Networks/terraform-provider-bigip/bigip.resourceBigipAs3Update(0xc0002197a0, 0x1cd58a0, 0xc0005025b0, 0x0, 0x0)
+2020-11-20T16:41:47.872Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: 	github.com/F5Networks/terraform-provider-bigip/bigip/resource_bigip_as3.go:219 +0x756
+2020-11-20T16:41:47.872Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: github.com/hashicorp/terraform-plugin-sdk/helper/schema.(*Resource).Apply(0xc0000b9980, 0xc00019ba90, 0xc00009dc80, 0x1cd58a0, 0xc0005025b0, 0x1b88b01, 0xc0002a9760, 0xc00031cea0)
+2020-11-20T16:41:47.872Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: 	github.com/hashicorp/terraform-plugin-sdk@v1.1.0/helper/schema/resource.go:311 +0x273
+2020-11-20T16:41:47.872Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: github.com/hashicorp/terraform-plugin-sdk/helper/schema.(*Provider).Apply(0xc0000b9d00, 0xc0002a98e0, 0xc00019ba90, 0xc00009dc80, 0xc00045da88, 0xc00000e330, 0x1b8a800)
+2020-11-20T16:41:47.872Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: 	github.com/hashicorp/terraform-plugin-sdk@v1.1.0/helper/schema/provider.go:294 +0x99
+2020-11-20T16:41:47.872Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: github.com/hashicorp/terraform-plugin-sdk/internal/helper/plugin.(*GRPCProviderServer).ApplyResourceChange(0xc0000b0180, 0x1e6fdc0, 0xc00031c120, 0xc0002e65a0, 0xc0000b0180, 0xc00031c120, 0xc000698a48)
+2020-11-20T16:41:47.872Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: 	github.com/hashicorp/terraform-plugin-sdk@v1.1.0/internal/helper/plugin/grpc_provider.go:885 +0x872
+2020-11-20T16:41:47.872Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: github.com/hashicorp/terraform-plugin-sdk/internal/tfplugin5._Provider_ApplyResourceChange_Handler(0x1c97f60, 0xc0000b0180, 0x1e6fdc0, 0xc00031c120, 0xc0002e6540, 0x0, 0x1e6fdc0, 0xc00031c120, 0xc000321800, 0x3545)
+2020-11-20T16:41:47.872Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: 	github.com/hashicorp/terraform-plugin-sdk@v1.1.0/internal/tfplugin5/tfplugin5.pb.go:3189 +0x214
+2020-11-20T16:41:47.872Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: google.golang.org/grpc.(*Server).processUnaryRPC(0xc0005c2160, 0x1e79ee0, 0xc000001680, 0xc0002e4a00, 0xc00007c600, 0x243f060, 0x0, 0x0, 0x0)
+2020-11-20T16:41:47.872Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: 	google.golang.org/grpc@v1.23.0/server.go:995 +0x482
+2020-11-20T16:41:47.872Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: google.golang.org/grpc.(*Server).handleStream(0xc0005c2160, 0x1e79ee0, 0xc000001680, 0xc0002e4a00, 0x0)
+2020-11-20T16:41:47.872Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: 	google.golang.org/grpc@v1.23.0/server.go:1275 +0xd34
+2020-11-20T16:41:47.872Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: google.golang.org/grpc.(*Server).serveStreams.func1.1(0xc0000b61c0, 0xc0005c2160, 0x1e79ee0, 0xc000001680, 0xc0002e4a00)
+2020-11-20T16:41:47.872Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: 	google.golang.org/grpc@v1.23.0/server.go:710 +0xa5
+2020-11-20T16:41:47.872Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: created by google.golang.org/grpc.(*Server).serveStreams.func1
+2020-11-20T16:41:47.872Z [DEBUG] plugin.terraform-provider-bigip_v1.4.0: 	google.golang.org/grpc@v1.23.0/server.go:708 +0xa5
+2020/11/20 16:41:47 [DEBUG] bigip_as3.nginx: apply errored, but we're indicating that via the Error pointer rather than returning it: rpc error: code = Unavailable desc = transport is closing
+2020/11/20 16:41:47 [TRACE] eval: *terraform.EvalMaybeTainted
+2020/11/20 16:41:47 [TRACE] eval: *terraform.EvalWriteState
+2020/11/20 16:41:47 [TRACE] EvalWriteState: recording 1 dependencies for bigip_as3.nginx
+2020/11/20 16:41:47 [TRACE] EvalWriteState: writing current state object for bigip_as3.nginx
+2020/11/20 16:41:47 [TRACE] eval: *terraform.EvalApplyProvisioners
+2020/11/20 16:41:47 [TRACE] EvalApplyProvisioners: bigip_as3.nginx is not freshly-created, so no provisioning is required
+2020/11/20 16:41:47 [TRACE] eval: *terraform.EvalMaybeTainted
+2020/11/20 16:41:47 [TRACE] eval: *terraform.EvalWriteState
+2020/11/20 16:41:47 [TRACE] EvalWriteState: recording 1 dependencies for bigip_as3.nginx
+2020/11/20 16:41:47 [TRACE] EvalWriteState: writing current state object for bigip_as3.nginx
+2020/11/20 16:41:47 [TRACE] eval: *terraform.EvalIf
+2020/11/20 16:41:47 [TRACE] eval: *terraform.EvalIf
+2020/11/20 16:41:47 [TRACE] eval: *terraform.EvalWriteDiff
+2020/11/20 16:41:47 [TRACE] eval: *terraform.EvalApplyPost
+2020/11/20 16:41:47 [ERROR] eval: *terraform.EvalApplyPost, err: rpc error: code = Unavailable desc = transport is closing
+2020/11/20 16:41:47 [ERROR] eval: *terraform.EvalSequence, err: rpc error: code = Unavailable desc = transport is closing
+2020/11/20 16:41:47 [TRACE] [walkApply] Exiting eval tree: bigip_as3.nginx
+2020/11/20 16:41:47 [TRACE] vertex "bigip_as3.nginx": visit complete
+2020/11/20 16:41:47 [TRACE] dag/walk: upstream of "provider[\"registry.terraform.io/f5networks/bigip\"] (close)" errored, so skipping
+2020/11/20 16:41:47 [TRACE] dag/walk: upstream of "meta.count-boundary (EachMode fixup)" errored, so skipping
+2020/11/20 16:41:47 [TRACE] dag/walk: upstream of "root" errored, so skipping
+2020-11-20T16:41:47.875Z [DEBUG] plugin: plugin process exited: path=.terraform/plugins/registry.terraform.io/f5networks/bigip/1.4.0/darwin_amd64/terraform-provider-bigip_v1.4.0 pid=50133 error="exit status 2"
+2020/11/20 16:41:47 [TRACE] statemgr.Filesystem: creating backup snapshot at terraform.tfstate.backup
+2020/11/20 16:41:47 [TRACE] statemgr.Filesystem: state has changed since last snapshot, so incrementing serial to 4
+2020/11/20 16:41:47 [TRACE] statemgr.Filesystem: writing snapshot at terraform.tfstate
+2020/11/20 16:41:47 [TRACE] statemgr.Filesystem: removing lock metadata file .terraform.tfstate.lock.info
+2020/11/20 16:41:47 [TRACE] statemgr.Filesystem: unlocking terraform.tfstate using fcntl flock
+2020-11-20T16:41:47.887Z [DEBUG] plugin: plugin exited
