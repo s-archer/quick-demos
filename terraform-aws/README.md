@@ -2,10 +2,10 @@ This deployment uses an IAM role attached to the BIG-IP which allows AS3 to quer
 
 To use this repo, clone to your local machine and then:
 
-terraform init
-terraform plan
-terraform apply
-...
-use
-...
-terraform destroy
+- terraform init
+- terraform plan
+- terraform apply
+- ...
+- use
+- ...
+- terraform destroy
