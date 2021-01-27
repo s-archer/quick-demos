@@ -27,14 +27,3 @@ variable "instance_type" {
   description = "aws ec2 instance type"
   default     = "t2.large"
 }
-
-# The following two vars are placeholder/empty vars.  The values are populated from a separate creds.tfvars file, stored
-# outside of your repo folder. Use the -var-file=../creds/creds.tfvars flag when applying config to use the values from 
-# your creds.tfvars file.  The creds.tfvars file must contain two variables defined like this (but not commented out):
-#
-# aws_access_key = "blahBlahBlah"
-# aws_secret_key = "blahBlahBlahblahBlahBlah"
-
-variable "aws_access_key" {}
-
-variable "aws_secret_key" {}

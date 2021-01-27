@@ -1,14 +1,3 @@
-data "aws_ami" "f5_ami" {
-  most_recent = true
-  # This is the F5 Networks 'owner ID', which ensures we get an image maintained by F5.
-  owners = ["679593333241"]
-
-  filter {
-    name   = "name"
-    values = [var.f5_ami_search_name]
-  }
-}
-
 resource "aws_network_interface" "mgmt" {
   subnet_id       = module.vpc.public_subnets[0]
   private_ips     = ["10.0.1.10"]
@@ -72,8 +61,6 @@ data "template_file" "f5_init" {
     internal_ip     = "${aws_network_interface.internal.private_ip}/24",
     internal_gw     = cidrhost(module.vpc.private_subnets_cidr_blocks[0], 1),
     vs1_ip          = aws_eip.external-vs1.private_ip,
-    access_key      = var.aws_access_key,
-    secret_key      = var.aws_secret_key,
     do_declaration  = data.template_file.do.rendered,
     as3_declaration = data.template_file.as3.rendered
   }
@@ -82,11 +69,11 @@ data "template_file" "f5_init" {
 
 resource "aws_instance" "f5" {
 
-  ami       = data.aws_ami.f5_ami.id
-  user_data = data.template_file.f5_init.rendered
-
-  instance_type = var.instance_type
-  key_name      = aws_key_pair.demo.key_name
+  ami                  = data.aws_ami.f5_ami.id
+  user_data            = data.template_file.f5_init.rendered
+  iam_instance_profile = aws_iam_instance_profile.as3.name
+  instance_type        = var.instance_type
+  key_name             = aws_key_pair.demo.key_name
   root_block_device { delete_on_termination = true }
 
   network_interface {
@@ -131,8 +118,6 @@ resource "local_file" "test_user_debug" {
     internal_ip     = "${aws_network_interface.internal.private_ip}/24",
     internal_gw     = cidrhost(module.vpc.public_subnets_cidr_blocks[1], 1),
     vs1_ip          = aws_eip.external-vs1.private_ip,
-    access_key      = var.aws_access_key,
-    secret_key      = var.aws_secret_key,
     do_declaration  = data.template_file.do.rendered,
     as3_declaration = data.template_file.as3.rendered
   })

@@ -36,8 +36,6 @@
                                             "tagKey": "Name",
                                             "tagValue": "nginx-autoscale",
                                             "addressRealm": "private",
-                                            "accessKeyId": "{{{ ACCESS_KEY }}}",
-                                            "secretAccessKey": "{{{ SECRET_KEY }}}",
                                             "region": "eu-west-2"
                                         }
                                     ]

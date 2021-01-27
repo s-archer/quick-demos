@@ -33,16 +33,6 @@ cat << 'EOF' > /config/cloud/runtime-init-conf.yaml
             "name": "VS1_IP",
             "type": "static",
             "value": "${vs1_ip}"
-        },
-        {
-            "name": "ACCESS_KEY",
-            "type": "static",
-            "value": "${access_key}"
-        },
-        {
-            "name": "SECRET_KEY",
-            "type": "static",
-            "value": "${secret_key}"
         }
     ],
     "pre_onboard_enabled": [
