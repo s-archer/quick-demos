@@ -1,11 +1,11 @@
-To run, your AWS credentials need to be provided for teh AS3 declaration for autodiscovery.  The values can be populated from a separate creds.tfvars file, stored
-outside of your repo folder. 
+This deployment uses an IAM role attached to the BIG-IP which allows AS3 to query the AWS API to discover the NGINX instances automatically (service discovery).
 
-Use the following flag when applying config to use the values from your creds.tfvars file.
+To use this repo, clone to your local machine and then:
 
-terraform apply -var-file=../creds/creds.tfvars   
-
-The creds.tfvars file must contain two variables defined like this (but not commented out):
-
-aws_access_key = "blahBlahBlah"
-aws_secret_key = "blahBlahBlahblahBlahBlah"
+terraform init
+terraform plan
+terraform apply
+...
+use
+...
+terraform destroy
