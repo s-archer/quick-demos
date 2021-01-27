@@ -5,7 +5,7 @@
                     "declaration": {
                         "class": "ADC",
                         "schemaVersion": "3.22.0",
-                        "label": "Sample 1",
+                        "label": "TF Cloud V1",
                         "remark": "Simple HTTP Service with Round-Robin Load Balancing",
                         "demo_day_1": {
                             "class": "Tenant",
