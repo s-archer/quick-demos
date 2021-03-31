@@ -1,0 +1,113 @@
+{
+    "class": "ADC",
+    "schemaVersion": "3.6.0",
+    "id": "GSLB_Sample",
+    "dns_tenant": {
+        "class": "Tenant",
+        "Application": {
+            "class": "Application",
+            "testDomain": {
+                "class": "GSLB_Domain",
+                "domainName": "admiral.g.archf5.com",
+                "resourceRecordType": "A",
+                "poolLbMode": "ratio",
+                "pools": [
+                              { "use": "testPool" }
+                ]
+            },
+            "testPool": {
+               "class": "GSLB_Pool",
+                "enabled": true,
+                "lbModeAlternate": "ratio",
+                "lbModeFallback": "ratio",
+                "manualResumeEnabled": true,
+                "verifyMemberEnabled": false,
+                "members": [
+                    {
+                        "ratio": 10,
+                        "server": {
+                            "use": "/Common/Shared/testServer"
+                        },
+                        "virtualServer": "arch_vs_1"
+                    },
+                    {
+                        "ratio": 10,
+                        "server": {
+                            "use": "/Common/Shared/testServer"
+                        },
+                        "virtualServer": "arch_vs_2"
+                    }
+                ],
+                "monitors": [
+                    {
+                        "bigip": "/Common/http"
+                    }
+                ],
+                "resourceRecordType": "A",
+                "fallbackIP": "1.1.1.1"
+            }
+        },
+        "arch_app": {
+            "class": "Application",
+            "arch_vs_1": {
+                "class": "Service_HTTP",
+                "virtualPort": 80,
+                "redirect80": false,
+                "virtualAddresses": [
+                    "10.0.2.5"
+                ],
+                "persistenceMethods": [],
+                "profileMultiplex": {
+                    "bigip": "/Common/oneconnect"
+                },
+                "pool": "arch_pool"
+            }, 
+            "arch_pool": {
+                "class": "Pool",
+                "monitors": [
+                    "http"
+                ],
+                "members": [{
+                    "servicePort": 80,
+                    "serverAddresses": [
+                       "10.0.2.10",
+                       "10.0.2.11"
+                    ]
+                 }]
+            }
+        }
+    },
+    "Common": {
+        "class": "Tenant",
+        "Shared": {
+            "class": "Application",
+            "template": "shared",
+            "testDataCenter": {
+                "class": "GSLB_Data_Center"
+            },
+            "testServer": {
+                "class": "GSLB_Server",
+                "dataCenter": {
+                    "use": "testDataCenter"
+                },
+                "devices": [
+                    {
+                        "address": "10.0.2.4"
+                    }
+                ],
+                "virtualServers": [
+                    {
+                        "address": "10.0.2.5",
+                        "port": 80,
+                        "name": "arch_vs_1"
+                    },
+                    {
+                        "address": "10.0.2.6",
+                        "port": 80,
+                        "name": "arch_vs_2"
+                    }
+                ]
+            }
+        }
+    }
+}
