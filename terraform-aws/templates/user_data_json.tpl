@@ -17,11 +17,11 @@ cat << 'EOF' > /config/cloud/runtime-init-conf.yaml
         "install_operations": [
             {
                 "extensionType": "do",
-                "extensionVersion": "1.21.1"
+                "extensionVersion": "1.46.0"
             },
             {
                 "extensionType": "as3",
-                "extensionVersion": "3.26.1"
+                "extensionVersion": "3.50.1"
             },
             {
                 "extensionType": "cf",

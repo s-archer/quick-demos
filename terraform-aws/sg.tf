@@ -21,7 +21,9 @@ resource "aws_security_group" "mgmt" {
     from_port   = 443
     to_port     = 443
     protocol    = "tcp"
-    cidr_blocks = ["${data.http.myip.response_body}/32"]
+    #cidr_blocks = ["${data.http.myip.response_body}/32"]
+    # Include GCP us-east-1 cidr blocks for Gitlab runners
+    cidr_blocks = ["${data.http.myip.response_body}/32", "34.0.0.0/8","35.0.0.0/8", "104.196.0.0/16", "162.216.148.0/22"]
     #cidr_blocks = ["0.0.0.0/0"]
   }
 
