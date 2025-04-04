@@ -1,6 +1,6 @@
-# data "http" "myip" {
-#   url = "https://ifconfig.me"
-# }
+data "http" "myip" {
+  url = "https://ifconfig.me"
+}
 
 resource "aws_security_group" "mgmt" {
   name        = "${var.prefix}mgmt"
@@ -12,8 +12,8 @@ resource "aws_security_group" "mgmt" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    # cidr_blocks = ["${data.http.myip.response_body}/32"]
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["${data.http.myip.response_body}/32"]
+    #cidr_blocks = ["0.0.0.0/0"]
   }
 
   ingress {
@@ -23,8 +23,8 @@ resource "aws_security_group" "mgmt" {
     protocol    = "tcp"
     #cidr_blocks = ["${data.http.myip.response_body}/32"]
     # Include GCP us-east-1 cidr blocks for Gitlab runners
-    #cidr_blocks = ["${data.http.myip.response_body}/32", "34.0.0.0/8","35.0.0.0/8", "104.196.0.0/16", "162.216.148.0/22"]
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["${data.http.myip.response_body}/32", "34.0.0.0/8","35.0.0.0/8", "104.196.0.0/16", "162.216.148.0/22"]
+    #cidr_blocks = ["0.0.0.0/0"]
   }
 
   egress {
@@ -129,8 +129,8 @@ resource "aws_security_group" "nginx" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    #cidr_blocks = ["${chomp(data.http.myip.response_body)}/32"]
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["${chomp(data.http.myip.response_body)}/32"]
+    #cidr_blocks = ["0.0.0.0/0"]
   }
 
   ingress {
