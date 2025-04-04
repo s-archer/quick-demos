@@ -1,5 +1,5 @@
 data "http" "myip" {
-  url = "https://ifconfig.me"
+  url = "https://ifconfig.me/ip"
 }
 
 resource "aws_security_group" "mgmt" {
